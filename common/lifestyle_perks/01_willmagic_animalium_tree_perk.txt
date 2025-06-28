@@ -29,22 +29,10 @@ control_animals_perk = {
 	}
 }
 
-resurrect_animals_perk = {
-	lifestyle = willmagic_lifestyle
-	tree = animalium
-	position = { 0 2 }
-	icon = node_learning
-
-	parent = control_animals_perk
-	
-	effect = {
-		custom_description_no_bullet = { text = resurrect_animals_perk_effect }
-	}
-}
 ferocious_animals_perk = {
 	lifestyle = willmagic_lifestyle
 	tree = animalium
-	position = { 1 2 }
+	position = { 0 2 }
 	icon = node_learning
 
 	parent = control_animals_perk

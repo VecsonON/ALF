@@ -82,7 +82,7 @@ ALF_calm_animals_effect = {
 			hidden_effect = {
 				send_interface_message = {
 					title = spell_calm_animals
-					hunt_activity_dangerous_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
+					hunt_activity_dangerous_game_effect = { PROVINCE = scope:province }
 					var:spell_target = {
 						hunt_create_sighting_effect = {
 							TYPE = dangerous
@@ -100,7 +100,7 @@ ALF_calm_animals_effect = {
 			hidden_effect = {
 				send_interface_message = {
 					title = spell_calm_animals
-					hunt_activity_falconry_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
+					hunt_activity_falconry_game_effect = { PROVINCE = scope:province }
 					var:spell_target = {
 						hunt_create_sighting_effect = {
 							TYPE = falconry
