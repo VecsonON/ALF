@@ -1,0 +1,16 @@
+﻿willmagic_focus = {
+	lifestyle = willmagic_lifestyle
+	
+	modifier = {
+		stress_gain_mult = -0.1
+	}
+
+	desc = {
+		desc = willmagic_focus_desc
+		desc = line_break
+	}
+
+	auto_selection_weight = {
+		value = 2000
+	}
+}

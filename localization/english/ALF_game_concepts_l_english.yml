@@ -1,0 +1,17 @@
+﻿l_english:
+ game_concept_ALF_mod: "Arcane Legacy 4"
+ game_concept_ALF_mod_desc: "#bold Arcane Legacy 4#! is an another mod from Arcane Legacy series to Ck3 with goal of adding immersive and well designed magic to very magic-less ck3"
+
+ game_concept_ALF_mental_fortitude: "Mental Fortitude"
+ game_concept_ALF_mental_fortitude_i: "@willpower_icon!"
+ game_concept_ALF_mental_fortitude_with_i: "$game_concept_ALF_mental_fortitude_i$Mental Fortitude"
+ game_concept_ALF_mental_fortitude_desc: "#bold Mental Fortitude#!, is messure of how strong mind and will of certain character is.\n\nIn game, it works as new [skill|E] against which you can be 'dueled' as well flat reduction of any [ALF_spell|E] cost."
+
+ game_concept_ALF_willpower: "Willpower"
+ game_concept_ALF_willpower_i: "@willpower_icon!"
+ game_concept_ALF_willpower_with_i: "$game_concept_ALF_willpower_i$Willpower"
+ game_concept_ALF_willpower_desc: "#bold Willpower#!, is a form of [stress|E] which cannot be reduced via existing [stress|E]-related [modifiers|E] and is affected only by specific to [ALF_mod|E] [modifiers|E] and your [ALF_mental_fortitude|E]."
+
+ game_concept_ALF_spell: "Spell"
+ game_concept_ALF_spell_desc: "#bold Spell#!, is name for any effect that mage wills into existance.\n\nIn game, all spells are new effects avaiable in GUI accessable by [character_interaction|E]."
+

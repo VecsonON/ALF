@@ -1,0 +1,52 @@
+﻿ALF_will_power_1_modifier = {
+	stress_gain_mult = 0.5
+	stacking = yes
+}
+ALF_will_power_2_modifier = {
+	stress_loss_mult = 0.5
+	stacking = yes
+}
+ALF_will_power_3_modifier = {
+	stress_gain_mult = -0.01
+	stacking = yes
+}
+ALF_will_power_35_modifier = {
+	stress_gain_mult = 0.01
+	stacking = yes
+}
+ALF_will_power_4_modifier = {
+	stress_loss_mult = -0.01
+	stacking = yes
+}
+ALF_will_power_45_modifier = {
+	stress_loss_mult = 0.01
+	stacking = yes
+}
+
+counter_will_modifier = {
+	icon = magic_positive
+	POD_terrain_mage_max_combat_roll = 0.05
+	scale = {
+		value = counter_will_perk_count
+		desc = ALF_counter_will_perk_count_desc
+		display_mode = scaled
+	}
+}
+enforce_will_modifier = {
+	icon = magic_positive
+	POD_terrain_mage_min_combat_roll = -0.05
+	scale = {
+		value = enforce_will_perk_count
+		desc = ALF_enforce_will_perk_count_desc
+		display_mode = scaled
+	}
+}
+strenghen_will_modifier = {
+	icon = magic_positive
+	POD_terrain_mage_development_growth = 0.1
+	scale = {
+		value = strenghen_will_perk_count
+		desc = ALF_strenghen_will_perk_count_desc
+		display_mode = scaled
+	}
+}

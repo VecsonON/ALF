@@ -1,0 +1,7 @@
+﻿l_english:
+ ALF_open_gui_character_interaction: "Open Will Magic GUI #weak ([character|E])#!"
+ ALF_open_gui_artifact_interaction: "Open Will Magic GUI #weak ([artifact|E])#!"
+ ALF_open_gui_title_interaction: "Open Will Magic GUI #weak ([title|E])#!"
+ ALF_open_gui_interaction_desc: "Open Will Magic GUI to cast spells"
+ ALF_open_gui_interaction_effect: "You will open Will Magic GUI with target being [recipient.GetFullName]"
+ ALF_open_gui_interaction_target_effect: "You will open Will Magic GUI with target being [target.GetName]"

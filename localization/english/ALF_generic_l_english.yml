@@ -1,0 +1,42 @@
+﻿l_english:
+ ALF_WILLPOWER_COST_EFFECT_GLOBAL: "Use @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_COST_EFFECT_GLOBAL_PAST: "Used @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_COST_EFFECT_FIRST: "You use @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_COST_EFFECT_FIRST_PAST: "You used @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_COST_EFFECT_THIRD: "[CHARACTER.GetShortUIName] Use @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_COST_EFFECT_THIRD_PAST: "[CHARACTER.GetShortUIName] Used @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+
+ ALF_WILLPOWER_REGAIN_EFFECT_GLOBAL: "Regain @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_REGAIN_EFFECT_GLOBAL_PAST: "Regained @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_REGAIN_EFFECT_FIRST: "You regain @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_REGAIN_EFFECT_FIRST_PAST: "You regained @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_REGAIN_EFFECT_THIRD: "[CHARACTER.GetShortUIName] Regain @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+ ALF_WILLPOWER_REGAIN_EFFECT_THIRD_PAST: "[CHARACTER.GetShortUIName] Regained @willpower_icon!$VALUE|-0$ [ALF_willpower|E]"
+
+ ALF_ADD_MENTAL_FORTITUDE_EFFECT_GLOBAL: "Gain @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_ADD_MENTAL_FORTITUDE_EFFECT_GLOBAL_PAST: "Gained @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_ADD_MENTAL_FORTITUDE_EFFECT_FIRST: "You gain @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_ADD_MENTAL_FORTITUDE_EFFECT_FIRST_PAST: "You gained @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_ADD_MENTAL_FORTITUDE_EFFECT_THIRD: "[CHARACTER.GetShortUIName] Gain @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_ADD_MENTAL_FORTITUDE_EFFECT_THIRD_PAST: "[CHARACTER.GetShortUIName] Gained @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+
+ ALF_SUBTRACT_MENTAL_FORTITUDE_EFFECT_GLOBAL: "Lose @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_SUBTRACT_MENTAL_FORTITUDE_EFFECT_GLOBAL_PAST: "Lost @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_SUBTRACT_MENTAL_FORTITUDE_EFFECT_FIRST: "You lose @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_SUBTRACT_MENTAL_FORTITUDE_EFFECT_FIRST_PAST: "You lost @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_SUBTRACT_MENTAL_FORTITUDE_EFFECT_THIRD: "[CHARACTER.GetShortUIName] Lose @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+ ALF_SUBTRACT_MENTAL_FORTITUDE_EFFECT_THIRD_PAST: "[CHARACTER.GetShortUIName] Lost @willpower_icon!$VALUE|+0$ [ALF_mental_fortitude|E]"
+
+ ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_GLOBAL: "You have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
+ ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_GLOBAL_NOT: "You don't have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
+ ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_FIRST: "You have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
+ ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_FIRST_NOT: "You don't have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
+ ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_THIRD: "[CHARACTER.GetShortUIName] have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
+ ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_THIRD_NOT: "[CHARACTER.GetShortUIName] don't have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
+
+ POD_terrain_mage_advantage: "[ALF_mental_fortitude|E]"
+ POD_terrain_mage_min_combat_roll: "[ALF_willpower|E] Cost"
+ POD_terrain_mage_max_combat_roll: "Enemy [ALF_mental_fortitude|E] Cost"
+ POD_terrain_mage_development_growth: "Chance for [mental_break|E] to increase [ALF_mental_fortitude|E]"
+
+ ALF_generalized_mental_fortitude_duel_tt:0 "[ALF_mental_fortitude_with_i|E] Challenge against [TARGET_CHARACTER.GetTitledFirstName]"

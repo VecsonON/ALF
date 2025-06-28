@@ -1,0 +1,1 @@
+﻿gui/ALF_window_will_magic.gui = ALF_willmagic

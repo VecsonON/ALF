@@ -1,0 +1,20 @@
+﻿ALF_mod = {
+	texture = "gfx/interface/icons/ALF.dds"
+}
+ALF_mental_fortitude = {
+	texture = "gfx/interface/icons/ALF_willpower.dds"
+	alias = { ALF_mental_fortitude_with_i ALF_mental_fortitude_i }
+	parent = ALF_mod
+}
+ALF_willpower = {
+	texture = "gfx/interface/icons/ALF_willpower.dds"
+	parent = ALF_mod
+}
+willmagic_lifestyle = {
+	texture = "gfx/interface/icons/traits/ALF_mage.dds"
+	parent = focus
+}
+ALF_spell = {
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+	parent = ALF_mod
+}

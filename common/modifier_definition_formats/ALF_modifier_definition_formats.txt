@@ -1,0 +1,20 @@
+﻿monthly_willmagic_lifestyle_xp_gain_mult = {
+	decimals = 0
+	percent = yes
+}
+POD_terrain_mage_advantage = { # Mental Fortitude
+	decimals = 0
+}
+POD_terrain_mage_min_combat_roll = { # Willpower cost
+	decimals = 0
+	color = bad
+	percent = yes
+}
+POD_terrain_mage_max_combat_roll = { # Enemy Power Cost
+	decimals = 0
+	percent = yes
+}
+POD_terrain_mage_development_growth = { # Meditation Mental Fortitude Buff
+	decimals = 0
+	percent = yes
+}

@@ -1,0 +1,18 @@
+﻿ALF_mage = {
+	stress_gain_mult = -0.25
+	stress_loss_mult = 0.25
+
+	name = trait_ALF_mage
+
+	flag = ALF_has_access_to_willmagic
+	
+	desc = {
+		first_valid = {	
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_ALF_mage_desc
+			}	
+			desc = trait_character_ALF_mage_desc
+		}
+	}
+}

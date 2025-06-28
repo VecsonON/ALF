@@ -1,0 +1,23 @@
+﻿repeatable_perk_effect = { global = REPEATABLE_PERK_EFFECT }
+
+############ VOLUNTAS ############
+inspect_will_perk_effect = { global = INSPECT_WILL_PERK_EFFECT }
+train_will_perk_effect = { global = TRAIN_WILL_PERK_EFFECT }
+
+command_will_perk_effect = { global = COMMAND_WILL_PERK_EFFECT }
+
+extend_will_perk_effect = { global = EXTEND_WILL_PERK_EFFECT }
+
+hide_will_perk_effect = { global = HIDE_WILL_PERK_EFFECT }
+regenerate_will_perk_effect = { global = REGENERATE_WILL_PERK_EFFECT }
+
+defend_will_perk_effect = { global = DEFEND_WILL_PERK_EFFECT }
+attack_will_perk_effect = { global = ATTACK_WILL_PERK_EFFECT }
+
+steal_will_perk_effect = { global = STEAL_WILL_PERK_EFFECT }
+
+conquer_will_perk_effect = { global = CONQUER_WILL_PERK_EFFECT }
+
+counter_will_perk_effect = { global = COUNTER_WILL_PERK_EFFECT }
+enforce_will_perk_effect = { global = ENFORCE_WILL_PERK_EFFECT }
+strenghen_will_perk_effect = { global = STRENGHEN_WILL_PERK_EFFECT }

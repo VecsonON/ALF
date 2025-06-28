@@ -1,0 +1,273 @@
+﻿widget = {
+	name = "ALF_willmagic"
+	visible = "[And(And(Not(IsPauseMenuShown), IsDefaultGUIMode), GetPlayer.IsValid)]"
+	layer = royal_court
+	size = { 100% 100% }
+
+	window = {
+		parentanchor = center
+		size = { 830 950 }
+		using = Window_Background
+		using = Window_Decoration
+
+		visible = "[GetPlayer.MakeScope.Var('willmagic_gui').IsSet]"
+
+		state = {
+			name = _show
+			using = Animation_FadeIn_Quick
+			using = Sound_WindowShow_Standard
+			on_start = "[GetVariableSystem.Clear('ALF_spell')]"
+			on_start = "[GetScriptedGui('ALF_setup').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			on_start = "[GetScriptedGui('ALF_filter_set').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('filter', MakeScopeFlag('any')).End)]"
+		}
+
+		state = {
+			name = _hide
+			using = Animation_FadeOut_Quick
+			using = Sound_WindowHide_Standard
+			on_start = "[GetScriptedGui('ALF_clearup').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			on_start = "[GetVariableSystem.Clear('ALF_spell')]"
+		}
+
+		allow_outside = yes
+
+		vbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+
+			using = Window_Margins
+
+			allow_outside = yes
+
+			header_pattern = {
+				layoutpolicy_horizontal = expanding
+
+				blockoverride "header_text" { text = ALF_WILLMAGIC_TITLE }
+
+				blockoverride "button_close"
+				{
+					onclick = "[GetScriptedGui('ALF_close_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				}
+			}
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				hbox = {
+					layoutpolicy_horizontal = expanding
+
+					background = {
+						using = Background_Area_Dark
+						alpha = 0.2
+					}
+					margin = { 10 10 }
+					spacing = 10
+
+					vbox = {
+						text_label_center = { text = ALF_caster }
+						portrait_head_small = {
+							datacontext = "[GetPlayer]"
+							blockoverride "opinion_box" {}
+							blockoverride "status_icons" {}
+						}
+					}
+					scrollbox = {
+						# using = Window_Decoration_Spike
+						layoutpolicy_horizontal = expanding 
+						layoutpolicy_vertical = expanding
+						size = { -1 150 }
+
+						blockoverride "scrollbox_background"
+						{
+							background = {
+								using = Background_Area
+							}
+						}
+
+						blockoverride "scrollbox_content"
+						{	
+							
+							text_multi = {
+								visible = "[GetVariableSystem.Exists('ALF_spell')]"
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin = { 5 5 }
+								autoresize = yes
+								text = "[GetScriptedGui(Concatenate(GetVariableSystem.Get('ALF_spell'),'_sgui')).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', GetPlayer.MakeScope.GetVariable('spell').Story.MakeScope).End)]"
+							}
+
+							block "extra_content" {}
+						}
+					}
+					vbox = {
+						text_label_center = { text = ALF_target }
+						portrait_head_small = {
+							visible = "[GetScriptedGui('ALF_target_character').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							datacontext = "[GetPlayer.MakeScope.Var('spell_target').GetCharacter]"
+							blockoverride "portrait_transformation"
+							{
+								portrait_scale = { -1 1 }
+								portrait_offset = { 1 0 }
+							}
+						}
+						icon_artifact = {
+							visible = "[GetScriptedGui('ALF_target_artifact').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							datacontext = "[GetPlayer.MakeScope.Var('spell_target').Artifact]"
+						}
+						coa_title_medium = {
+							visible = "[GetScriptedGui('ALF_target_title').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							datacontext = "[GetPlayer.MakeScope.Var('spell_target').Title]"
+						}
+					}
+				}
+
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 10
+						hbox = {
+							name = "grouped_filters"
+							layoutpolicy_horizontal = expanding
+						
+							hbox = {
+								layoutpolicy_horizontal = expanding
+
+								spacing = 5
+								
+								expand = { layoutpolicy_horizontal = expanding }
+
+								text_single = {
+									text = "ALF_filter"
+									default_format = "#medium"
+									align = nobaseline
+								}
+
+								dropdown_menu_standard = {
+									blockoverride "dropdown_properties"
+									{
+										datamodel = "[GetPlayer.MakeScope.GetList('WillMagicPaths')]"
+									}
+									blockoverride "dropdown_active_item_properties"
+									{
+										text = "[Localize(Concatenate('spell_filter_', GetPlayer.MakeScope.GetVariable('spell_filter').GetFlagName))]"
+									}
+									blockoverride "dropdown_item_properties"
+									{
+										text = "[Localize(Concatenate('spell_filter_', Scope.GetFlagName))]"
+										onmousehierarchyenter = "[GetScriptedGui('ALF_filter_set').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('filter', MakeScopeFlag(Scope.GetFlagName)).End)]"
+									}
+								}
+							}
+						}
+					}
+					
+					scrollbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+
+						blockoverride "scrollbox_margins"
+						{
+							margin_top = 15
+							margin_bottom = 15
+							margin_right = 5
+						}
+
+						blockoverride "scrollbox_content"
+						{
+							vbox = {
+								margin = { 8 8 }
+								spacing = 4
+								ignoreinvisible = yes
+								datamodel = "[GetPlayer.MakeScope.GetList('WillMagicSpells')]"
+								layoutpolicy_horizontal = expanding
+
+								item = {
+									ALF_spell_button = {
+										visible = "[GetScriptedGui('ALF_filter_check').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"
+									}
+								}
+							}
+						}
+					}
+				}
+				hbox = {
+					margin = { 0 5 }
+					button_standard_big = {
+						visible = "[GetVariableSystem.Exists('ALF_spell')]"
+						size = { 420 40 }
+						texture = "gfx/interface/buttons/button_standard_clean.dds"
+						background = {
+							using = Background_Area_ExtraDark
+						}
+						text = "ALF_execute"
+						enabled = "[GetScriptedGui(Concatenate(GetVariableSystem.Get('ALF_spell'),'_sgui')).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', GetPlayer.MakeScope.GetVariable('spell').Story.MakeScope).End)]"
+						onclick = "[GetScriptedGui(Concatenate(GetVariableSystem.Get('ALF_spell'),'_sgui')).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', GetPlayer.MakeScope.GetVariable('spell').Story.MakeScope).End)]"
+						tooltip = "[GetScriptedGui(Concatenate(GetVariableSystem.Get('ALF_spell'),'_sgui')).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', GetPlayer.MakeScope.GetVariable('spell').Story.MakeScope).End)]"
+						using = tooltip_below
+					}
+					button_standard_big = {
+						visible = "[Not(GetVariableSystem.Exists('ALF_spell'))]"
+						size = { 420 40 }
+						texture = "gfx/interface/buttons/button_standard_clean.dds"
+						background = {
+							using = Background_Area_ExtraDark
+						}
+						text = "ALF_execute"
+						enabled = no
+						using = tooltip_below
+					}
+				}
+			}
+		}
+	}
+}
+types WillMagicTypes {
+	type ALF_spell_button = button_standard {
+		layoutpolicy_horizontal = expanding
+		minimumsize = { -1 50 }
+
+		hbox = {
+			vbox = {
+				margin = { 10 0 }
+				text_single = {
+					visible = "[GetScriptedGui('ALF_spell_target_character').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"
+					text = "ALF_spell_type_character"
+					fontsize_min = 12
+					margin_bottom = 5
+				}
+				text_single = {
+					visible = "[GetScriptedGui('ALF_spell_target_artifact').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"
+					text = "ALF_spell_type_artifact"
+					fontsize_min = 12
+					margin_bottom = 5
+				}
+				text_single = {
+					visible = "[GetScriptedGui('ALF_spell_target_title').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"
+					text = "ALF_spell_type_title"
+					fontsize_min = 12
+					margin_bottom = 5
+				}
+			}
+
+			divider_light = {
+				layoutpolicy_vertical = expanding
+			}
+			expand = {}
+
+			text_single = { 
+				align = center
+				margin_bottom = 5
+				fontsize_min = 12
+				layoutpolicy_horizontal = expanding
+				text = "[Localize(Concatenate('spell_', Scope.Var('id').GetFlagName))]" 
+			}
+		}
+		
+		onclick = "[GetScriptedGui('ALF_select_spell').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"
+		enabled = "[GetScriptedGui(Concatenate(Scope.Var('id').GetFlagName,'_sgui')).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"
+		tooltip = "[GetScriptedGui(Concatenate(Scope.Var('id').GetFlagName,'_sgui')).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"
+		onclick = "[GetVariableSystem.Set('ALF_spell',Scope.Var('id').GetFlagName)]"
+		down = "[GetVariableSystem.HasValue('ALF_spell',Scope.Var('id').GetFlagName)]"
+	}
+}

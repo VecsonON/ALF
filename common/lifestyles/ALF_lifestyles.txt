@@ -1,0 +1,11 @@
+﻿willmagic_lifestyle = {
+	is_valid = { 
+		OR = {
+			has_trait_with_flag = ALF_has_access_to_willmagic
+			has_character_flag = ALF_has_access_to_willmagic
+		}
+	}
+
+	xp_per_level = 1000
+	base_xp_gain = 10
+}

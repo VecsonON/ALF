@@ -1,0 +1,4 @@
+﻿l_english:
+ trait_ALF_mage: "Mage"
+ trait_ALF_mage_desc: "This character can change world around them by simply willing that change."
+ trait_character_ALF_mage_desc: "[ROOT.Char.GetFirstName] can change world around them by simply willing that change."

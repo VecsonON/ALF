@@ -1,0 +1,4 @@
+﻿ALF_set_variable_or_change = {
+	if = { limit = { has_variable = $VAR$ } change_variable = { name = $VAR$ add = $VAL$ } }
+	else = { set_variable = { name = $VAR$ value = $VAL$ } }
+}

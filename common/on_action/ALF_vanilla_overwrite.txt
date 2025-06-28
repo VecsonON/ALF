@@ -1,0 +1,44 @@
+﻿# Triggered when stress level goes down
+# Root is the character
+on_stress_level_reduced = {
+	trigger = {
+		NOT = { has_character_flag = ALF_willpower_change_flag }
+	}
+}
+#Going to a new stress level will fire this.
+on_stress_level_1 = {
+	trigger = {
+		NOT = { has_character_flag = recently_hit_stress_threshold } # Prevents multiple mental breaks from occuring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = ALF_willpower_change_flag }
+	}
+	on_actions = {
+		ALF_stress_pulse
+	}
+}
+on_stress_level_2 = {
+	trigger = {
+		NOT = { has_character_flag = recently_hit_stress_threshold } # Prevents multiple mental breaks from occuring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = ALF_willpower_change_flag }
+	}
+	on_actions = {
+		ALF_stress_pulse
+	}
+}
+on_stress_level_3 = {
+	trigger = {
+		NOT = { has_character_flag = recently_hit_stress_threshold } # Prevents multiple mental breaks from occuring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = ALF_willpower_change_flag }
+	}
+	on_actions = {
+		ALF_stress_pulse
+	}
+}
+on_stress_level_4 = {
+	trigger = {
+		NOT = { has_character_flag = recently_hit_stress_threshold } # Prevents multiple mental breaks from occuring on the same day (causes errors and creates an unbreakable stress loop).
+		NOT = { has_character_flag = ALF_willpower_change_flag }
+	}
+	on_actions = {
+		ALF_stress_pulse
+	}
+}

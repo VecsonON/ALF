@@ -1,0 +1,33 @@
+﻿ALF_inspect_will_effect = {
+	ALF_mental_fortitude_duel_effect = {
+		TARGET = var:spell_target
+		SUCCESS = "
+			custom_tooltip = { 
+				text = ALF_inspect_will_effect
+				send_interface_message = {
+					title = spell_inspect_will
+					custom_tooltip = ALF_inspect_will_effect_real
+				}
+			}
+		"
+		FAILURE = " "
+	}
+	ALF_use_willpower_with_enemy_effect = { COUNT = 20 TARGET = var:spell_target }
+}
+ALF_steal_will_effect = {
+	ALF_mental_fortitude_duel_effect = {
+		TARGET = var:spell_target
+		SUCCESS = "
+			ALF_change_mental_fortitude_effect = { COUNT = 1 }
+			var:spell_target = { ALF_change_mental_fortitude_effect = { COUNT = -1 } }
+		"
+		FAILURE = " "
+	}
+	var:spell_target = { death = { death_reason = death_dungeon killer = PREV } }
+	if = { limit = { has_perk = conquer_will_perk } 
+		ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target }
+	}
+	else = {
+		ALF_use_willpower_with_enemy_effect = { COUNT = 100 TARGET = var:spell_target }
+	}
+}

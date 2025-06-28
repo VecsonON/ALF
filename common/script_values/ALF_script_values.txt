@@ -1,0 +1,78 @@
+﻿ALF_mental_fortitude_genetic = {
+	value = 0
+	if = { limit = { has_variable = ALF_mental_fortitude_genetic_var } add = var:ALF_mental_fortitude_genetic_var }
+	if = { limit = { is_alive = no } value = -1 }
+	
+}
+ALF_mental_fortitude = {
+	value = ALF_mental_fortitude_genetic
+	if = { limit = { has_variable = ALF_mental_fortitude_var } add = var:ALF_mental_fortitude_var }
+	if = { limit = { is_alive = no } value = -1 }
+	
+}
+
+ALF_willpower_owned_cost_mult = {
+	value = 1
+
+	if = { limit = { has_perk = command_will_perk } add = -0.05 }
+	if = { limit = { has_perk = extend_will_perk } add = -0.05 }
+	if = { limit = { has_perk = attack_will_perk } add = -0.1 }
+
+	add = {
+		value = counter_will_perk_count_tt
+		multiply = -0.05
+	}
+}
+ALF_willpower_hostile_cost_mult = {
+	value = 1
+
+	if = { limit = { has_perk = command_will_perk } add = 0.05 }
+	if = { limit = { has_perk = extend_will_perk } add = 0.05 }
+	if = { limit = { has_perk = defend_will_perk } add = 0.1 }
+
+	add = {
+		value = enforce_will_perk_count_tt
+		multiply = 0.05
+	}
+}
+
+ALF_stress_break_mental_fortitude_increase_chance = {
+	value = 0
+	if = { limit = { has_perk = command_will_perk } add = 10 }
+	if = { limit = { has_perk = extend_will_perk } add = 10 }
+	if = { limit = { has_perk = defend_will_perk } add = 10 }
+
+	add = {
+		value = strenghen_will_perk_count_tt
+		multiply = 10
+	}
+}
+
+counter_will_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_counter_will_perk_count_var } value = var:ALF_counter_will_perk_count_var }
+}
+counter_will_perk_count_tt = {
+	value = counter_will_perk_count
+	subtract = 1
+}
+enforce_will_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_enforce_will_perk_count_var } value = var:ALF_enforce_will_perk_count_var }
+}
+enforce_will_perk_count_tt = {
+	value = enforce_will_perk_count
+	subtract = 1
+}
+strenghen_will_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_strenghen_will_perk_count_var } value = var:ALF_strenghen_will_perk_count_var }
+}
+strenghen_will_perk_count_tt = {
+	value = strenghen_will_perk_count
+	subtract = 1
+}
+
+ALF_willpower_cost_flat = {
+	value = ALF_mental_fortitude
+}

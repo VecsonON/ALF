@@ -1,0 +1,75 @@
+﻿on_birth_child = { on_actions = { ALF_on_birth_child } }
+on_game_start_after_lobby = { on_actions = { ALF_on_game_start_after_lobby } }
+yearly_global_pulse = { on_actions = { ALF_yearly_global_pulse } }
+
+ALF_on_birth_child = {
+	effect = {
+		ALF_set_mental_fortitude_from_parents_effect = yes
+	}
+}
+ALF_on_game_start_after_lobby = {
+	effect = {
+		every_living_character = {
+			limit = {  
+				NOR = {
+					mother ?= { is_alive = yes }
+					real_father ?= { is_alive = yes }
+				}
+			}
+			save_scope_value_as = { name = random_mental_fortitude value = { value = { 0 10 } floor = yes } }
+			set_variable = { name = ALF_mental_fortitude_genetic_var value = scope:random_mental_fortitude }
+			every_child = {
+				limit = { is_alive = yes }
+				ALF_set_mental_fortitude_from_parents_effect = yes
+			}
+		}
+	}
+}
+ALF_yearly_global_pulse = {
+	effect = {
+		trigger_event = { on_action = ALF_quarterly_global_pulse days = 45 }
+		trigger_event = { on_action = ALF_quarterly_global_pulse days = 135 }
+		trigger_event = { on_action = ALF_quarterly_global_pulse days = 225 }
+		trigger_event = { on_action = ALF_quarterly_global_pulse days = 315 }
+		every_living_character = {
+			limit = { has_perk = regenerate_will_perk }
+			if = {
+				limit = {
+					save_temporary_scope_value_as = {
+						name = biyearly_countdown
+						value = { value = current_year modulo = 10 }
+					}
+					scope:biyearly_countdown = 0
+				}
+				send_interface_message = {
+					title = regenerate_will_perk_name
+					ALF_change_mental_fortitude_effect = { COUNT = 1 }
+				}
+			}
+		}
+	}
+}
+ALF_quarterly_global_pulse = {
+	effect = {
+		trigger_event = { on_action = ALF_monthly_global_pulse }
+		trigger_event = { on_action = ALF_monthly_global_pulse months = 1 }
+		trigger_event = { on_action = ALF_monthly_global_pulse months = 2 }
+	}
+}
+ALF_monthly_global_pulse = {
+	effect = {
+		
+	}
+}
+
+ALF_stress_pulse = {
+	effect = {
+		random = {
+			chance = ALF_stress_break_mental_fortitude_increase_chance
+			send_interface_message = {
+				title = train_will_perk_name
+				ALF_change_mental_fortitude_effect = { COUNT = 1 }
+			}
+		}
+	}
+}

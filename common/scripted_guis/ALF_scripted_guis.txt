@@ -1,0 +1,75 @@
+﻿ALF_close_gui = {
+	effect = {
+		remove_variable = willmagic_gui
+		remove_variable = spell_target
+		remove_variable = spell_type
+	}
+}
+ALF_target_character = { is_valid = { var:spell_type ?= flag:character } }
+ALF_target_artifact = { is_valid = { var:spell_type ?= flag:artifact } }
+ALF_target_title = { is_valid = { var:spell_type ?= flag:title } }
+ALF_spell_target_character = { is_valid = { scope:spell.var:type ?= flag:character } }
+ALF_spell_target_artifact = { is_valid = { scope:spell.var:type ?= flag:artifact } }
+ALF_spell_target_title = { is_valid = { scope:spell.var:type ?= flag:title } }
+ALF_setup = {
+	effect = {
+		clear_variable_list = WillMagicPaths
+		add_to_variable_list = { name = WillMagicPaths target = flag:any }
+		add_to_variable_list = { name = WillMagicPaths target = flag:character }
+		add_to_variable_list = { name = WillMagicPaths target = flag:artifact }
+		add_to_variable_list = { name = WillMagicPaths target = flag:title }
+		add_to_variable_list = { name = WillMagicPaths target = flag:voluntas }
+		
+		clear_variable_list = WillMagicSpells
+		remove_variable = spell
+		remove_variable = spell_filter
+		ALF_genereate_spell = { ID = inspect_will TYPE = character PATH = voluntas LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = steal_will TYPE = character PATH = voluntas LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = inspect_will TYPE = artifact PATH = voluntas LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = inspect_will TYPE = title PATH = voluntas LIST = WillMagicSpells }
+	}
+}
+ALF_clearup = {
+	effect = {
+		clear_variable_list = WillMagicPaths
+		every_in_list = {
+			variable = WillMagicSpells
+			end_story = yes
+		}
+		clear_variable_list = WillMagicSpells
+		remove_variable = spell
+		remove_variable = spell_filter
+	}
+}
+ALF_filter_set = { 
+	saved_scopes = { filter }
+	effect = { 
+		set_variable = { name = spell_filter value = scope:filter } 
+		if = { limit = { var:spell_filter ?= flag:any } }
+	} 
+}
+ALF_filter_check = {
+	saved_scopes = { spell_filter }
+	is_shown = {
+		trigger_if = { limit = { var:spell_filter ?= flag:any } }
+		trigger_else_if = {
+			limit = { 
+				OR = {
+					var:spell_filter ?= flag:character 
+					var:spell_filter ?= flag:artifact 
+					var:spell_filter ?= flag:title 
+				}
+			}
+			scope:spell.var:type ?= var:spell_filter
+		}
+		trigger_else = {
+			scope:spell.var:path ?= var:spell_filter
+		}
+	} 
+}
+ALF_select_spell = {
+	effect = {
+		set_variable = { name = spell value = scope:spell }
+		if = { limit = { var:spell ?= scope:spell } }
+	}
+}

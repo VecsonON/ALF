@@ -1,0 +1,9 @@
+﻿ALT_story_cycle = {
+	on_setup = { }
+
+	on_end = { }
+
+	on_owner_death = {
+		end_story = yes
+	}
+}

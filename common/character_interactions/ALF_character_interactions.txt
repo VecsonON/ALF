@@ -1,0 +1,81 @@
+﻿ALF_open_gui_character_interaction = {
+	category = interaction_category_diplomacy
+	icon = ALF_willmagic
+	desc = ALF_open_gui_interaction_desc
+
+	common_interaction = yes
+
+	is_shown = {
+		scope:actor = { ALF_has_access_to_willmagic_trigger = yes }
+	}
+
+	on_accept = {
+		scope:actor = {
+			ALF_open_willmagic_gui_effect = { TARGET = scope:recipient TYPE = character }
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = {
+		base = 0
+	}
+}
+ALF_open_gui_artifact_interaction = {
+	category = interaction_category_diplomacy
+	icon = ALF_willmagic
+	desc = ALF_open_gui_interaction_desc
+
+	target_type = artifact
+	target_filter = recipient_artifacts
+
+	common_interaction = yes
+
+	is_shown = {
+		scope:recipient = { has_any_artifact = yes }
+		scope:actor = { ALF_has_access_to_willmagic_trigger = yes }
+	}
+
+	on_accept = {
+		scope:actor = {
+			ALF_open_willmagic_gui_effect = { TARGET = scope:target TYPE = artifact }
+		}
+	}
+
+	has_valid_target = { exists = scope:target }
+
+	auto_accept = yes
+
+	ai_will_do = {
+		base = 0
+	}
+}
+ALF_open_gui_title_interaction = {
+	category = interaction_category_diplomacy
+	icon = ALF_willmagic
+	desc = ALF_open_gui_interaction_desc
+
+	target_type = title
+	target_filter = recipient_domain_titles
+
+	common_interaction = yes
+
+	is_shown = {
+		scope:recipient = { is_landed = yes }
+		scope:actor = { ALF_has_access_to_willmagic_trigger = yes }
+	}
+
+	on_accept = {
+		scope:actor = {
+			ALF_open_willmagic_gui_effect = { TARGET = scope:target TYPE = title }
+		}
+	}
+
+	has_valid_target = { exists = scope:target }
+
+	auto_accept = yes
+
+	ai_will_do = {
+		base = 0
+	}
+}

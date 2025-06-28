@@ -1,0 +1,54 @@
+﻿# Adding new Spell
+# Go to `common/scripted_effects/ALF_spell_effects.txt` and create new effect ALF_$ID$_effect
+# Go to `common/scripted_guis/ALF_scripted_guis.txt` and in `ALF_setup` add new spell
+# Then copy paste what's bellow and edit to your wishes
+# $ID$_sgui = {
+# 	is_valid = { 
+# 		ALF_general_spell_trigger = yes
+# 		$ADDITIONAL TRIGGERS$
+# 	}
+# 	effect = {
+# 		if = { 
+		# 	limit = { var:spell_type ?= flag:$TYPE$ } 
+		# 	ALF_$ID$_effect = yes
+		# }
+# 	}
+# }
+
+inspect_will_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:character } 
+			var:spell_target ?= { NOT = { has_perk = hide_will_perk } } 
+			trigger_if = { limit = { NOT = { var:spell_target = THIS } } has_perk = inspect_will_perk }
+		}
+	}
+	effect = {
+		if = { 
+			limit = { var:spell_type ?= flag:character } 
+			ALF_inspect_will_effect = yes
+		}
+	}
+}
+steal_will_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = steal_will_perk
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:character } 
+			var:spell_target ?= { is_imprisoned_by = PREV } 
+			custom_description = { 
+				text = ALF_target_has_higher_willpower_trigger
+				object = var:spell_target
+				var:spell_target.ALF_mental_fortitude >= ALF_mental_fortitude
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { var:spell_type ?= flag:character } 
+			ALF_steal_will_effect = yes
+		}
+	}
+}

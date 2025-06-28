@@ -1,0 +1,12 @@
+﻿ALF_has_access_to_willmagic_trigger = {
+	OR = {
+		has_trait_with_flag = ALF_has_access_to_willmagic
+		has_character_flag = ALF_has_access_to_willmagic
+	}
+}
+ALF_general_spell_trigger = {
+	custom_tooltip = { 
+		text = ALF_cast_spell_sgui_type
+		scope:spell.var:type ?= var:spell_type
+	}
+}

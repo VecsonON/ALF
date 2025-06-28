@@ -1,0 +1,47 @@
+﻿ALF_open_willmagic_gui_effect = {
+	set_variable = willmagic_gui
+	set_variable = { name = spell_target value = $TARGET$ }
+	set_variable = { name = spell_type value = flag:$TYPE$ }
+	switch = {
+		trigger = flag:$TYPE$
+		flag:character = { custom_tooltip = ALF_open_gui_interaction_effect }
+		fallback = { custom_tooltip = ALF_open_gui_interaction_target_effect }
+	}
+}
+ALF_genereate_spell = {
+	create_story = {
+		type = ALT_story_cycle
+		save_scope_as = spell
+	}
+	scope:spell ?= {
+		set_variable = { name = id value = flag:$ID$ }
+		set_variable = { name = type value = flag:$TYPE$ }
+		set_variable = { name = path value = flag:$PATH$ }
+	}
+	add_to_variable_list = { name = $LIST$ target = scope:spell }
+
+	if = { limit = { var:id ?= flag:$ID$ } }
+	if = { limit = { var:type ?= flag:$TYPE$ } }
+	if = { limit = { var:path ?= flag:$PATH$ } }
+}
+ALF_mental_fortitude_duel_effect = {
+	if = { 
+		limit = { $TARGET$ = THIS } 
+		$SUCCESS$
+	}
+	else = {
+		duel = {
+			localization = ALF_generalized_mental_fortitude_duel
+			value = ALF_mental_fortitude
+			target = $TARGET$
+			0 = {
+				modifier = { add = ALF_mental_fortitude }
+				$SUCCESS$
+			}
+			0 = {
+				modifier = { add = $TARGET$.ALF_mental_fortitude }
+				$FAILURE$
+			}
+		}
+	}
+}
