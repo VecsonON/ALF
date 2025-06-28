@@ -34,9 +34,11 @@
  ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_THIRD: "[CHARACTER.GetShortUIName] have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
  ALF_TARGET_HAS_HIGHER_WILLPOWER_TRIGGER_THIRD_NOT: "[CHARACTER.GetShortUIName] don't have more [ALF_mental_fortitude|E] than [TARGET_CHARACTER.GetTitledFirstName]"
 
- POD_terrain_mage_advantage: "[ALF_mental_fortitude|E]"
- POD_terrain_mage_min_combat_roll: "[ALF_willpower|E] Cost"
- POD_terrain_mage_max_combat_roll: "Enemy [ALF_mental_fortitude|E] Cost"
- POD_terrain_mage_development_growth: "Chance for [mental_break|E] to increase [ALF_mental_fortitude|E]"
+ ALF_terrain_mage_advantage: "[ALF_mental_fortitude|E]"
+ ALF_terrain_mage_min_combat_roll: "[ALF_willpower|E] Cost"
+ ALF_terrain_mage_max_combat_roll: "Enemy [ALF_mental_fortitude|E] Cost"
+ ALF_terrain_mage_development_growth: "Chance for [mental_break|E] to increase [ALF_mental_fortitude|E]"
 
  ALF_generalized_mental_fortitude_duel_tt:0 "[ALF_mental_fortitude_with_i|E] Challenge against [TARGET_CHARACTER.GetTitledFirstName]"
+
+ ALF_target_is_root: "You are not [SpellTarget.GetTitledFirstName]!"

@@ -18,3 +18,9 @@ ALF_spell = {
 	texture = "gfx/interface/icons/ALF_willmagic.dds"
 	parent = ALF_mod
 }
+
+
+ALF_animals_maa = {
+	parent = men_at_arms
+	texture = "gfx/interface/icons/regimenttypes/ALF_wolves.dds"
+}

@@ -19,14 +19,15 @@ ALF_setup = {
 		add_to_variable_list = { name = WillMagicPaths target = flag:artifact }
 		add_to_variable_list = { name = WillMagicPaths target = flag:title }
 		add_to_variable_list = { name = WillMagicPaths target = flag:voluntas }
+		add_to_variable_list = { name = WillMagicPaths target = flag:animalium }
 		
 		clear_variable_list = WillMagicSpells
 		remove_variable = spell
 		remove_variable = spell_filter
 		ALF_genereate_spell = { ID = inspect_will TYPE = character PATH = voluntas LIST = WillMagicSpells }
 		ALF_genereate_spell = { ID = steal_will TYPE = character PATH = voluntas LIST = WillMagicSpells }
-		ALF_genereate_spell = { ID = inspect_will TYPE = artifact PATH = voluntas LIST = WillMagicSpells }
-		ALF_genereate_spell = { ID = inspect_will TYPE = title PATH = voluntas LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = influence_animals TYPE = character PATH = animalium LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = calm_animals TYPE = title PATH = animalium LIST = WillMagicSpells }
 	}
 }
 ALF_clearup = {

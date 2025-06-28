@@ -1,0 +1,7 @@
+﻿animal_low_recruitment_cost = 50
+animal_med_recruitment_cost = 75
+animal_high_recruitment_cost = 100
+
+animal_low_maint_cost = 0.25
+animal_med_maint_cost = 0.5
+animal_high_maint_cost = 1

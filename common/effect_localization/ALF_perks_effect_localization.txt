@@ -21,3 +21,23 @@ conquer_will_perk_effect = { global = CONQUER_WILL_PERK_EFFECT }
 counter_will_perk_effect = { global = COUNTER_WILL_PERK_EFFECT }
 enforce_will_perk_effect = { global = ENFORCE_WILL_PERK_EFFECT }
 strenghen_will_perk_effect = { global = STRENGHEN_WILL_PERK_EFFECT }
+
+############ ANIMALIUM ############
+influence_animals_perk_effect = { global = INFLUENCE_ANIMALS_PERK_EFFECT }
+
+control_animals_perk_effect = { global = CONTROL_ANIMALS_PERK_EFFECT }
+
+resurrect_animals_perk_effect = { global = RESURRECT_ANIMALS_PERK_EFFECT }
+ferocious_animals_perk_effect = { global = FEROCIOUS_ANIMALS_PERK_EFFECT }
+calm_animals_perk_effect = { global = CALM_ANIMALS_PERK_EFFECT }
+
+durrable_animals_perk_effect = { global = DURRABLE_ANIMALS_PERK_EFFECT }
+
+create_animals_perk_effect = { global = CREATE_ANIMALS_PERK_EFFECT }
+
+create_mythical_animals_perk_effect = { global = CREATE_MYTHICAL_ANIMALS_PERK_EFFECT }
+
+supernatural_animals_perk_effect = { global = SUPERNATURAL_ANIMALS_PERK_EFFECT }
+
+strong_animals_perk_effect = { global = STRONG_ANIMALS_PERK_EFFECT }
+cheap_animals_perk_effect = { global = CHEAP_ANIMALS_PERK_EFFECT }

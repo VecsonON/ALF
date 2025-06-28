@@ -29,7 +29,7 @@ train_will_perk = {
 	}
 
 	character_modifier = {
-		POD_terrain_mage_development_growth = 0.1
+		ALF_terrain_mage_development_growth = 0.1
 	}
 	
 	effect = {
@@ -47,9 +47,9 @@ command_will_perk = {
 	parent = train_will_perk
 
 	character_modifier = {
-		POD_terrain_mage_min_combat_roll = -0.05
-		POD_terrain_mage_max_combat_roll = 0.05
-		POD_terrain_mage_development_growth = 0.1
+		ALF_terrain_mage_min_combat_roll = -0.05
+		ALF_terrain_mage_max_combat_roll = 0.05
+		ALF_terrain_mage_development_growth = 0.1
 	}
 	
 	effect = {
@@ -66,9 +66,9 @@ extend_will_perk = {
 	parent = command_will_perk
 
 	character_modifier = {
-		POD_terrain_mage_min_combat_roll = -0.05
-		POD_terrain_mage_max_combat_roll = 0.05
-		POD_terrain_mage_development_growth = 0.1
+		ALF_terrain_mage_min_combat_roll = -0.05
+		ALF_terrain_mage_max_combat_roll = 0.05
+		ALF_terrain_mage_development_growth = 0.1
 	}
 	
 	effect = {
@@ -110,7 +110,7 @@ defend_will_perk = {
 	parent = regenerate_will_perk
 
 	character_modifier = {
-		POD_terrain_mage_max_combat_roll = 0.1
+		ALF_terrain_mage_max_combat_roll = 0.1
 	}
 	
 	effect = {
@@ -127,7 +127,7 @@ attack_will_perk = {
 	parent = regenerate_will_perk
 
 	character_modifier = {
-		POD_terrain_mage_min_combat_roll = -0.1
+		ALF_terrain_mage_min_combat_roll = -0.1
 	}
 	
 	effect = {

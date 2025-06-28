@@ -2,19 +2,136 @@
 	decimals = 0
 	percent = yes
 }
-POD_terrain_mage_advantage = { # Mental Fortitude
+ALF_terrain_mage_advantage = { # Mental Fortitude
 	decimals = 0
 }
-POD_terrain_mage_min_combat_roll = { # Willpower cost
+ALF_terrain_mage_min_combat_roll = { # Willpower cost
 	decimals = 0
 	color = bad
 	percent = yes
 }
-POD_terrain_mage_max_combat_roll = { # Enemy Power Cost
+ALF_terrain_mage_max_combat_roll = { # Enemy Power Cost
 	decimals = 0
 	percent = yes
 }
-POD_terrain_mage_development_growth = { # Meditation Mental Fortitude Buff
+ALF_terrain_mage_development_growth = { # Meditation Mental Fortitude Buff
+	decimals = 0
+	percent = yes
+}
+
+ALF_animals_maa_damage_add = {
+	decimals = 0
+}
+ALF_animals_maa_damage_mult = {
+	decimals = 0
+	percent = yes
+}
+
+ALF_animals_maa_toughness_add = {
+	decimals = 0
+}
+ALF_animals_maa_toughness_mult = {
+	decimals = 0
+	percent = yes
+}
+
+ALF_animals_maa_pursuit_add = {
+	decimals = 0
+}
+
+ALF_animals_maa_pursuit_mult = {
+	decimals = 0
+	percent = yes
+}
+ALF_animals_maa_screen_add = {
+	decimals = 0
+}
+
+ALF_animals_maa_screen_mult = {
+	decimals = 0
+	percent = yes
+}
+ALF_animals_maa_maintenance_mult = {
+	decimals = 0
+	color = bad
+	percent = yes
+}
+
+ALF_animals_maa_recruitment_cost_mult = {
+	decimals = 0
+	color = bad
+	percent = yes
+}
+
+ALF_animals_maa_max_size_add = {
+	decimals = 0
+}
+
+ALF_animals_maa_max_size_mult = {
+	decimals = 0
+	percent = yes
+}
+
+ALF_animals_maa_siege_value_add = {
+	decimals = 1
+}
+
+ALF_animals_maa_siege_value_mult = {
+	decimals = 0
+	percent = yes
+}
+
+stationed_ALF_animals_maa_damage_add = {
+	prefix = MOD_DAMAGE_PREFIX
+	decimals = 0
+}
+
+stationed_ALF_animals_maa_damage_mult = {
+	prefix = MOD_DAMAGE_PREFIX
+	decimals = 0
+	percent = yes
+}
+
+stationed_ALF_animals_maa_toughness_add = {
+	prefix = MOD_TOUGHNESS_PREFIX
+	decimals = 0
+}
+
+stationed_ALF_animals_maa_toughness_mult = {
+	prefix = MOD_TOUGHNESS_PREFIX
+	decimals = 0
+	percent = yes
+}
+
+stationed_ALF_animals_maa_pursuit_add = {
+	prefix = MOD_PURSUIT_PREFIX
+	decimals = 0
+}
+
+stationed_ALF_animals_maa_pursuit_mult = {
+	prefix = MOD_PURSUIT_PREFIX
+	decimals = 0
+	percent = yes
+}
+
+stationed_ALF_animals_maa_screen_add = {
+	prefix = MOD_SCREEN_PREFIX
+	decimals = 0
+}
+
+stationed_ALF_animals_maa_screen_mult = {
+	prefix = MOD_SCREEN_PREFIX
+	decimals = 0
+	percent = yes
+}
+
+stationed_ALF_animals_maa_siege_value_add = {
+	prefix = MOD_SIEGE_PROGRESS_PREFIX
+	decimals = 1
+}
+
+stationed_ALF_animals_maa_siege_value_mult = {
+	prefix = MOD_SIEGE_PROGRESS_PREFIX
 	decimals = 0
 	percent = yes
 }

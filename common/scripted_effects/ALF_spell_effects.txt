@@ -2,7 +2,7 @@
 	ALF_mental_fortitude_duel_effect = {
 		TARGET = var:spell_target
 		SUCCESS = "
-			custom_tooltip = { 
+			custom_tooltip = {
 				text = ALF_inspect_will_effect
 				send_interface_message = {
 					title = spell_inspect_will
@@ -24,10 +24,111 @@ ALF_steal_will_effect = {
 		FAILURE = " "
 	}
 	var:spell_target = { death = { death_reason = death_dungeon killer = PREV } }
-	if = { limit = { has_perk = conquer_will_perk } 
+	if = { limit = { has_perk = conquer_will_perk }
 		ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target }
 	}
 	else = {
 		ALF_use_willpower_with_enemy_effect = { COUNT = 100 TARGET = var:spell_target }
 	}
+}
+ALF_influence_animals_effect = {
+	random_list = {
+		1 = {
+			trigger = { NOT = { any_owned_story = { story_type = story_cycle_pet_cat } } }
+			start_cat_story_cycle_effect = yes
+		}
+		1 = {
+			trigger = { NOT = { any_owned_story = { story_type = story_cycle_pet_dog } } }
+			start_dog_story_cycle_effect = yes
+		}
+		1 = {
+			trigger = { NOT = { any_owned_story = { story_type = story_cycle_martial_lifestyle_warhorse } } }
+			hidden_effect = { start_warhorse_story_cycle_effect = yes }
+			add_character_modifier = horse_story_modifier
+			add_character_flag = had_warhorse_story
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 25 }
+}
+ALF_calm_animals_effect = {
+	var:spell_target = { 
+		hunt_remove_sighting_effect = yes
+		title_province = { save_scope_as = province } 
+	}
+	
+	random_list = {
+		5 = {
+			show_as_tooltip = {
+				var:spell_target = { add_county_modifier = hunt_sighting_standard_modifier }
+			}
+			hidden_effect = {
+				send_interface_message = {
+					title = spell_calm_animals
+					hunt_activity_standard_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
+					var:spell_target = {
+						hunt_create_sighting_effect = {
+							TYPE = standard
+							ANIMAL = var:animal_type
+							OWNER = root
+						}
+					}
+				}
+			}
+		}
+		5 = {
+			show_as_tooltip = {
+				var:spell_target = { add_county_modifier = hunt_sighting_dangerous_modifier }
+			}
+			hidden_effect = {
+				send_interface_message = {
+					title = spell_calm_animals
+					hunt_activity_dangerous_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
+					var:spell_target = {
+						hunt_create_sighting_effect = {
+							TYPE = dangerous
+							ANIMAL = var:animal_type
+							OWNER = root
+						}
+					}
+				}
+			}
+		}
+		10 = {
+			show_as_tooltip = {
+				var:spell_target = { add_county_modifier = hunt_sighting_falconry_modifier }
+			}
+			hidden_effect = {
+				send_interface_message = {
+					title = spell_calm_animals
+					hunt_activity_falconry_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
+					var:spell_target = {
+						hunt_create_sighting_effect = {
+							TYPE = falconry
+							ANIMAL = var:animal_type
+							OWNER = root
+						}
+					}
+				}
+			}
+		}
+		1 = {
+			show_as_tooltip = {
+				var:spell_target = { add_county_modifier = hunt_sighting_legendary_modifier }
+			}
+			hidden_effect = {
+				send_interface_message = {
+					title = spell_calm_animals
+					hunt_activity_standard_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
+					var:spell_target = {
+						hunt_create_sighting_effect = {
+							TYPE = legendary
+							ANIMAL = var:animal_type
+							OWNER = root
+						}
+					}
+				}
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 50 }
 }

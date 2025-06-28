@@ -1,0 +1,238 @@
+﻿#Cat dies
+#by Linnéa Thimrén, Edited by VecsonON
+pet_animal.0199 = {
+	type = character_event
+	title = pet_animal.0199.t
+	desc = pet_animal.0199.desc
+	theme = pet
+	left_portrait = {
+		character = root
+		animation = sadness
+	}
+	artifact = {
+		position = lower_right_portrait
+		target = scope:newly_created_artifact
+	}
+	trigger = {
+		NOT = { has_perk = resurrect_animals_perk }
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_prison"
+		create_artifact_animal_hide_effect = {
+			OWNER = root
+			HUNTER = root
+			LEGENDARY = no
+			ANIMAL = flag:cat
+		}
+	}
+
+	option = {
+		name = pet_animal.0199.a
+		if = {
+			limit = { exists = scope:newly_created_artifact }
+			hidden_effect = { destroy_artifact = scope:newly_created_artifact }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = pet_animal.0199.b
+		remove_short_term_gold = { 10 20 }
+		show_as_tooltip = {
+			scope:newly_created_artifact = { set_owner = root }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	after = {
+		show_as_tooltip = {
+			remove_cat_story_modifiers_effect = yes
+		}
+		scope:story = {
+			hidden_effect = { end_story = yes }
+		}
+		remove_character_flag = cat_is_dying
+	}
+}
+
+#Dog dies
+#by Linnéa Thimrén
+pet_animal.1199 = {
+	type = character_event
+	title = pet_animal.1199.t
+	desc = pet_animal.1199.desc
+	theme = pet
+	override_background = { reference = ep2_dog_kennels }
+	left_portrait = {
+		character = root
+		animation = sadness
+	}
+	artifact = {
+		position = lower_right_portrait
+		target = scope:newly_created_artifact
+	}
+	trigger = {
+		NOT = { has_perk = resurrect_animals_perk }
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_prison"
+		create_artifact_animal_hide_effect = {
+			OWNER = root
+			HUNTER = root
+			LEGENDARY = no
+			ANIMAL = flag:dog
+		}
+	}
+
+	option = {
+		name = pet_animal.1199.a
+		if = {
+			limit = { exists = scope:newly_created_artifact }
+			hidden_effect = { destroy_artifact = scope:newly_created_artifact }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = pet_animal.0199.b
+		remove_short_term_gold = { 10 20 }
+		show_as_tooltip = {
+			scope:newly_created_artifact = { set_owner = root }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	after = {
+		show_as_tooltip = {
+			remove_dog_story_modifiers_effect = yes
+		}
+		scope:story = {
+			hidden_effect = { end_story = yes }
+		}
+		remove_character_flag = dog_is_dying
+	}
+}
+
+
+#Your horse is sick! Pay gold or risk its death (end of story)
+warhorse.1201 = {
+	type = character_event
+	title = warhorse.1201.t
+	desc = warhorse.1201.desc
+	theme = martial_chivalry_focus
+	override_background = {
+		reference = alley_night
+	}
+	left_portrait = {
+		character = root
+		animation = horse_exhausted
+		camera = camera_event_horse_very_left
+	}
+	override_effect_2d = {
+		reference = rain
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_warhorse_1201_event }
+		NOT = { has_perk = resurrect_animals_perk }
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_warhorse_1201_event
+			days = 1825
+		}
+	}
+
+	option = { #I'll pay whatever!
+		name = warhorse.1201.a
+		remove_short_term_gold = minor_gold_value
+		stress_impact = {
+			greedy = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_compassion = 0.75
+			}
+		}
+	}
+
+	option = { #no
+		name = warhorse.1201.b
+		random_list = {
+			50 = {
+				desc = warhorse.1201.b_good
+				show_chance = no
+				custom_tooltip = warhorse.1201.b.tt
+				send_interface_toast = {
+					title = warhorse.1201.b_good
+				}
+			}
+			50 = {
+				desc = warhorse.1201.b_bad
+				show_chance = no
+				send_interface_toast = {
+					title = warhorse.1201.b_bad
+					show_as_tooltip = { remove_horse_story_modifiers_effect = yes }
+				}
+				scope:story = {
+					hidden_effect = { end_story = yes }
+				}
+			}
+		}
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_rationality = 0.25
+				ai_greed = 0.25
+			}
+		}
+	}
+}
+
+#Horse dies
+warhorse.8003 = {
+	type = character_event
+	title = warhorse.8001.t
+	desc = warhorse.8003.desc
+	theme = martial_chivalry_focus
+	override_background = {
+		reference = garden
+	}
+	left_portrait = {
+		character = root
+		animation = sadness
+	}
+
+	trigger = {
+		NOT = { has_perk = resurrect_animals_perk }
+	}
+	
+	immediate = {
+	
+	}
+
+	option = {
+		name = warhorse.8003.a
+		show_as_tooltip = {
+			remove_horse_story_modifiers_effect = yes
+		}
+		scope:story = {
+			hidden_effect = { end_story = yes }
+		}
+	}
+}

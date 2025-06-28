@@ -1,0 +1,11 @@
+﻿l_english:
+ spell_inspect_will: "Inspect Will"
+ ALF_inspect_will_effect: "You will scry [SpellTarget.GetFullName] to determinate their [ALF_mental_fortitude|E]."
+ ALF_inspect_will_effect_real: "[ALF_mental_fortitude|E] of [SpellTarget.GetFullName] is #V;bold [SpellTarget.MakeScope.ScriptValue('ALF_mental_fortitude')]#!"
+
+ spell_steal_will: "Steal Will"
+
+ spell_influence_animals: "Influence Animals"
+ 
+ spell_calm_animals: "Calm Animals"
+ spell_influence_animals_tt: "You already have all pets this spell can summon!"

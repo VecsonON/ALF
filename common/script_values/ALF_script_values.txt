@@ -48,6 +48,10 @@ ALF_stress_break_mental_fortitude_increase_chance = {
 	}
 }
 
+ALF_willpower_cost_flat = {
+	value = ALF_mental_fortitude
+}
+
 counter_will_perk_count = {
 	value = 1
 	if = { limit = { has_variable = ALF_counter_will_perk_count_var } value = var:ALF_counter_will_perk_count_var }
@@ -73,6 +77,19 @@ strenghen_will_perk_count_tt = {
 	subtract = 1
 }
 
-ALF_willpower_cost_flat = {
-	value = ALF_mental_fortitude
+strong_animals_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_strong_animals_perk_count_var } value = var:ALF_strong_animals_perk_count_var }
+}
+strong_animals_perk_count_tt = {
+	value = strong_animals_perk_count
+	subtract = 1
+}
+cheap_animals_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_cheap_animals_perk_count_var } value = var:ALF_cheap_animals_perk_count_var }
+}
+cheap_animals_perk_count_tt = {
+	value = cheap_animals_perk_count
+	subtract = 1
 }

@@ -5,11 +5,13 @@
 
  ALF_filter: "Filter Spells"
 
+ spell_filter_-: ""
  spell_filter_any: "Any"
  spell_filter_character: "Type: Character"
  spell_filter_artifact: "Type: Artifact"
  spell_filter_title: "Type: Title"
  spell_filter_voluntas: "Path: Voluntas"
+ spell_filter_animalium: "Path: Animalium"
 
  ALF_cast_spell_sgui_type: "This spell targets different type!"
 
@@ -18,8 +20,3 @@
  ALF_spell_type_character: "[Concept('character','@character_icon!')]"
  ALF_spell_type_artifact: "[Concept('artifact','@artifact_icon!')]"
  ALF_spell_type_title: "[title_i]"
-
- spell_inspect_will: "Inspect Will"
- ALF_inspect_will_effect: "You will scry [SpellTarget.GetFullName] to determinate their [ALF_mental_fortitude|E]."
- ALF_inspect_will_effect_real: "[ALF_mental_fortitude|E] of [SpellTarget.GetFullName] is #V;bold [SpellTarget.MakeScope.ScriptValue('ALF_mental_fortitude')]#!"
- spell_steal_will: "Steal Will"

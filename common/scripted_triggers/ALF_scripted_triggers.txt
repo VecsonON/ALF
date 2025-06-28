@@ -10,3 +10,9 @@ ALF_general_spell_trigger = {
 		scope:spell.var:type ?= var:spell_type
 	}
 }
+ALF_target_is_root = {
+	custom_tooltip = { 
+		text = ALF_target_is_root
+		var:spell_target = ROOT
+	}
+}

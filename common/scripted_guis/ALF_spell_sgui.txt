@@ -52,3 +52,45 @@ steal_will_sgui = {
 		}
 	}
 }
+influence_animals_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = influence_animals_perk
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:character } 
+			ALF_target_is_root = yes
+		}
+		custom_tooltip = {
+			text = spell_influence_animals_tt
+			NOT = {
+				AND = {
+					has_character_modifier = cat_story_modifier
+					has_character_modifier = dog_story_modifier
+					has_character_modifier = horse_story_modifier
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { var:spell_type ?= flag:character } 
+			ALF_influence_animals_effect = yes
+		}
+	}
+}
+calm_animals_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = calm_animals_perk
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:title } 
+			var:spell_target = { tier = 2 }
+		}
+	}
+	effect = {
+		if = { 
+			limit = { var:spell_type ?= flag:title } 
+			ALF_calm_animals_effect = yes
+		}
+	}
+}

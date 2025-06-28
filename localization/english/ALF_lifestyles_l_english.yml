@@ -27,6 +27,7 @@
 
  general_spell_loca: "As [ALF_spell|E],"
 
+ ################## Voluntas ##################
  voluntas_name: "Voluntas"
 
  inspect_will_perk_name: "Inscept Will"
@@ -64,3 +65,41 @@
  STRENGHEN_WILL_PERK_EFFECT: "#flavor Mage can strenghen their own [ALF_mental_fortitude|E] using pure determination.#!"
  strenghen_will_modifier: "Strenghen Will"
  ALF_strenghen_will_perk_count_desc: "Per #V $strenghen_will_modifier$#! level"
+ 
+ ################## Animalium ##################
+ animalium_name: "Animalium"
+
+ influence_animals_perk_name: "Influence Animals"
+ INFLUENCE_ANIMALS_PERK_EFFECT: "$general_spell_loca$ Spawn random animal as pet.\n#flavor Mage can subtly influence animals nearby.#!"
+
+ control_animals_perk_name: "Control Animals"
+ CONTROL_ANIMALS_PERK_EFFECT: "Unlock [GetMaA('ALF_wolves').GetName], [GetMaA('ALF_birds').GetName] and [GetMaA('ALF_rats').GetName] as [men_at_arms|E].\n#flavor Mage can take control over nearby animals.#!"
+
+ resurrect_animals_perk_name: "Resurrect Pets"
+ RESURRECT_ANIMALS_PERK_EFFECT: "Your pets won't be able to die anymore.\n#flavor Mage can simply not allow their pets to die.#!"
+ ferocious_animals_perk_name: "Ferocious Animals"
+ FEROCIOUS_ANIMALS_PERK_EFFECT: "#flavor Mage can make previously 'pacifist' animals into war machines.#!"
+ calm_animals_perk_name: "Calm Animals"
+ CALM_ANIMALS_PERK_EFFECT: "$general_spell_loca$ Spawn hunting oportunity.\n#flavor Mage can calm animals nearby.#!"
+
+ durrable_animals_perk_name: "Durrable Animals"
+ DURRABLE_ANIMALS_PERK_EFFECT: "#flavor Mage can make animals under their control more durrable than their natural counterpart#!"
+
+ create_animals_perk_name: "Create Animals"
+ CREATE_ANIMALS_PERK_EFFECT: "#flavor Mage can create completely new animals from thin air, as long they know what that animal looks in nature.#!"
+
+ create_mythical_animals_perk_name: "Create Mythical Animals"
+ CREATE_MYTHICAL_ANIMALS_PERK_EFFECT: "Unlock [GetMaA('ALF_pegasus').GetName]and [GetMaA('ALF_unicorn').GetName] as [men_at_arms|E].\n#flavor Mage can create completely new animals from thin air, no matter what 'nature' says.#!"
+
+ supernatural_animals_perk_name: "Supernatural Animals"
+ SUPERNATURAL_ANIMALS_PERK_EFFECT: "#flavor Mage can make animals under their control obviously supernatural.#!"
+
+ strong_animals_perk_name: "Strong Animals ([ROOT.Char.MakeScope.ScriptValue('strong_animals_perk_count_tt')]/∞)"
+ STRONG_ANIMALS_PERK_EFFECT: "#flavor Mage can Strenghen animals under their control.#!"
+ strong_animals_modifier: "Strong Animals"
+ ALF_strong_animals_perk_count_desc: "Per #V $strong_animals_modifier$#! level"
+
+ cheap_animals_perk_name: "Cheap Animals ([ROOT.Char.MakeScope.ScriptValue('cheap_animals_perk_count_tt')]/15)"
+ CHEAP_ANIMALS_PERK_EFFECT: "#flavor Mage can create animals much easier than before.#!"
+ cheap_animals_modifier: "Cheap Animals"
+ ALF_cheap_animals_perk_count_desc: "Per #V $cheap_animals_modifier$#! level"

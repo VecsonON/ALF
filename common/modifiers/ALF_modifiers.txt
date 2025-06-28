@@ -25,7 +25,7 @@ ALF_will_power_45_modifier = {
 
 counter_will_modifier = {
 	icon = magic_positive
-	POD_terrain_mage_max_combat_roll = 0.05
+	ALF_terrain_mage_max_combat_roll = 0.05
 	scale = {
 		value = counter_will_perk_count
 		desc = ALF_counter_will_perk_count_desc
@@ -34,7 +34,7 @@ counter_will_modifier = {
 }
 enforce_will_modifier = {
 	icon = magic_positive
-	POD_terrain_mage_min_combat_roll = -0.05
+	ALF_terrain_mage_min_combat_roll = -0.05
 	scale = {
 		value = enforce_will_perk_count
 		desc = ALF_enforce_will_perk_count_desc
@@ -43,10 +43,33 @@ enforce_will_modifier = {
 }
 strenghen_will_modifier = {
 	icon = magic_positive
-	POD_terrain_mage_development_growth = 0.1
+	ALF_terrain_mage_development_growth = 0.1
 	scale = {
 		value = strenghen_will_perk_count
 		desc = ALF_strenghen_will_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+strong_animals_modifier = {
+	icon = magic_positive
+	ALF_animals_maa_damage_mult = 0.05
+	ALF_animals_maa_pursuit_mult = 0.05
+	ALF_animals_maa_toughness_mult = 0.05
+	ALF_animals_maa_screen_mult = 0.05
+	scale = {
+		value = strong_animals_perk_count
+		desc = ALF_strong_animals_perk_count_desc
+		display_mode = scaled
+	}
+}
+cheap_animals_modifier = {
+	icon = magic_positive
+	ALF_animals_maa_maintenance_mult = -0.05
+	ALF_animals_maa_recruitment_cost_mult = -0.05
+	scale = {
+		value = cheap_animals_perk_count
+		desc = ALF_cheap_animals_perk_count_desc
 		display_mode = scaled
 	}
 }

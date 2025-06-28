@@ -1,0 +1,43 @@
+﻿l_english:
+ ALF_animals_maa: "[ALF_animals_maa|E]"
+ 
+ ALF_animals_maa_damage_add: "[ALF_animals_maa|E] [damage|E]"
+ ALF_animals_maa_damage_mult: "[ALF_animals_maa|E] [damage|E]"
+ ALF_animals_maa_toughness_add: "[ALF_animals_maa|E] [toughness|E]"
+ ALF_animals_maa_toughness_mult: "[ALF_animals_maa|E] [toughness|E]"
+ ALF_animals_maa_pursuit_add: "[ALF_animals_maa|E] [pursuit|E]"
+ ALF_animals_maa_pursuit_mult: "[ALF_animals_maa|E] [pursuit|E]"
+ ALF_animals_maa_screen_add: "[ALF_animals_maa|E] [screen|E]"
+ ALF_animals_maa_screen_mult: "[ALF_animals_maa|E] [screen|E]"
+ ALF_animals_maa_maintenance_mult: "[ALF_animals_maa|E] Maintenance"
+ ALF_animals_maa_recruitment_cost_mult: "[ALF_animals_maa|E] Recruitment Cost"
+ ALF_animals_maa_max_size_add: "Max Size of [ALF_animals_maa|E] [regiments|E]"
+ ALF_animals_maa_max_size_mult: "Max Size of [ALF_animals_maa|E] [regiments|E]"
+ ALF_animals_maa_siege_value_add: "[ALF_animals_maa|E] [siege_progress|E]"
+ ALF_animals_maa_siege_value_mult: "[ALF_animals_maa|E] [siege_progress|E]"
+
+ stationed_ALF_animals_maa_damage_add: "[stationed|E] [ALF_animals_maa|E] [damage|E]"
+ stationed_ALF_animals_maa_damage_mult: "$stationed_ALF_animals_maa_damage_add$"
+ stationed_ALF_animals_maa_toughness_add: "[stationed|E] [ALF_animals_maa|E] [toughness|E]"
+ stationed_ALF_animals_maa_toughness_mult: "$stationed_ALF_animals_maa_toughness_add$"
+ stationed_ALF_animals_maa_pursuit_add: "[stationed|E] [ALF_animals_maa|E] [pursuit|E]"
+ stationed_ALF_animals_maa_pursuit_mult: "$stationed_ALF_animals_maa_pursuit_add$"
+ stationed_ALF_animals_maa_screen_add: "[stationed|E] [ALF_animals_maa|E] [screen|E]"
+ stationed_ALF_animals_maa_screen_mult: "$stationed_ALF_animals_maa_screen_add$"
+ stationed_ALF_animals_maa_siege_value_add: "[stationed|E] [ALF_animals_maa|E] [siege_progress|E]"
+ stationed_ALF_animals_maa_siege_value_mult: "$stationed_ALF_animals_maa_siege_value_add$"
+
+ ALF_wolves: "Wolves"
+ ALF_wolves_flavor: "#flavor Proto-Dogs controlled by some mage needing army, but unwilling to pay salary.#!"
+
+ ALF_birds: "Birds"
+ ALF_birds_flavor: "#flavor Pack of Birds, and influenced to attack anything moving.#!"
+
+ ALF_rats: "Rats"
+ ALF_rats_flavor: "#flavor Rats, every where you look, RATS!#!"
+
+ ALF_pegasus: "Pegasus"
+ ALF_pegasus_flavor: "#flavor Majestic Creatures imported directly from Fairy Tels!#!"
+
+ ALF_unicorn: "Unicorn"
+ ALF_unicorn_flavor: "#flavor Unicorn, Don't you mean Rhinoceros?#!"

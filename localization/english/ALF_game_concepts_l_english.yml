@@ -15,3 +15,5 @@
  game_concept_ALF_spell: "Spell"
  game_concept_ALF_spell_desc: "#bold Spell#!, is name for any effect that mage wills into existance.\n\nIn game, all spells are new effects avaiable in GUI accessable by [character_interaction|E]."
 
+ game_concept_ALF_animals_maa: "Animals"
+ game_concept_ALF_animals_maa_desc: "Animals are type of [men_at_arms|E] recuitable by mages proficent in Animalium Path."

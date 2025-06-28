@@ -1,0 +1,150 @@
+﻿ALF_wolves = {
+	type = ALF_animals_maa
+
+	can_recruit = {
+		has_perk = control_animals_perk
+	}
+	
+	damage = 15
+	toughness = 2
+	pursuit = 15
+	screen = 0
+
+	buy_cost = { prestige = animal_low_recruitment_cost }
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { prestige = animal_low_maint_cost }
+	provision_cost = 3
+		
+	counters = {
+		skirmishers = 1
+		light_cavalry = 0.5
+	}
+
+	max_sub_regiments = 5
+	
+	allowed_in_hired_troops = no
+
+	stack = 100
+	ai_quality = { value = 0 }
+	icon = ALF_wolves
+}
+ALF_birds = {
+	type = ALF_animals_maa
+
+	can_recruit = {
+		has_perk = control_animals_perk
+	}
+	
+	damage = 5
+	toughness = 0
+	pursuit = 25
+	screen = 5
+
+	buy_cost = { prestige = animal_low_recruitment_cost }
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { prestige = animal_low_maint_cost }
+	provision_cost = 2
+		
+	counters = {
+		skirmishers = 0.5
+		light_cavalry = 1
+	}
+
+	max_sub_regiments = 5
+	
+	allowed_in_hired_troops = no
+
+	stack = 100
+	ai_quality = { value = 0 }
+	icon = ALF_birds
+}
+ALF_rats = {
+	type = ALF_animals_maa
+
+	can_recruit = {
+		has_perk = control_animals_perk
+	}
+	
+	damage = 5
+	toughness = 0
+	pursuit = 5
+	screen = 10
+
+	buy_cost = { prestige = animal_low_recruitment_cost }
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { prestige = animal_low_maint_cost }
+	provision_cost = 2
+		
+	counters = {
+		skirmishers = 0.5
+		light_cavalry = 0.5
+	}
+
+	max_sub_regiments = 5
+	
+	allowed_in_hired_troops = no
+
+	stack = 300
+	ai_quality = { value = 0 }
+	icon = ALF_rats
+}
+ALF_pegasus = {
+	type = ALF_animals_maa
+
+	can_recruit = {
+		has_perk = create_mythical_animals_perk
+	}
+	
+	damage = 50
+	toughness = 0
+	pursuit = 25
+	screen = 25
+
+	buy_cost = { prestige = animal_med_recruitment_cost }
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { prestige = animal_med_maint_cost }
+	provision_cost = 5
+		
+	counters = {
+		skirmishers = 1
+		light_cavalry = 1
+	}
+
+	max_sub_regiments = 5
+	
+	allowed_in_hired_troops = no
+
+	stack = 50
+	ai_quality = { value = 0 }
+	icon = ALF_pegasus
+}
+ALF_unicorn = {
+	type = ALF_animals_maa
+
+	can_recruit = {
+		has_perk = create_mythical_animals_perk
+	}
+	
+	damage = 25
+	toughness = 0
+	pursuit = 50
+	screen = 50
+
+	buy_cost = { prestige = animal_med_recruitment_cost }
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { prestige = animal_med_maint_cost }
+	provision_cost = 5
+		
+	counters = {
+		skirmishers = 1
+		light_cavalry = 1
+	}
+
+	max_sub_regiments = 5
+	
+	allowed_in_hired_troops = no
+
+	stack = 50
+	ai_quality = { value = 0 }
+	icon = ALF_unicorn
+}
