@@ -34,20 +34,26 @@
  INSPECT_WILL_PERK_EFFECT: "$general_spell_loca$ discover [ALF_mental_fortitude|E] of target.\n#flavor Mage can sense [ALF_mental_fortitude|E] of other people with expensure of [ALF_willpower|E].#!"
  train_will_perk_name: "Train Will"
  TRAIN_WILL_PERK_EFFECT: "#flavor Mage can meditate with hopes of strenghening their [ALF_mental_fortitude|E].#!"
+
  command_will_perk_name: "Command Will"
  COMMAND_WILL_PERK_EFFECT: "#flavor Mage can manipulate [ALF_willpower|E] much easier than before.#!"
+
  extend_will_perk_name: "Extend Will"
  EXTEND_WILL_PERK_EFFECT: "#flavor Mage can extend their own [ALF_willpower|E] beyond what was possible before.#!"
+
  hide_will_perk_name: "Hide Will"
  HIDE_WILL_PERK_EFFECT: "Become Immune to [GetPerk('inspect_will_perk').GetName(GetPlayer)].\n#flavor Mage can hide their [ALF_mental_fortitude|E] from spying eyes.#!"
  regenerate_will_perk_name: "Regenerate Will"
  REGENERATE_WILL_PERK_EFFECT: "Every #V 10#! years, gain 1 [ALF_mental_fortitude|E].\n#flavor Mage can create infinite loop which generates free [ALF_willpower|E] over time.#!"
+
  defend_will_perk_name: "Defend Will"
  DEFEND_WILL_PERK_EFFECT: "#flavor Mage's defensive abilites against hostile will are much stronger.#!"
  attack_will_perk_name: "Attack Will"
  ATTACK_WILL_PERK_EFFECT: "#flavor Mage's aggresive abilites against hostile will are much stronger.#!"
+
  steal_will_perk_name: "Steal Will"
  STEAL_WILL_PERK_EFFECT: "$general_spell_loca$ Steal 1 [ALF_mental_fortitude|E] from [imprisoned|E] target at cost of 100 [ALF_willpower|E].\n#flavor Mage can steal [ALF_mental_fortitude|E] of other beings although at great cost to both of sides.#!"
+ 
  conquer_will_perk_name: "Conquer Will"
  CONQUER_WILL_PERK_EFFECT: "Decrease cost of [GetPerk('steal_will_perk').GetName(GetPlayer)] from #N 100#! [ALF_willpower|E] to #P 50#! [ALF_willpower|E].\n#flavor Mage can steal [ALF_mental_fortitude|E] from others with greater ease than before, limiting cost on their side.#!"
 
@@ -75,8 +81,6 @@
  control_animals_perk_name: "Control Animals"
  CONTROL_ANIMALS_PERK_EFFECT: "Unlock [GetMaA('ALF_wolves').GetName], [GetMaA('ALF_birds').GetName] and [GetMaA('ALF_rats').GetName] as [men_at_arms|E].\n#flavor Mage can take control over nearby animals.#!"
 
- resurrect_animals_perk_name: "Resurrect Pets"
- RESURRECT_ANIMALS_PERK_EFFECT: "Your pets won't be able to die anymore.\n#flavor Mage can simply not allow their pets to die.#!"
  ferocious_animals_perk_name: "Ferocious Animals"
  FEROCIOUS_ANIMALS_PERK_EFFECT: "#flavor Mage can make previously 'pacifist' animals into war machines.#!"
  calm_animals_perk_name: "Calm Animals"
@@ -103,3 +107,39 @@
  CHEAP_ANIMALS_PERK_EFFECT: "#flavor Mage can create animals much easier than before.#!"
  cheap_animals_modifier: "Cheap Animals"
  ALF_cheap_animals_perk_count_desc: "Per #V $cheap_animals_modifier$#! level"
+ 
+ ################## Vita ##################
+ vita_name: "Vita"
+
+ sense_life_perk_name: "Sense Life"
+ SENSE_LIFE_PERK_EFFECT: "#flavor Mage can sense nearby life.#!"
+
+ understand_life_perk_name: "Understand Life"
+ UNDERSTAND_LIFE_PERK_EFFECT: "#flavor Mage understanding of life is great, due to fact they change what life is nearby.#!"
+
+ influence_life_perk_name: "Influence Life"
+ INFLUENCE_LIFE_PERK_EFFECT: "#flavor Mage can subtly influence life nearby.#!"
+
+ close_wound_perk_name: "Close Wound"
+ CLOSE_WOUND_PERK_EFFECT: "$general_spell_loca$ Reduce Wounded [trait|E] level by #P 1#!.\n#flavor Mage can force wounds to close.#!"
+ heal_illness_perk_name: "Heal Illness"
+ HEAL_ILLNESS_PERK_EFFECT: "$general_spell_loca$ Heal random illnes [trait|E] target has.\n#flavor Mage can kill any illness they know of.#!"
+
+ amend_flesh_perk_name: "Amend Flesh"
+ AMEND_FLESH_PERK_EFFECT: "$general_spell_loca$ Remove random permanent disfigurement [trait|E], like [GetTrait('maimed').GetName(GetPlayer)] or [GetTrait('one_eyed').GetName(GetPlayer)].\n#flavor Mage can amend any permanent disfigurement.#!"
+ inflict_wounds_perk_name: "Inflict Wounds"
+ INFLICT_WOUNDS_PERK_EFFECT: "$general_spell_loca$, Inflict Wounded [trait|E] onto target.\n#flavor Mage can will into existence the fact that their target is wounded.#!"
+
+ inflict_illness_perk_name: "Inflict Illness"
+ INFLICT_ILLNESS_PERK_EFFECT: "$general_spell_loca$ Inflict random Illness onto target.\n$general_spell_loca$ Inflict [epidemic|E] onto target.\n#flavor Mage can will into existence the fact that their target is ill.#!"
+ remove_flesh_perk_name: "Remove Flesh"
+ REMOVE_FLESH_PERK_EFFECT: "$general_spell_loca$ Give random permanent disfigurement [trait|E], like [GetTrait('maimed').GetName(GetPlayer)] or [GetTrait('one_eyed').GetName(GetPlayer)].\n#flavor Mage can will limb out of existence.#!"
+
+ improve_flesh_perk_name: "Improve Flesh"
+ IMPROVE_FLESH_PERK_EFFECT: "$general_spell_loca$, Increase random genetic [trait|E] level by #P 1#!.\n#flavor Mage can improve genetic structure of human body, though they don't use word 'genetic'.#!"
+
+ long_life_perk_name: "Long Life ([ROOT.Char.MakeScope.ScriptValue('long_life_perk_count_tt')]/∞)"
+ LONG_LIFE_PERK_EFFECT: "Every time you get this [perk|E], cost of this [perk|E] doubles.\n#flavor Mage can extend their lifespan, though process isn't perfect.#!"
+ long_life_modifier: "Long Life"
+ ALF_long_life_perk_count_desc: "Per #V $long_life_modifier$#! level"
+ LONG_LIFE_PERK_COST_EFFECT: "#clickable This [perk|E] will cost $VALUE|0$ [perk|E] points!#!"

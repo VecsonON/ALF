@@ -73,3 +73,14 @@ cheap_animals_modifier = {
 		display_mode = scaled
 	}
 }
+
+long_life_modifier = {
+	icon = magic_positive
+	health = 1
+	life_expectancy = 10
+	scale = {
+		value = long_life_perk_count
+		desc = ALF_long_life_perk_count_desc
+		display_mode = scaled
+	}
+}

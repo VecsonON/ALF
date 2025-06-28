@@ -18,7 +18,6 @@
 			using = Sound_WindowShow_Standard
 			on_start = "[GetVariableSystem.Clear('ALF_spell')]"
 			on_start = "[GetScriptedGui('ALF_setup').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-			on_start = "[GetScriptedGui('ALF_filter_set').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('filter', MakeScopeFlag('any')).End)]"
 		}
 
 		state = {

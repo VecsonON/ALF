@@ -19,14 +19,14 @@ inspect_will_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
 		trigger_if = { 
-			limit = { var:spell_type ?= flag:character } 
+			limit = { ALF_general_spell_trigger = yes } 
 			var:spell_target ?= { NOT = { has_perk = hide_will_perk } } 
 			trigger_if = { limit = { NOT = { var:spell_target = THIS } } has_perk = inspect_will_perk }
 		}
 	}
 	effect = {
 		if = { 
-			limit = { var:spell_type ?= flag:character } 
+			limit = { ALF_general_spell_trigger = yes } 
 			ALF_inspect_will_effect = yes
 		}
 	}
@@ -36,7 +36,7 @@ steal_will_sgui = {
 		ALF_general_spell_trigger = yes
 		has_perk = steal_will_perk
 		trigger_if = { 
-			limit = { var:spell_type ?= flag:character } 
+			limit = { ALF_general_spell_trigger = yes } 
 			var:spell_target ?= { is_imprisoned_by = PREV } 
 			custom_description = { 
 				text = ALF_target_has_higher_willpower_trigger
@@ -47,7 +47,7 @@ steal_will_sgui = {
 	}
 	effect = {
 		if = { 
-			limit = { var:spell_type ?= flag:character } 
+			limit = { ALF_general_spell_trigger = yes } 
 			ALF_steal_will_effect = yes
 		}
 	}
@@ -57,7 +57,7 @@ influence_animals_sgui = {
 		ALF_general_spell_trigger = yes
 		has_perk = influence_animals_perk
 		trigger_if = { 
-			limit = { var:spell_type ?= flag:character } 
+			limit = { ALF_general_spell_trigger = yes } 
 			ALF_target_is_root = yes
 		}
 		custom_tooltip = {
@@ -73,7 +73,7 @@ influence_animals_sgui = {
 	}
 	effect = {
 		if = { 
-			limit = { var:spell_type ?= flag:character } 
+			limit = { ALF_general_spell_trigger = yes } 
 			ALF_influence_animals_effect = yes
 		}
 	}
@@ -83,14 +83,186 @@ calm_animals_sgui = {
 		ALF_general_spell_trigger = yes
 		has_perk = calm_animals_perk
 		trigger_if = { 
-			limit = { var:spell_type ?= flag:title } 
+			limit = { ALF_general_spell_trigger = yes } 
 			var:spell_target = { tier = 2 }
 		}
 	}
 	effect = {
 		if = { 
-			limit = { var:spell_type ?= flag:title } 
+			limit = { ALF_general_spell_trigger = yes } 
 			ALF_calm_animals_effect = yes
+		}
+	}
+}
+close_wound_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = close_wound_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { has_trait = wounded }
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_close_wound_effect = yes
+		}
+	}
+}
+heal_illness_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = heal_illness_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { 
+				custom_tooltip = {
+					text = spell_heal_illness_tt
+					has_any_illness = yes 
+				} 
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_heal_illness_effect = yes
+		}
+	}
+}
+amend_flesh_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = amend_flesh_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { 
+				custom_tooltip = {
+					text = spell_amend_flesh_tt
+					OR = {
+						has_trait = maimed
+						has_trait = one_eyed
+						has_trait = one_legged
+						has_trait = blind
+						has_trait = eunuch_1
+						has_trait = beardless_eunuch
+						has_trait = disfigured
+						has_trait = infirm
+						has_trait = incapable
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_amend_flesh_effect = yes
+		}
+	}
+}
+inflict_wounds_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = inflict_wounds_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { 
+				NOT = { has_trait = wounded_3 }
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_inflict_wounds_effect = yes
+		}
+	}
+}
+inflict_illness_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = inflict_illness_perk
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_inflict_illness_effect = yes
+		}
+	}
+}
+inflict_epidemic_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = inflict_illness_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { tier = 2 }
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_inflict_epidemic_effect = yes
+		}
+	}
+}
+remove_flesh_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = remove_flesh_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { 
+				custom_tooltip = {
+					text = spell_remove_flesh_tt
+					NOT = {
+						AND = {
+							has_trait = maimed
+							has_trait = one_legged
+							has_trait = blind
+							has_trait = eunuch_1
+							has_trait = disfigured
+							has_trait = infirm
+							has_trait = incapable
+						}
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_remove_flesh_effect = yes
+		}
+	}
+}
+improve_flesh_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = improve_flesh_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { 
+				custom_tooltip = {
+					text = spell_improve_flesh_tt
+					NOT = {
+						AND = {
+							has_trait = beauty_good_3
+							has_trait = intellect_good_3
+							has_trait = physique_good_3
+						}
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_improve_flesh_effect = yes
 		}
 	}
 }

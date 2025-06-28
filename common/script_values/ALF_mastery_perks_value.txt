@@ -1,0 +1,58 @@
+﻿counter_will_perk_count = { # Modifer. Needs to be at least 1 all the time
+	value = 1
+	if = { limit = { has_variable = ALF_counter_will_perk_count_var } value = var:ALF_counter_will_perk_count_var }
+}
+counter_will_perk_count_tt = { # Tooltip and sciprt. Must follow variable to the tea
+	value = 0
+	if = { limit = { has_variable = ALF_counter_will_perk_count_var } add = var:ALF_counter_will_perk_count_var }
+}
+
+enforce_will_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_enforce_will_perk_count_var } value = var:ALF_enforce_will_perk_count_var }
+}
+enforce_will_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_enforce_will_perk_count_var } add = var:ALF_enforce_will_perk_count_var }
+}
+
+strenghen_will_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_strenghen_will_perk_count_var } add = var:ALF_strenghen_will_perk_count_var }
+}
+strenghen_will_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_strenghen_will_perk_count_var } add = var:ALF_strenghen_will_perk_count_var }
+}
+
+strong_animals_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_strong_animals_perk_count_var } value = var:ALF_strong_animals_perk_count_var }
+}
+strong_animals_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_strong_animals_perk_count_var } add = var:ALF_strong_animals_perk_count_var }
+}
+
+cheap_animals_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_cheap_animals_perk_count_var } value = var:ALF_cheap_animals_perk_count_var }
+}
+cheap_animals_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_cheap_animals_perk_count_var } add = var:ALF_cheap_animals_perk_count_var }
+}
+
+long_life_additional_cost = {
+	value = 0
+	add = long_life_perk_count
+	multiply = long_life_perk_count
+}
+long_life_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_long_life_perk_count_var } value = var:ALF_long_life_perk_count_var }
+}
+long_life_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_long_life_perk_count_var } add = var:ALF_long_life_perk_count_var }
+}

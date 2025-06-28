@@ -52,7 +52,7 @@ ALF_influence_animals_effect = {
 }
 ALF_calm_animals_effect = {
 	var:spell_target = { 
-		hunt_remove_sighting_effect = yes
+		if = { limit = { tier = 2 } hunt_remove_sighting_effect = yes }
 		title_province = { save_scope_as = province } 
 	}
 	
@@ -64,8 +64,8 @@ ALF_calm_animals_effect = {
 			hidden_effect = {
 				send_interface_message = {
 					title = spell_calm_animals
-					hunt_activity_standard_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
 					var:spell_target = {
+						hunt_activity_standard_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
 						hunt_create_sighting_effect = {
 							TYPE = standard
 							ANIMAL = var:animal_type
@@ -82,8 +82,8 @@ ALF_calm_animals_effect = {
 			hidden_effect = {
 				send_interface_message = {
 					title = spell_calm_animals
-					hunt_activity_dangerous_game_effect = { PROVINCE = scope:province }
 					var:spell_target = {
+						hunt_activity_dangerous_game_effect = { PROVINCE = scope:province }
 						hunt_create_sighting_effect = {
 							TYPE = dangerous
 							ANIMAL = var:animal_type
@@ -100,8 +100,8 @@ ALF_calm_animals_effect = {
 			hidden_effect = {
 				send_interface_message = {
 					title = spell_calm_animals
-					hunt_activity_falconry_game_effect = { PROVINCE = scope:province }
 					var:spell_target = {
+						hunt_activity_falconry_game_effect = { PROVINCE = scope:province }
 						hunt_create_sighting_effect = {
 							TYPE = falconry
 							ANIMAL = var:animal_type
@@ -118,8 +118,8 @@ ALF_calm_animals_effect = {
 			hidden_effect = {
 				send_interface_message = {
 					title = spell_calm_animals
-					hunt_activity_standard_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
 					var:spell_target = {
+						hunt_activity_standard_game_effect = { PROVINCE = scope:province HUNTER = ROOT }
 						hunt_create_sighting_effect = {
 							TYPE = legendary
 							ANIMAL = var:animal_type
@@ -131,4 +131,252 @@ ALF_calm_animals_effect = {
 		}
 	}
 	ALF_use_willpower_effect = { COUNT = 50 }
+}
+
+ALF_close_wound_effect = {
+	var:spell_target = {
+		change_trait_rank = {
+			trait = wounded
+			rank = -1
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 25 }
+}
+ALF_heal_illness_effect = {
+	custom_tooltip = {
+		text = ALF_heal_illness_effect
+		var:spell_target = {
+			random_character_trait = {
+				limit = { has_trait_flag = illness }
+				PREV = { 
+					send_interface_message = {
+						title = spell_heal_illness
+						remove_trait = PREV 
+					}
+				}
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 50 }
+}
+ALF_amend_flesh_effect = {
+	var:spell_target = {
+		random_list = {
+			1 = { trigger = { has_trait = maimed } remove_trait = maimed }
+			1 = { trigger = { has_trait = one_eyed } remove_trait = one_eyed }
+			1 = { trigger = { has_trait = one_legged } remove_trait = one_legged }
+			1 = { trigger = { has_trait = blind } remove_trait = blind }
+			1 = { trigger = { has_trait = eunuch_1 } remove_trait = eunuch_1 }
+			1 = { trigger = { has_trait = beardless_eunuch } remove_trait = beardless_eunuch }
+			1 = { trigger = { has_trait = disfigured } remove_trait = disfigured }
+			1 = { trigger = { has_trait = infirm } remove_trait = infirm }
+			1 = { trigger = { has_trait = incapable } remove_trait = incapable }
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 100 }
+}
+ALF_inflict_wounds_effect = {
+	var:spell_target = {
+		increase_wounds_effect = { REASON = fight }
+	}
+	ALF_use_willpower_effect = { COUNT = 50 }
+}
+ALF_inflict_illness_effect = {
+	custom_tooltip = {
+		text = ALF_inflict_illness_effect
+		var:spell_target = {
+			random_trait = {
+				limit = { 
+					has_trait_flag = illness 
+					PREV = { NOT = { has_trait = PREV } } 
+					NOT = {
+						any_opposite_trait = {
+							ROOT.var:spell_target = { has_trait = PREV }
+						}
+					}
+				}
+				PREV = { 
+					send_interface_message = {
+						title = spell_inflict_illness
+						add_trait = PREV 
+					}
+				}
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 75 }
+}
+ALF_inflict_epidemic_effect = {
+	random_list = {
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_measles save_scope_value_as = { name = type value = flag:measles } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_consumption save_scope_value_as = { name = type value = flag:consumption } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_smallpox save_scope_value_as = { name = type value = flag:smallpox } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_dysentery save_scope_value_as = { name = type value = flag:dysentery } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_bubonic_plague save_scope_value_as = { name = type value = flag:bubonic_plague } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_ergotism save_scope_value_as = { name = type value = flag:ergotism } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_typhus save_scope_value_as = { name = type value = flag:typhus } }
+		}
+	}
+	random_list = {
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_minor save_scope_value_as = { name = intensity value = flag:minor } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_major save_scope_value_as = { name = intensity value = flag:major } }
+		}
+		1 = { 
+			custom_tooltip = { text = ALF_inflict_epidemic_effect_apocalyptic save_scope_value_as = { name = intensity value = flag:apocalyptic } }
+		}
+	}
+	hidden_effect = {
+		send_interface_message = {
+			title = spell_inflict_epidemic
+			var:spell_target = {
+				title_province = { 
+					switch = {
+						trigger = scope:intensity
+						flag:minor = {
+							switch = {
+								trigger = scope:type
+								flag:measles = { create_epidemic_outbreak = { type = measles intensity = minor } }
+								flag:consumption = { create_epidemic_outbreak = { type = consumption intensity = minor } }
+								flag:smallpox = { create_epidemic_outbreak = { type = smallpox intensity = minor } }
+								flag:dysentery = { create_epidemic_outbreak = { type = dysentery intensity = minor } }
+								flag:bubonic_plague = { create_epidemic_outbreak = { type = bubonic_plague intensity = minor } }
+								flag:ergotism = { create_epidemic_outbreak = { type = ergotism intensity = minor } }
+								flag:typhus = { create_epidemic_outbreak = { type = typhus intensity = minor } }
+							}
+						}
+						flag:major = {
+							switch = {
+								trigger = scope:type
+								flag:measles = { create_epidemic_outbreak = { type = measles intensity = major } }
+								flag:consumption = { create_epidemic_outbreak = { type = consumption intensity = major } }
+								flag:smallpox = { create_epidemic_outbreak = { type = smallpox intensity = major } }
+								flag:dysentery = { create_epidemic_outbreak = { type = dysentery intensity = major } }
+								flag:bubonic_plague = { create_epidemic_outbreak = { type = bubonic_plague intensity = major } }
+								flag:ergotism = { create_epidemic_outbreak = { type = ergotism intensity = major } }
+								flag:typhus = { create_epidemic_outbreak = { type = typhus intensity = major } }
+							}
+						}
+						flag:apocalyptic = {
+							switch = {
+								trigger = scope:type
+								flag:measles = { create_epidemic_outbreak = { type = measles intensity = apocalyptic } }
+								flag:consumption = { create_epidemic_outbreak = { type = consumption intensity = apocalyptic } }
+								flag:smallpox = { create_epidemic_outbreak = { type = smallpox intensity = apocalyptic } }
+								flag:dysentery = { create_epidemic_outbreak = { type = dysentery intensity = apocalyptic } }
+								flag:bubonic_plague = { create_epidemic_outbreak = { type = bubonic_plague intensity = apocalyptic } }
+								flag:ergotism = { create_epidemic_outbreak = { type = ergotism intensity = apocalyptic } }
+								flag:typhus = { create_epidemic_outbreak = { type = typhus intensity = apocalyptic } }
+							}
+						}
+					}
+				} 
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 125 }
+}
+ALF_remove_flesh_effect = {
+	var:spell_target = {
+		random_list = {
+			1 = { 
+				trigger = { NOT = { has_trait = maimed } } 
+				add_trait = maimed 
+			}
+			1 = { 
+				trigger = { NOT = { has_trait = one_eyed has_trait = blind } } 
+				add_trait = one_eyed 
+			}
+			1 = { 
+				trigger = { NOT = { has_trait = one_legged } } 
+				add_trait = one_legged 
+			}
+			1 = { 
+				trigger = { NOT = { has_trait = blind } } 
+				remove_trait = one_eyed 
+				add_trait = blind 
+			}
+			1 = { 
+				trigger = { NOT = { has_trait = eunuch_1 has_trait = beardless_eunuch } } 
+				add_trait = eunuch_1 
+			}
+			1 = { 
+				trigger = { NOT = { has_trait = disfigured } }
+				add_trait = disfigured 
+			}
+			1 = {
+				trigger = { NOT = { has_trait = infirm } }
+				add_trait = infirm 
+			}
+			1 = { 
+				trigger = { NOT = { has_trait = incapable } } 
+				add_trait = incapable 
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 125 }
+}
+ALF_improve_flesh_effect = {
+	var:spell_target = {
+		random_list = {
+			1 = {
+				trigger = { has_trait = beauty_bad }
+				change_trait_rank = {
+					trait = beauty_bad
+					rank = -1
+				}
+			}
+			1 = {
+				trigger = { has_trait = intellect_bad }
+				change_trait_rank = {
+					trait = intellect_bad
+					rank = -1
+				}
+			}
+			1 = {
+				trigger = { has_trait = physique_bad }
+				change_trait_rank = {
+					trait = physique_bad
+					rank = -1
+				}
+			}
+			1 = {
+				trigger = { NOT = { has_trait = beauty_bad has_trait = beauty_good_3 } }
+				change_trait_rank = {
+					trait = beauty_good
+					rank = 1
+				}
+			}
+			1 = {
+				trigger = { NOT = { has_trait = intellect_bad has_trait = intellect_good_3 } }
+				change_trait_rank = {
+					trait = intellect_good
+					rank = 1
+				}
+			}
+			1 = {
+				trigger = { NOT = { has_trait = physique_bad has_trait = physique_good_3 } }
+				change_trait_rank = {
+					trait = physique_good
+					rank = 1
+				}
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 200 }
 }

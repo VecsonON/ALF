@@ -9,3 +9,37 @@
  
  spell_calm_animals: "Calm Animals"
  spell_influence_animals_tt: "You already have all pets this spell can summon!"
+
+ spell_close_wound: "Close Wound"
+
+ spell_heal_illness: "Heal Illness"
+ spell_heal_illness_tt: "Target doesn't have any healable illness!"
+ ALF_heal_illness_effect: "Heal random illness [trait|E] [SpellTarget.GetFullName] has"
+
+ spell_amend_flesh: "Amend Flesh"
+ spell_amend_flesh_tt: "Target must have at least one of these [traits|E]:$permanent_disfigurenments_list$"
+ permanent_disfigurenments_list: "\n$BULLET_WITH_TAB$[GetTrait('maimed').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('one_eyed').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('one_legged').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('blind').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('eunuch_1').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('beardless_eunuch').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('disfigured').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('infirm').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetTrait('incapable').GetName(GetPlayer)]"
+
+ spell_inflict_wounds: "Inflict Wounds"
+
+ spell_inflict_illness: "Inflict Illness"
+ ALF_inflict_illness_effect: "Cause random illness [trait|E] to [SpellTarget.GetFullName]"
+
+ spell_inflict_epidemic: "Inflict Plague"
+ ALF_inflict_epidemic_effect_measles: "You will create [epidemic|E] of [GetTrait('measles').GetName(GetPlayer)]"
+ ALF_inflict_epidemic_effect_consumption: "You will create [epidemic|E] of [GetTrait('consumption').GetName(GetPlayer)]"
+ ALF_inflict_epidemic_effect_smallpox: "You will create [epidemic|E] of [GetTrait('smallpox').GetName(GetPlayer)]"
+ ALF_inflict_epidemic_effect_dysentery: "You will create [epidemic|E] of [GetTrait('dysentery').GetName(GetPlayer)]"
+ ALF_inflict_epidemic_effect_bubonic_plague: "You will create [epidemic|E] of [GetTrait('bubonic_plague').GetName(GetPlayer)]"
+ ALF_inflict_epidemic_effect_ergotism: "You will create [epidemic|E] of [GetTrait('ergotism').GetName(GetPlayer)]"
+ ALF_inflict_epidemic_effect_typhus: "You will create [epidemic|E] of [GetTrait('typhus').GetName(GetPlayer)]"
+
+ ALF_inflict_epidemic_effect_minor: "[epidemic|E] you will create will be [plague_minor|E] in [plague_intensity|E]"
+ ALF_inflict_epidemic_effect_major: "[epidemic|E] you will create will be [plague_major|E] in [plague_intensity|E]"
+ ALF_inflict_epidemic_effect_apocalyptic: "[epidemic|E] you will create will be [plague_apocalyptic|E] in [plague_intensity|E]"
+
+ spell_remove_flesh: "Remove Flesh"
+ spell_remove_flesh_tt: "Target already has all permanent disfigurement [traits|E] that can be inflicted"
+
+ spell_improve_flesh: "Improve Flesh"
+ spell_improve_flesh_tt: "You cannot further improve any genetic [traits|E]!"

@@ -27,7 +27,6 @@ influence_animals_perk_effect = { global = INFLUENCE_ANIMALS_PERK_EFFECT }
 
 control_animals_perk_effect = { global = CONTROL_ANIMALS_PERK_EFFECT }
 
-resurrect_animals_perk_effect = { global = RESURRECT_ANIMALS_PERK_EFFECT }
 ferocious_animals_perk_effect = { global = FEROCIOUS_ANIMALS_PERK_EFFECT }
 calm_animals_perk_effect = { global = CALM_ANIMALS_PERK_EFFECT }
 
@@ -41,3 +40,24 @@ supernatural_animals_perk_effect = { global = SUPERNATURAL_ANIMALS_PERK_EFFECT }
 
 strong_animals_perk_effect = { global = STRONG_ANIMALS_PERK_EFFECT }
 cheap_animals_perk_effect = { global = CHEAP_ANIMALS_PERK_EFFECT }
+
+############ VITA ############
+sense_life_perk_effect = { global = SENSE_LIFE_PERK_EFFECT }
+
+understand_life_perk_effect = { global = UNDERSTAND_LIFE_PERK_EFFECT }
+
+influence_life_perk_effect = { global = INFLUENCE_LIFE_PERK_EFFECT }
+
+close_wound_perk_effect = { global = CLOSE_WOUND_PERK_EFFECT }
+heal_illness_perk_effect = { global = HEAL_ILLNESS_PERK_EFFECT }
+
+amend_flesh_perk_effect = { global = AMEND_FLESH_PERK_EFFECT }
+inflict_wounds_perk_effect = { global = INFLICT_WOUNDS_PERK_EFFECT }
+
+inflict_illness_perk_effect = { global = INFLICT_ILLNESS_PERK_EFFECT }
+remove_flesh_perk_effect = { global = REMOVE_FLESH_PERK_EFFECT }
+
+improve_flesh_perk_effect = { global = IMPROVE_FLESH_PERK_EFFECT }
+
+long_life_perk_effect = { global = LONG_LIFE_PERK_EFFECT }
+long_life_perk_cost_effect = { global = LONG_LIFE_PERK_COST_EFFECT }
