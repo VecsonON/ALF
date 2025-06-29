@@ -43,3 +43,9 @@
 
  spell_improve_flesh: "Improve Flesh"
  spell_improve_flesh_tt: "You cannot further improve any genetic [traits|E]!"
+
+ spell_manipulate_material: "Manipulate Material"
+
+ spell_devastate_duchy: "Devastate [duchy|E]"
+ spell_devastate_duchy_perk: "You need at least one of these [perks|E]:\n$BULLET_WITH_TAB$[GetPerk('rule_fire_perk').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetPerk('rule_storm_perk').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetPerk('rule_stream_perk').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetPerk('rule_material_perk').GetName(GetPlayer)]"
+ ALF_devastate_duchy_effect: "Random [building|E] in [THIS.Province.GetName] will be destroyed!"

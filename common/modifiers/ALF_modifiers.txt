@@ -84,3 +84,49 @@ long_life_modifier = {
 		display_mode = scaled
 	}
 }
+
+king_of_fire_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 2
+	enemy_hard_casualty_modifier = 0.1
+	scale = {
+		value = king_of_fire_perk_count
+		desc = ALF_king_of_fire_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+king_of_storm_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 1
+	character_travel_speed_mult = 0.2
+	movement_speed = 0.1
+	naval_movement_speed_mult = 0.1
+	scale = {
+		value = king_of_storm_perk_count
+		desc = ALF_king_of_storm_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+king_of_stream_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 1
+	naval_movement_speed_mult = 0.2
+	scale = {
+		value = king_of_stream_perk_count
+		desc = ALF_king_of_stream_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+king_of_material_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 1
+	advantage = 2
+	scale = {
+		value = king_of_material_perk_count
+		desc = ALF_king_of_material_perk_count_desc
+		display_mode = scaled
+	}
+}

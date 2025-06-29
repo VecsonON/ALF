@@ -51,3 +51,22 @@ ALF_stress_break_mental_fortitude_increase_chance = {
 ALF_willpower_cost_flat = {
 	value = ALF_mental_fortitude
 }
+
+ALF_manipulate_material_level = {
+	value = 0
+	if = { limit = { has_perk = manipulate_material_perk } value = 1 }
+	if = { limit = { has_perk = control_material_perk } value = 2 }
+	if = { limit = { has_perk = rule_material_perk } value = 3 }
+	if = { limit = { has_perk = king_of_elements_perk } value = 4 }
+	multiply = 25
+}
+ALF_devastate_duchy_level = {
+	value = 0
+	if = { limit = { has_perk = rule_fire_perk } add = 1 }
+	if = { limit = { has_perk = rule_storm_perk } add = 1 }
+	if = { limit = { has_perk = rule_stream_perk } add = 1 }
+	if = { limit = { has_perk = rule_material_perk } add = 1 }
+	if = { limit = { has_perk = king_of_elements_perk } add = 1 }
+	min = 1
+	multiply = -1
+}

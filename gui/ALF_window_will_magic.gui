@@ -260,6 +260,7 @@ types WillMagicTypes {
 				fontsize_min = 12
 				layoutpolicy_horizontal = expanding
 				text = "[Localize(Concatenate('spell_', Scope.Var('id').GetFlagName))]" 
+				alwaystransparent = yes
 			}
 		}
 		

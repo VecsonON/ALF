@@ -31,6 +31,7 @@ ALF_steal_will_effect = {
 		ALF_use_willpower_with_enemy_effect = { COUNT = 100 TARGET = var:spell_target }
 	}
 }
+
 ALF_influence_animals_effect = {
 	random_list = {
 		1 = {
@@ -379,4 +380,23 @@ ALF_improve_flesh_effect = {
 		}
 	}
 	ALF_use_willpower_effect = { COUNT = 200 }
+}
+
+ALF_manipulate_material_effect = {
+	var:spell_target = {
+		add_gold = PREV.ALF_manipulate_material_level
+	}
+	ALF_use_willpower_effect = { COUNT = 30 }
+}
+ALF_devastate_duchy_effect = {
+	var:spell_target = {
+		every_de_jure_county = {
+			change_development_level = ROOT.ALF_devastate_duchy_level
+			title_province = {
+				hidden_effect = { destroy_random_building_variable_effect = yes }
+				destroy_random_building_effect = yes
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 100 }
 }

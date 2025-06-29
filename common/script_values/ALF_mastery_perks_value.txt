@@ -56,3 +56,39 @@ long_life_perk_count_tt = {
 	value = 0
 	if = { limit = { has_variable = ALF_long_life_perk_count_var } add = var:ALF_long_life_perk_count_var }
 }
+
+king_of_fire_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_king_of_fire_perk_count_var } value = var:ALF_king_of_fire_perk_count_var }
+}
+king_of_fire_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_king_of_fire_perk_count_var } add = var:ALF_king_of_fire_perk_count_var }
+}
+
+king_of_storm_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_king_of_storm_perk_count_var } value = var:ALF_king_of_storm_perk_count_var }
+}
+king_of_storm_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_king_of_storm_perk_count_var } add = var:ALF_king_of_storm_perk_count_var }
+}
+
+king_of_stream_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_king_of_stream_perk_count_var } value = var:ALF_king_of_stream_perk_count_var }
+}
+king_of_stream_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_king_of_stream_perk_count_var } add = var:ALF_king_of_stream_perk_count_var }
+}
+
+king_of_material_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_king_of_material_perk_count_var } value = var:ALF_king_of_material_perk_count_var }
+}
+king_of_material_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_king_of_material_perk_count_var } add = var:ALF_king_of_material_perk_count_var }
+}

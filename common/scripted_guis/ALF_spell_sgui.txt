@@ -52,6 +52,7 @@ steal_will_sgui = {
 		}
 	}
 }
+
 influence_animals_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
@@ -89,11 +90,12 @@ calm_animals_sgui = {
 	}
 	effect = {
 		if = { 
-			limit = { ALF_general_spell_trigger = yes } 
+			limit = { ALF_general_spell_trigger = yes var:spell_target = { tier = 2 } } 
 			ALF_calm_animals_effect = yes
 		}
 	}
 }
+
 close_wound_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
@@ -203,7 +205,7 @@ inflict_epidemic_sgui = {
 	}
 	effect = {
 		if = { 
-			limit = { ALF_general_spell_trigger = yes } 
+			limit = { ALF_general_spell_trigger = yes var:spell_target = { tier = 2 } } 
 			ALF_inflict_epidemic_effect = yes
 		}
 	}
@@ -263,6 +265,43 @@ improve_flesh_sgui = {
 		if = { 
 			limit = { ALF_general_spell_trigger = yes } 
 			ALF_improve_flesh_effect = yes
+		}
+	}
+}
+
+manipulate_material_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = manipulate_material_perk
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_manipulate_material_effect = yes
+		}
+	}
+}
+devastate_duchy_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		custom_tooltip = {
+			text = spell_devastate_duchy_perk
+			OR = {
+				has_perk = rule_fire_perk
+				has_perk = rule_storm_perk
+				has_perk = rule_stream_perk
+				has_perk = rule_material_perk
+			}
+		}
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { tier = 3 }
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes var:spell_target = { tier = 3 } } 
+			ALF_devastate_duchy_effect = yes
 		}
 	}
 }

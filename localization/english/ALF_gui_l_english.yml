@@ -13,6 +13,7 @@
  spell_filter_voluntas: "Path: Voluntas"
  spell_filter_animalium: "Path: Animalium"
  spell_filter_vita: "Path: Vita"
+ spell_filter_elementis: "Path: Elementis"
 
  ALF_cast_spell_sgui_type: "This spell targets different type!"
  ALF_cast_spell_sgui_stress: "You don't have any [ALF_willpower|E] left!"

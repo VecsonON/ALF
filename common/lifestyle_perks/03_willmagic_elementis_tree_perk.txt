@@ -1,0 +1,557 @@
+﻿manipulate_flame_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 0 0 }
+	icon = node_learning
+
+	can_be_picked = { has_trait = ALF_mage }
+
+	auto_selection_weight = {
+		value = 11
+		if = { limit = { has_focus = willmagic_focus } multiply = 5 }
+	}
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		enemy_hard_casualty_modifier = 0.1
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_flame_perk_effect }
+	}
+}
+manipulate_wind_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 1.5 0 }
+	icon = node_learning
+
+	can_be_picked = { has_trait = ALF_mage }
+
+	auto_selection_weight = {
+		value = 11
+		if = { limit = { has_focus = willmagic_focus } multiply = 5 }
+	}
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		character_travel_speed_mult = 0.2
+		movement_speed = 0.1
+		naval_movement_speed_mult = 0.1
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_wind_perk_effect }
+	}
+}
+manipulate_water_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 3 0 }
+	icon = node_learning
+
+	can_be_picked = { has_trait = ALF_mage }
+
+	auto_selection_weight = {
+		value = 11
+		if = { limit = { has_focus = willmagic_focus } multiply = 5 }
+	}
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		embarkation_cost_mult = -0.1
+		naval_movement_speed_mult = 0.2
+		no_water_crossing_penalty = yes
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_water_perk_effect }
+	}
+}
+manipulate_rock_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 4.5 0 }
+	icon = node_learning
+
+	can_be_picked = { has_trait = ALF_mage }
+
+	auto_selection_weight = {
+		value = 11
+		if = { limit = { has_focus = willmagic_focus } multiply = 5 }
+	}
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		advantage = 2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_rock_perk_effect }
+	}
+}
+
+control_flame_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 0 1 }
+	icon = node_learning
+
+	parent = manipulate_flame_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		enemy_hard_casualty_modifier = 0.1
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_flame_perk_effect }
+	}
+}
+control_wind_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 1.5 1 }
+	icon = node_learning
+
+	parent = manipulate_wind_perk
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		character_travel_speed_mult = 0.2
+		movement_speed = 0.1
+		naval_movement_speed_mult = 0.1
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_wind_perk_effect }
+	}
+}
+control_water_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 3 1 }
+	icon = node_learning
+
+	parent = manipulate_water_perk
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		embarkation_cost_mult = -0.1
+		naval_movement_speed_mult = 0.2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_water_perk_effect }
+	}
+}
+control_rock_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 4.5 1 }
+	icon = node_learning
+
+	parent = manipulate_rock_perk
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		advantage = 2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_rock_perk_effect }
+	}
+}
+
+rule_flame_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 0 2 }
+	icon = node_learning
+
+	parent = control_flame_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		enemy_hard_casualty_modifier = 0.1
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_flame_perk_effect }
+	}
+}
+rule_wind_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 1.5 2 }
+	icon = node_learning
+
+	parent = control_wind_perk
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		character_travel_speed_mult = 0.2
+		movement_speed = 0.1
+		naval_movement_speed_mult = 0.1
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_wind_perk_effect }
+	}
+}
+rule_water_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 3 2 }
+	icon = node_learning
+
+	parent = control_water_perk
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		embarkation_cost_mult = -0.1
+		naval_movement_speed_mult = 0.2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_water_perk_effect }
+	}
+}
+rule_rock_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 4.5 2 }
+	icon = node_learning
+
+	parent = control_rock_perk
+
+	character_modifier = {
+		prowess_no_portrait = 1
+		advantage = 2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_rock_perk_effect }
+	}
+}
+
+manipulate_fire_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 0 3 }
+	icon = node_learning
+
+	parent = rule_flame_perk
+
+	character_modifier = {
+		prowess_no_portrait = 3
+		enemy_hard_casualty_modifier = 0.15
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_fire_perk_effect }
+	}
+}
+manipulate_storm_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 1.5 3 }
+	icon = node_learning
+
+	parent = rule_wind_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		character_travel_speed_mult = 0.4
+		movement_speed = 0.2
+		naval_movement_speed_mult = 0.2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_storm_perk_effect }
+	}
+}
+manipulate_stream_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 3 3 }
+	icon = node_learning
+
+	parent = rule_water_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		embarkation_cost_mult = -0.2
+		naval_movement_speed_mult = 0.3
+		no_disembark_penalty = yes
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_stream_perk_effect }
+	}
+}
+manipulate_material_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 4.5 3 }
+	icon = node_learning
+
+	parent = rule_rock_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		advantage = 4
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = manipulate_material_perk_effect }
+	}
+}
+
+control_fire_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 0 4 }
+	icon = node_learning
+
+	parent = manipulate_fire_perk
+
+	character_modifier = {
+		prowess_no_portrait = 3
+		enemy_hard_casualty_modifier = 0.15
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_fire_perk_effect }
+	}
+}
+control_storm_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 1.5 4 }
+	icon = node_learning
+
+	parent = manipulate_storm_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		character_travel_speed_mult = 0.4
+		movement_speed = 0.2
+		naval_movement_speed_mult = 0.2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_storm_perk_effect }
+	}
+}
+control_stream_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 3 4 }
+	icon = node_learning
+
+	parent = manipulate_stream_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		embarkation_cost_mult = -0.2
+		naval_movement_speed_mult = 0.3
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_stream_perk_effect }
+	}
+}
+control_material_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 4.5 4 }
+	icon = node_learning
+
+	parent = manipulate_material_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		advantage = 4
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = control_material_perk_effect }
+	}
+}
+
+rule_fire_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 0 5 }
+	icon = node_learning
+
+	parent = control_fire_perk
+
+	character_modifier = {
+		prowess_no_portrait = 3
+		enemy_hard_casualty_modifier = 0.15
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_fire_perk_effect }
+	}
+}
+rule_storm_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 1.5 5 }
+	icon = node_learning
+
+	parent = control_storm_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		character_travel_speed_mult = 0.4
+		movement_speed = 0.2
+		naval_movement_speed_mult = 0.2
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_storm_perk_effect }
+	}
+}
+rule_stream_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 3 5 }
+	icon = node_learning
+
+	parent = control_stream_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		embarkation_cost_mult = -0.2
+		naval_movement_speed_mult = 0.3
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_stream_perk_effect }
+	}
+}
+rule_material_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 4.5 5 }
+	icon = node_learning
+
+	parent = control_material_perk
+
+	character_modifier = {
+		prowess_no_portrait = 2
+		advantage = 4
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = rule_material_perk_effect }
+	}
+}
+
+king_of_elements_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 2 6 }
+	icon = node_learning
+
+	parent = rule_fire_perk
+	parent = rule_storm_perk
+	parent = rule_stream_perk
+	parent = rule_material_perk
+
+	character_modifier = {
+		prowess_no_portrait = 8
+		enemy_hard_casualty_modifier = 0.15
+		character_travel_speed_mult = 0.4
+		movement_speed = 0.2
+		naval_movement_speed_mult = 0.2
+		embarkation_cost_mult = -0.2
+		naval_movement_speed_mult = 0.2
+		advantage = 4
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = king_of_elements_perk_effect }
+	}
+}
+
+king_of_fire_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 0 6.8 }
+	icon = ALF_willmagic
+
+	parent = king_of_elements_perk
+
+	effect = {
+		custom_description_no_bullet = { text = repeatable_perk_effect }
+		custom_description_no_bullet = { text = king_of_fire_perk_effect }
+		ALF_set_variable_or_change = { VAR = ALF_king_of_fire_perk_count_var VAL = 1 }
+		hidden_effect = { 
+			remove_character_modifier = king_of_fire_modifier
+			remove_perk = king_of_fire_perk 
+		}
+		add_character_modifier = king_of_fire_modifier
+	}
+}
+king_of_storm_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 1.5 6.8 }
+	icon = ALF_willmagic
+
+	parent = king_of_elements_perk
+
+	effect = {
+		custom_description_no_bullet = { text = repeatable_perk_effect }
+		custom_description_no_bullet = { text = king_of_storm_perk_effect }
+		ALF_set_variable_or_change = { VAR = ALF_king_of_storm_perk_count_var VAL = 1 }
+		hidden_effect = { 
+			remove_character_modifier = king_of_storm_modifier
+			remove_perk = king_of_storm_perk 
+		}
+		add_character_modifier = king_of_storm_modifier
+	}
+}
+king_of_stream_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 3 6.8 }
+	icon = ALF_willmagic
+
+	parent = king_of_elements_perk
+
+	effect = {
+		custom_description_no_bullet = { text = repeatable_perk_effect }
+		custom_description_no_bullet = { text = king_of_stream_perk_effect }
+		ALF_set_variable_or_change = { VAR = ALF_king_of_stream_perk_count_var VAL = 1 }
+		hidden_effect = { 
+			remove_character_modifier = king_of_stream_modifier
+			remove_perk = king_of_stream_perk 
+		}
+		add_character_modifier = king_of_stream_modifier
+	}
+}
+king_of_material_perk = {
+	lifestyle = willmagic_lifestyle
+	tree = elementis
+	position = { 4.5 6.8 }
+	icon = ALF_willmagic
+
+	parent = king_of_elements_perk
+
+	effect = {
+		custom_description_no_bullet = { text = repeatable_perk_effect }
+		custom_description_no_bullet = { text = king_of_material_perk_effect }
+		ALF_set_variable_or_change = { VAR = ALF_king_of_material_perk_count_var VAL = 1 }
+		hidden_effect = { 
+			remove_character_modifier = king_of_material_modifier
+			remove_perk = king_of_material_perk 
+		}
+		add_character_modifier = king_of_material_modifier
+	}
+}

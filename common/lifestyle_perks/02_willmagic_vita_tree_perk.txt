@@ -30,6 +30,7 @@ understand_life_perk = {
 
 	character_modifier = {
 		health = 1
+		no_prowess_loss_from_age = yes
 	}
 
 	effect = {

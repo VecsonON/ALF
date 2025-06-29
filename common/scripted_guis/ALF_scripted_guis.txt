@@ -21,9 +21,13 @@ ALF_setup = {
 		add_to_variable_list = { name = WillMagicPaths target = flag:voluntas }
 		add_to_variable_list = { name = WillMagicPaths target = flag:animalium }
 		add_to_variable_list = { name = WillMagicPaths target = flag:vita }
+		add_to_variable_list = { name = WillMagicPaths target = flag:elementis }
 		
 		clear_variable_list = WillMagicSpells
 		remove_variable = spell
+
+		if = { limit = { NOT = { has_variable = spell_filter } } set_variable = { name = spell_filter value = flag:any }  }
+
 		ALF_genereate_spell = { ID = inspect_will TYPE = character PATH = voluntas LIST = WillMagicSpells }
 		ALF_genereate_spell = { ID = steal_will TYPE = character PATH = voluntas LIST = WillMagicSpells }
 
@@ -38,6 +42,9 @@ ALF_setup = {
 		ALF_genereate_spell = { ID = inflict_epidemic TYPE = title PATH = vita LIST = WillMagicSpells }
 		ALF_genereate_spell = { ID = remove_flesh TYPE = character PATH = vita LIST = WillMagicSpells }
 		ALF_genereate_spell = { ID = improve_flesh TYPE = character PATH = vita LIST = WillMagicSpells }
+
+		ALF_genereate_spell = { ID = manipulate_material TYPE = character PATH = elementis LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = devastate_duchy TYPE = title PATH = elementis LIST = WillMagicSpells }
 	}
 }
 ALF_clearup = {

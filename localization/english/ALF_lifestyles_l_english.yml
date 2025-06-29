@@ -31,115 +31,253 @@
  voluntas_name: "Voluntas"
 
  inspect_will_perk_name: "Inscept Will"
- INSPECT_WILL_PERK_EFFECT: "$general_spell_loca$ discover [ALF_mental_fortitude|E] of target.\n#flavor Mage can sense [ALF_mental_fortitude|E] of other people with expensure of [ALF_willpower|E].#!"
  train_will_perk_name: "Train Will"
+
+ INSPECT_WILL_PERK_EFFECT: "$general_spell_loca$ discover [ALF_mental_fortitude|E] of target.\n#flavor Mage can sense [ALF_mental_fortitude|E] of other people with expensure of [ALF_willpower|E].#!"
  TRAIN_WILL_PERK_EFFECT: "#flavor Mage can meditate with hopes of strenghening their [ALF_mental_fortitude|E].#!"
 
+
  command_will_perk_name: "Command Will"
+
  COMMAND_WILL_PERK_EFFECT: "#flavor Mage can manipulate [ALF_willpower|E] much easier than before.#!"
 
+
  extend_will_perk_name: "Extend Will"
+
  EXTEND_WILL_PERK_EFFECT: "#flavor Mage can extend their own [ALF_willpower|E] beyond what was possible before.#!"
 
+
  hide_will_perk_name: "Hide Will"
- HIDE_WILL_PERK_EFFECT: "Become Immune to [GetPerk('inspect_will_perk').GetName(GetPlayer)].\n#flavor Mage can hide their [ALF_mental_fortitude|E] from spying eyes.#!"
  regenerate_will_perk_name: "Regenerate Will"
+
+ HIDE_WILL_PERK_EFFECT: "Become Immune to [GetPerk('inspect_will_perk').GetName(GetPlayer)].\n#flavor Mage can hide their [ALF_mental_fortitude|E] from spying eyes.#!"
  REGENERATE_WILL_PERK_EFFECT: "Every #V 10#! years, gain 1 [ALF_mental_fortitude|E].\n#flavor Mage can create infinite loop which generates free [ALF_willpower|E] over time.#!"
 
+
  defend_will_perk_name: "Defend Will"
- DEFEND_WILL_PERK_EFFECT: "#flavor Mage's defensive abilites against hostile will are much stronger.#!"
  attack_will_perk_name: "Attack Will"
+
+ DEFEND_WILL_PERK_EFFECT: "#flavor Mage's defensive abilites against hostile will are much stronger.#!"
  ATTACK_WILL_PERK_EFFECT: "#flavor Mage's aggresive abilites against hostile will are much stronger.#!"
 
+
  steal_will_perk_name: "Steal Will"
+
  STEAL_WILL_PERK_EFFECT: "$general_spell_loca$ Steal 1 [ALF_mental_fortitude|E] from [imprisoned|E] target at cost of 100 [ALF_willpower|E].\n#flavor Mage can steal [ALF_mental_fortitude|E] of other beings although at great cost to both of sides.#!"
  
  conquer_will_perk_name: "Conquer Will"
+
  CONQUER_WILL_PERK_EFFECT: "Decrease cost of [GetPerk('steal_will_perk').GetName(GetPlayer)] from #N 100#! [ALF_willpower|E] to #P 50#! [ALF_willpower|E].\n#flavor Mage can steal [ALF_mental_fortitude|E] from others with greater ease than before, limiting cost on their side.#!"
 
+
  counter_will_perk_name: "Counter Will ([ROOT.Char.MakeScope.ScriptValue('counter_will_perk_count_tt')]/∞)"
- COUNTER_WILL_PERK_EFFECT: "#flavor Mage counter incoming hostile will with greater ease#!"
+ enforce_will_perk_name: "Enforce Will ([ROOT.Char.MakeScope.ScriptValue('enforce_will_perk_count_tt')]/∞)"
+ strenghen_will_perk_name: "Strenghen Will ([ROOT.Char.MakeScope.ScriptValue('strenghen_will_perk_count_tt')]/7)"
+
  counter_will_modifier: "Counter Will"
  ALF_counter_will_perk_count_desc: "Per #V $counter_will_modifier$#! level"
-
- enforce_will_perk_name: "Enforce Will ([ROOT.Char.MakeScope.ScriptValue('enforce_will_perk_count_tt')]/∞)"
- ENFORCE_WILL_PERK_EFFECT: "#flavor Mage enforce their demands to world with greater ease.#!"
- enforce_will_modifier: "Enforce Will"
- ALF_enforce_will_perk_count_desc: "Per #V $enforce_will_modifier$#! level"
- 
- strenghen_will_perk_name: "Strenghen Will ([ROOT.Char.MakeScope.ScriptValue('strenghen_will_perk_count_tt')]/7)"
- STRENGHEN_WILL_PERK_EFFECT: "#flavor Mage can strenghen their own [ALF_mental_fortitude|E] using pure determination.#!"
  strenghen_will_modifier: "Strenghen Will"
  ALF_strenghen_will_perk_count_desc: "Per #V $strenghen_will_modifier$#! level"
+ enforce_will_modifier: "Enforce Will"
+ ALF_enforce_will_perk_count_desc: "Per #V $enforce_will_modifier$#! level"
+
+ COUNTER_WILL_PERK_EFFECT: "#flavor Mage counter incoming hostile will with greater ease#!"
+ ENFORCE_WILL_PERK_EFFECT: "#flavor Mage enforce their demands to world with greater ease.#!"
+ STRENGHEN_WILL_PERK_EFFECT: "#flavor Mage can strenghen their own [ALF_mental_fortitude|E] using pure determination.#!"
+ 
+
+
  
  ################## Animalium ##################
  animalium_name: "Animalium"
 
  influence_animals_perk_name: "Influence Animals"
+
  INFLUENCE_ANIMALS_PERK_EFFECT: "$general_spell_loca$ Spawn random animal as pet.\n#flavor Mage can subtly influence animals nearby.#!"
 
+
  control_animals_perk_name: "Control Animals"
+
  CONTROL_ANIMALS_PERK_EFFECT: "Unlock [GetMaA('ALF_wolves').GetName], [GetMaA('ALF_birds').GetName] and [GetMaA('ALF_rats').GetName] as [men_at_arms|E].\n#flavor Mage can take control over nearby animals.#!"
 
+
  ferocious_animals_perk_name: "Ferocious Animals"
- FEROCIOUS_ANIMALS_PERK_EFFECT: "#flavor Mage can make previously 'pacifist' animals into war machines.#!"
  calm_animals_perk_name: "Calm Animals"
+
+ FEROCIOUS_ANIMALS_PERK_EFFECT: "#flavor Mage can make previously 'pacifist' animals into war machines.#!"
  CALM_ANIMALS_PERK_EFFECT: "$general_spell_loca$ Spawn hunting oportunity.\n#flavor Mage can calm animals nearby.#!"
 
  durrable_animals_perk_name: "Durrable Animals"
+
  DURRABLE_ANIMALS_PERK_EFFECT: "#flavor Mage can make animals under their control more durrable than their natural counterpart#!"
 
+
  create_animals_perk_name: "Create Animals"
+
  CREATE_ANIMALS_PERK_EFFECT: "#flavor Mage can create completely new animals from thin air, as long they know what that animal looks in nature.#!"
 
+
  create_mythical_animals_perk_name: "Create Mythical Animals"
+
  CREATE_MYTHICAL_ANIMALS_PERK_EFFECT: "Unlock [GetMaA('ALF_pegasus').GetName]and [GetMaA('ALF_unicorn').GetName] as [men_at_arms|E].\n#flavor Mage can create completely new animals from thin air, no matter what 'nature' says.#!"
 
+
  supernatural_animals_perk_name: "Supernatural Animals"
+
  SUPERNATURAL_ANIMALS_PERK_EFFECT: "#flavor Mage can make animals under their control obviously supernatural.#!"
 
+
  strong_animals_perk_name: "Strong Animals ([ROOT.Char.MakeScope.ScriptValue('strong_animals_perk_count_tt')]/∞)"
- STRONG_ANIMALS_PERK_EFFECT: "#flavor Mage can Strenghen animals under their control.#!"
+ cheap_animals_perk_name: "Cheap Animals ([ROOT.Char.MakeScope.ScriptValue('cheap_animals_perk_count_tt')]/15)"
+
  strong_animals_modifier: "Strong Animals"
  ALF_strong_animals_perk_count_desc: "Per #V $strong_animals_modifier$#! level"
-
- cheap_animals_perk_name: "Cheap Animals ([ROOT.Char.MakeScope.ScriptValue('cheap_animals_perk_count_tt')]/15)"
- CHEAP_ANIMALS_PERK_EFFECT: "#flavor Mage can create animals much easier than before.#!"
  cheap_animals_modifier: "Cheap Animals"
  ALF_cheap_animals_perk_count_desc: "Per #V $cheap_animals_modifier$#! level"
+
+ STRONG_ANIMALS_PERK_EFFECT: "#flavor Mage can Strenghen animals under their control.#!"
+ CHEAP_ANIMALS_PERK_EFFECT: "#flavor Mage can create animals much easier than before.#!"
  
  ################## Vita ##################
  vita_name: "Vita"
 
  sense_life_perk_name: "Sense Life"
+
  SENSE_LIFE_PERK_EFFECT: "#flavor Mage can sense nearby life.#!"
 
+
  understand_life_perk_name: "Understand Life"
+
  UNDERSTAND_LIFE_PERK_EFFECT: "#flavor Mage understanding of life is great, due to fact they change what life is nearby.#!"
 
+
  influence_life_perk_name: "Influence Life"
+
  INFLUENCE_LIFE_PERK_EFFECT: "#flavor Mage can subtly influence life nearby.#!"
 
+
  close_wound_perk_name: "Close Wound"
- CLOSE_WOUND_PERK_EFFECT: "$general_spell_loca$ Reduce Wounded [trait|E] level by #P 1#!.\n#flavor Mage can force wounds to close.#!"
  heal_illness_perk_name: "Heal Illness"
+
+ CLOSE_WOUND_PERK_EFFECT: "$general_spell_loca$ Reduce Wounded [trait|E] level by #P 1#!.\n#flavor Mage can force wounds to close.#!"
  HEAL_ILLNESS_PERK_EFFECT: "$general_spell_loca$ Heal random illnes [trait|E] target has.\n#flavor Mage can kill any illness they know of.#!"
 
+
  amend_flesh_perk_name: "Amend Flesh"
- AMEND_FLESH_PERK_EFFECT: "$general_spell_loca$ Remove random permanent disfigurement [trait|E], like [GetTrait('maimed').GetName(GetPlayer)] or [GetTrait('one_eyed').GetName(GetPlayer)].\n#flavor Mage can amend any permanent disfigurement.#!"
  inflict_wounds_perk_name: "Inflict Wounds"
+
+ AMEND_FLESH_PERK_EFFECT: "$general_spell_loca$ Remove random permanent disfigurement [trait|E], like [GetTrait('maimed').GetName(GetPlayer)] or [GetTrait('one_eyed').GetName(GetPlayer)].\n#flavor Mage can amend any permanent disfigurement.#!"
  INFLICT_WOUNDS_PERK_EFFECT: "$general_spell_loca$, Inflict Wounded [trait|E] onto target.\n#flavor Mage can will into existence the fact that their target is wounded.#!"
 
+
  inflict_illness_perk_name: "Inflict Illness"
- INFLICT_ILLNESS_PERK_EFFECT: "$general_spell_loca$ Inflict random Illness onto target.\n$general_spell_loca$ Inflict [epidemic|E] onto target.\n#flavor Mage can will into existence the fact that their target is ill.#!"
  remove_flesh_perk_name: "Remove Flesh"
+
+ INFLICT_ILLNESS_PERK_EFFECT: "$general_spell_loca$ Inflict random Illness onto target.\n$general_spell_loca$ Inflict [epidemic|E] onto target.\n#flavor Mage can will into existence the fact that their target is ill.#!"
  REMOVE_FLESH_PERK_EFFECT: "$general_spell_loca$ Give random permanent disfigurement [trait|E], like [GetTrait('maimed').GetName(GetPlayer)] or [GetTrait('one_eyed').GetName(GetPlayer)].\n#flavor Mage can will limb out of existence.#!"
 
+
  improve_flesh_perk_name: "Improve Flesh"
+
  IMPROVE_FLESH_PERK_EFFECT: "$general_spell_loca$, Increase random genetic [trait|E] level by #P 1#!.\n#flavor Mage can improve genetic structure of human body, though they don't use word 'genetic'.#!"
 
+
  long_life_perk_name: "Long Life ([ROOT.Char.MakeScope.ScriptValue('long_life_perk_count_tt')]/∞)"
- LONG_LIFE_PERK_EFFECT: "Every time you get this [perk|E], cost of this [perk|E] doubles.\n#flavor Mage can extend their lifespan, though process isn't perfect.#!"
+
  long_life_modifier: "Long Life"
  ALF_long_life_perk_count_desc: "Per #V $long_life_modifier$#! level"
+
+ LONG_LIFE_PERK_EFFECT: "Every time you get this [perk|E], cost of this [perk|E] doubles.\n#flavor Mage can extend their lifespan, though process isn't perfect.#!"
  LONG_LIFE_PERK_COST_EFFECT: "#clickable This [perk|E] will cost $VALUE|0$ [perk|E] points!#!"
+ 
+ ################## Elementis ##################
+ elementis_name: "Elementis"
+ 
+ manipulate_flame_perk_name: "Manipulate Flame"
+ manipulate_wind_perk_name: "Manipulate Wind"
+ manipulate_water_perk_name: "Manipulate Water"
+ manipulate_rock_perk_name: "Manipulate Rock"
+
+ MANIPULATE_FLAME_PERK_EFFECT: "#flavor Mage can create and manipulate nearby flames.#!"
+ MANIPULATE_WIND_PERK_EFFECT: "#flavor Mage can create and manipulate nearby winds.#!"
+ MANIPULATE_WATER_PERK_EFFECT: "#flavor Mage can create and manipulate nearby water.#!"
+ MANIPULATE_ROCK_PERK_EFFECT: "#flavor Mage can create and manipulate nearby rock.#!"
+ 
+ 
+ control_flame_perk_name: "Control Flame"
+ control_wind_perk_name: "Control Wind"
+ control_water_perk_name: "Control Water"
+ control_rock_perk_name: "Control Rock"
+
+ CONTROL_FLAME_PERK_EFFECT: "#flavor Mage's control over flames increases.#!"
+ CONTROL_WIND_PERK_EFFECT: "#flavor Mage's control over flames increases.#!"
+ CONTROL_WATER_PERK_EFFECT: "#flavor Mage's control over flames increases.#!"
+ CONTROL_ROCK_PERK_EFFECT: "#flavor Mage's control over flames increases.#!"
+
+ 
+ rule_flame_perk_name: "Rule Flame"
+ rule_wind_perk_name: "Rule Wind"
+ rule_water_perk_name: "Rule Water"
+ rule_rock_perk_name: "Rule Rock"
+
+ RULE_FLAME_PERK_EFFECT: "#flavor Mage rules nearby flames with ease.#!"
+ RULE_WIND_PERK_EFFECT: "#flavor Mage rules nearby winnds with ease.#!"
+ RULE_WATER_PERK_EFFECT: "#flavor Mage rules nearby water with ease.#!"
+ RULE_ROCK_PERK_EFFECT: "#flavor Mage rules nearby rock with ease.#!"
+
+ 
+ manipulate_fire_perk_name: "Manipulate Fire"
+ manipulate_storm_perk_name: "Manipulate Storm"
+ manipulate_stream_perk_name: "Manipulate Stream"
+ manipulate_material_perk_name: "Manipulate Material"
+
+ MANIPULATE_FIRE_PERK_EFFECT: "#flavor Mage can manipulate entire forest fires.#!"
+ MANIPULATE_STORM_PERK_EFFECT: "#flavor Mage can manipulate entire storms.#!"
+ MANIPULATE_STREAM_PERK_EFFECT: "#flavor Mage can manipulate entire rivers.#!"
+ MANIPULATE_MATERIAL_PERK_EFFECT: "$general_spell_loca$ Gain [gold|e] at expensure of [ALF_willpower|E].\n#flavor Mage can manipulate entire fields.#!"
+
+ 
+ control_fire_perk_name: "Control Fire"
+ control_storm_perk_name: "Control Storm"
+ control_stream_perk_name: "Control Stream"
+ control_material_perk_name: "Control Material"
+
+ CONTROL_FIRE_PERK_EFFECT: "#flavor Mage can control absurd amounts of fire.#!"
+ CONTROL_STORM_PERK_EFFECT: "#flavor Mage can control absurd amounts of storms.#!"
+ CONTROL_STREAM_PERK_EFFECT: "#flavor Mage can control absurd amounts of streams.#!"
+ CONTROL_MATERIAL_PERK_EFFECT: "Improve [GetPerk('manipulate_material_perk').GetName(GetPlayer)] by increasing [gold|E] gain.\n#flavor Mage can control absurd amounts of materials.#!"
+
+ 
+ rule_fire_perk_name: "Rule Fire"
+ rule_storm_perk_name: "Rule Storm"
+ rule_stream_perk_name: "Rule Stream"
+ rule_material_perk_name: "Rule Material"
+
+ RULE_FIRE_PERK_EFFECT: "$general_spell_loca$ Cause devastation over [duchy|E], ie. reduce [development|E] level and destroy [buildings|E].\nEach 'version' of this [perk|E] increases power of this [ALF_spell|E].\n#flavor Mage can ignite entire [duchy|E] with ease.#!"
+ RULE_STORM_PERK_EFFECT: "$general_spell_loca$ Cause devastation over [duchy|E], ie. reduce [development|E] level and destroy [buildings|E].\nEach 'version' of this [perk|E] increases power of this [ALF_spell|E].\n#flavor Mage can level entire [duchy|E] with ease.#!"
+ RULE_STREAM_PERK_EFFECT: "$general_spell_loca$ Cause devastation over [duchy|E], ie. reduce [development|E] level and destroy [buildings|E].\nEach 'version' of this [perk|E] increases power of this [ALF_spell|E].\n#flavor Mage can drown entire [duchy|E] with ease.#!"
+ RULE_MATERIAL_PERK_EFFECT: "$general_spell_loca$ Cause devastation over [duchy|E], ie. reduce [development|E] level and destroy [buildings|E].\nEach 'version' of this [perk|E] increases power of this [ALF_spell|E].\nImprove [GetPerk('manipulate_material_perk').GetName(GetPlayer)] by increasing [gold|E] gain.\n#flavor Mage can burry entire [duchy|E] with ease.#!"
+
+
+ king_of_elements_perk_name: "King of Elements"
+
+ KING_OF_ELEMENTS_PERK_EFFECT: "Improve [ALF_spell|E] from previous [perks|E].\nImprove [GetPerk('manipulate_material_perk').GetName(GetPlayer)] by increasing [gold|E] gain.\n#flavor Mage ascends to levels worthy being called 'king of elements'.#!"
+
+ king_of_fire_perk_name: "King of Fire ([ROOT.Char.MakeScope.ScriptValue('king_of_fire_perk_count_tt')]/∞)"
+ king_of_storm_perk_name: "King of Storm ([ROOT.Char.MakeScope.ScriptValue('king_of_storm_perk_count_tt')]/∞)"
+ king_of_stream_perk_name: "King of Stream ([ROOT.Char.MakeScope.ScriptValue('king_of_stream_perk_count_tt')]/∞)"
+ king_of_material_perk_name: "King of Material ([ROOT.Char.MakeScope.ScriptValue('king_of_material_perk_count_tt')]/∞)"
+
+ king_of_fire_modifier: "King of Fire"
+ ALF_king_of_fire_perk_count_desc: "Per #V $king_of_fire_modifier$#! level"
+ king_of_storm_modifier: "King of Storm"
+ ALF_king_of_storm_perk_count_desc: "Per #V $king_of_storm_modifier$#! level"
+ king_of_stream_modifier: "King of Stream"
+ ALF_king_of_stream_perk_count_desc: "Per #V $king_of_stream_modifier$#! level"
+ king_of_material_modifier: "King of Material"
+ ALF_king_of_material_perk_count_desc: "Per #V $king_of_material_modifier$#! level"
+
+ KING_OF_FIRE_PERK_EFFECT: "#flavor Mage's dominion over Fires increases.#!"
+ KING_OF_STORM_PERK_EFFECT: "#flavor Mage's dominion over Storms increases.#!"
+ KING_OF_STREAM_PERK_EFFECT: "#flavor Mage's dominion over Streams increases.#!"
+ KING_OF_MATERIAL_PERK_EFFECT: "#flavor Mage's dominion over Materials increases.#!"
