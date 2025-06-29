@@ -8,9 +8,30 @@
 ALF_target_character = { is_valid = { var:spell_type ?= flag:character } }
 ALF_target_artifact = { is_valid = { var:spell_type ?= flag:artifact } }
 ALF_target_title = { is_valid = { var:spell_type ?= flag:title } }
-ALF_spell_target_character = { is_valid = { scope:spell.var:type ?= flag:character } }
-ALF_spell_target_artifact = { is_valid = { scope:spell.var:type ?= flag:artifact } }
-ALF_spell_target_title = { is_valid = { scope:spell.var:type ?= flag:title } }
+ALF_spell_target_character = { 
+	is_valid = { 
+		OR = {
+			scope:spell.var:type ?= flag:character 
+			scope:spell.var:type ?= flag:any 
+		}
+	} 
+}
+ALF_spell_target_artifact = { 
+	is_valid = { 
+		OR = {
+			scope:spell.var:type ?= flag:artifact 
+			scope:spell.var:type ?= flag:any 
+		}
+	} 
+}
+ALF_spell_target_title = { 
+	is_valid = { 
+		OR = {
+			scope:spell.var:type ?= flag:title 
+			scope:spell.var:type ?= flag:any 
+		}
+	} 
+}
 ALF_setup = {
 	effect = {
 		clear_variable_list = WillMagicPaths
@@ -22,6 +43,7 @@ ALF_setup = {
 		add_to_variable_list = { name = WillMagicPaths target = flag:animalium }
 		add_to_variable_list = { name = WillMagicPaths target = flag:vita }
 		add_to_variable_list = { name = WillMagicPaths target = flag:elementis }
+		add_to_variable_list = { name = WillMagicPaths target = flag:fortuna }
 		
 		clear_variable_list = WillMagicSpells
 		remove_variable = spell
@@ -45,6 +67,13 @@ ALF_setup = {
 
 		ALF_genereate_spell = { ID = manipulate_material TYPE = character PATH = elementis LIST = WillMagicSpells }
 		ALF_genereate_spell = { ID = devastate_duchy TYPE = title PATH = elementis LIST = WillMagicSpells }
+
+		ALF_genereate_spell = { ID = share_luck TYPE = character PATH = fortuna LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = steal_luck TYPE = character PATH = fortuna LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = oops TYPE = artifact PATH = fortuna LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = bless TYPE = any PATH = fortuna LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = curse TYPE = any PATH = fortuna LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = tragic_day TYPE = character PATH = fortuna LIST = WillMagicSpells }
 	}
 }
 ALF_clearup = {
@@ -77,7 +106,10 @@ ALF_filter_check = {
 					var:spell_filter ?= flag:title 
 				}
 			}
-			scope:spell.var:type ?= var:spell_filter
+			OR = {
+				scope:spell.var:type ?= var:spell_filter
+				scope:spell.var:type ?= flag:any
+			}
 		}
 		trigger_else = {
 			scope:spell.var:path ?= var:spell_filter

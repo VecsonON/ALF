@@ -92,3 +92,12 @@ king_of_material_perk_count_tt = {
 	value = 0
 	if = { limit = { has_variable = ALF_king_of_material_perk_count_var } add = var:ALF_king_of_material_perk_count_var }
 }
+
+lucky_day_perk_count = {
+	value = 1
+	if = { limit = { has_variable = ALF_lucky_day_perk_count_var } value = var:ALF_lucky_day_perk_count_var }
+}
+lucky_day_perk_count_tt = {
+	value = 0
+	if = { limit = { has_variable = ALF_lucky_day_perk_count_var } add = var:ALF_lucky_day_perk_count_var }
+}

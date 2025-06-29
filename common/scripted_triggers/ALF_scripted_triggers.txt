@@ -7,7 +7,10 @@
 ALF_general_spell_trigger = {
 	custom_tooltip = { 
 		text = ALF_cast_spell_sgui_type
-		scope:spell.var:type ?= var:spell_type
+		OR = {
+			scope:spell.var:type ?= var:spell_type
+			scope:spell.var:type ?= flag:any
+		}
 	}
 	custom_tooltip = { 
 		text = ALF_cast_spell_sgui_stress

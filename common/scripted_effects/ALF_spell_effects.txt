@@ -400,3 +400,80 @@ ALF_devastate_duchy_effect = {
 	}
 	ALF_use_willpower_effect = { COUNT = 100 }
 }
+
+ALF_share_luck_effect = {
+	var:spell_target = {
+		add_character_modifier = { modifier = additional_luck_modifier years = 5 }
+	}
+	ALF_use_willpower_effect = { COUNT = 25 }
+}
+ALF_steal_luck_effect = {
+	var:spell_target = {
+		add_character_modifier = { modifier = stolen_luck_modifier years = 5 }
+	}
+	add_character_modifier = { modifier = additional_luck_modifier years = 5 }
+	ALF_use_willpower_effect = { COUNT = 25 }
+}
+ALF_oops_effect = {
+	var:spell_target = {
+		add_durability = -10
+	}
+	ALF_use_willpower_effect = { COUNT = 50 }
+}
+ALF_bless_effect = {
+	var:spell_target = {
+		switch = {
+			trigger = PREV.var:spell_type
+			flag:character = { add_character_modifier = { modifier = bless_character_modifier years = 5 } }
+			flag:artifact = { add_artifact_modifier = bless_artifact_modifier }
+			flag:title = { add_county_modifier = { modifier = bless_land_modifier years = 5 } }
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 50 }
+}
+ALF_curse_effect = {
+	var:spell_target = {
+		switch = {
+			trigger = PREV.var:spell_type
+			flag:character = { add_character_modifier = { modifier = curse_character_modifier years = 5 } }
+			flag:artifact = { add_artifact_modifier = curse_artifact_modifier }
+			flag:title = { add_county_modifier = { modifier = curse_land_modifier years = 5 } }
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 50 }
+}
+ALF_tragic_day_effect = {
+	duel = {
+		skills = { diplomacy martial stewardship intrigue learning prowess }
+		target = var:spell_target
+		25 = {
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 3.5
+				min = -24
+			}
+			var:spell_target = {
+				death = { death_reason = death_accident }
+			}
+		}
+		50 = {
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = -1
+				min = -49
+			}
+			
+			var:spell_target = {
+				increase_wounds_no_death_effect = { REASON = fight }
+			}
+		}
+		75 = {
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = -3.5
+				min = -74
+			}
+		}
+	}
+	ALF_use_willpower_effect = { COUNT = 50 }
+}

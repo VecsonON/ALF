@@ -227,7 +227,7 @@ types WillMagicTypes {
 		minimumsize = { -1 50 }
 
 		hbox = {
-			vbox = {
+			hbox = {
 				margin = { 10 0 }
 				text_single = {
 					visible = "[GetScriptedGui('ALF_spell_target_character').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('spell', Scope.Story.MakeScope).End)]"

@@ -1,7 +1,7 @@
 ﻿l_english:
  spell_inspect_will: "Inspect Will"
- ALF_inspect_will_effect: "You will scry [SpellTarget.GetFullName] to determinate their [ALF_mental_fortitude|E]."
- ALF_inspect_will_effect_real: "[ALF_mental_fortitude|E] of [SpellTarget.GetFullName] is #V;bold [SpellTarget.MakeScope.ScriptValue('ALF_mental_fortitude')]#!"
+ ALF_inspect_will_effect: "You will scry [SpellTarget.Char.GetFullName] to determinate their [ALF_mental_fortitude|E]."
+ ALF_inspect_will_effect_real: "[ALF_mental_fortitude|E] of [SpellTarget.Char.GetFullName] is #V;bold [SpellTarget.Char.MakeScope.ScriptValue('ALF_mental_fortitude')]#!"
 
  spell_steal_will: "Steal Will"
 
@@ -14,7 +14,7 @@
 
  spell_heal_illness: "Heal Illness"
  spell_heal_illness_tt: "Target doesn't have any healable illness!"
- ALF_heal_illness_effect: "Heal random illness [trait|E] [SpellTarget.GetFullName] has"
+ ALF_heal_illness_effect: "Heal random illness [trait|E] [SpellTarget.Char.GetFullName] has"
 
  spell_amend_flesh: "Amend Flesh"
  spell_amend_flesh_tt: "Target must have at least one of these [traits|E]:$permanent_disfigurenments_list$"
@@ -23,7 +23,7 @@
  spell_inflict_wounds: "Inflict Wounds"
 
  spell_inflict_illness: "Inflict Illness"
- ALF_inflict_illness_effect: "Cause random illness [trait|E] to [SpellTarget.GetFullName]"
+ ALF_inflict_illness_effect: "Cause random illness [trait|E] to [SpellTarget.Char.GetFullName]"
 
  spell_inflict_epidemic: "Inflict Plague"
  ALF_inflict_epidemic_effect_measles: "You will create [epidemic|E] of [GetTrait('measles').GetName(GetPlayer)]"
@@ -49,3 +49,12 @@
  spell_devastate_duchy: "Devastate [duchy|E]"
  spell_devastate_duchy_perk: "You need at least one of these [perks|E]:\n$BULLET_WITH_TAB$[GetPerk('rule_fire_perk').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetPerk('rule_storm_perk').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetPerk('rule_stream_perk').GetName(GetPlayer)]\n$BULLET_WITH_TAB$[GetPerk('rule_material_perk').GetName(GetPlayer)]"
  ALF_devastate_duchy_effect: "Random [building|E] in [THIS.Province.GetName] will be destroyed!"
+
+ spell_share_luck: "Share Luck"
+ spell_steal_luck: "Steal Luck"
+ spell_oops: "Oops!"
+ spell_bless: "Bless"
+ spell_bless_tt: "[SpellTarget.Artifact.GetName] already have [GetModifier('bless_artifact_modifier').GetNameWithTooltip]"
+ spell_curse: "Curse"
+ spell_curse_tt: "[SpellTarget.Artifact.GetName] already have [GetModifier('curse_artifact_modifier').GetNameWithTooltip]"
+ spell_tragic_day: "Tragic Day"

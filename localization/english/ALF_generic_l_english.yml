@@ -41,4 +41,4 @@
 
  ALF_generalized_mental_fortitude_duel_tt:0 "[ALF_mental_fortitude_with_i|E] Challenge against [TARGET_CHARACTER.GetTitledFirstName]"
 
- ALF_target_is_root: "You are not [SpellTarget.GetTitledFirstName]!"
+ ALF_target_is_root: "You are not [SpellTarget.Char.GetTitledFirstName]!"

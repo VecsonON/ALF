@@ -1,0 +1,131 @@
+﻿counter_will_modifier = {
+	icon = magic_positive
+	ALF_terrain_mage_max_combat_roll = 0.05
+	scale = {
+		value = counter_will_perk_count
+		desc = ALF_counter_will_perk_count_desc
+		display_mode = scaled
+	}
+}
+enforce_will_modifier = {
+	icon = magic_positive
+	ALF_terrain_mage_min_combat_roll = -0.05
+	scale = {
+		value = enforce_will_perk_count
+		desc = ALF_enforce_will_perk_count_desc
+		display_mode = scaled
+	}
+}
+strenghen_will_modifier = {
+	icon = magic_positive
+	ALF_terrain_mage_development_growth = 0.1
+	scale = {
+		value = strenghen_will_perk_count
+		desc = ALF_strenghen_will_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+strong_animals_modifier = {
+	icon = magic_positive
+	ALF_animals_maa_damage_mult = 0.05
+	ALF_animals_maa_pursuit_mult = 0.05
+	ALF_animals_maa_toughness_mult = 0.05
+	ALF_animals_maa_screen_mult = 0.05
+	scale = {
+		value = strong_animals_perk_count
+		desc = ALF_strong_animals_perk_count_desc
+		display_mode = scaled
+	}
+}
+cheap_animals_modifier = {
+	icon = magic_positive
+	ALF_animals_maa_maintenance_mult = -0.05
+	ALF_animals_maa_recruitment_cost_mult = -0.05
+	scale = {
+		value = cheap_animals_perk_count
+		desc = ALF_cheap_animals_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+long_life_modifier = {
+	icon = magic_positive
+	health = 1
+	life_expectancy = 10
+	scale = {
+		value = long_life_perk_count
+		desc = ALF_long_life_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+king_of_fire_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 2
+	enemy_hard_casualty_modifier = 0.1
+	scale = {
+		value = king_of_fire_perk_count
+		desc = ALF_king_of_fire_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+king_of_storm_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 1
+	character_travel_speed_mult = 0.2
+	movement_speed = 0.1
+	naval_movement_speed_mult = 0.1
+	scale = {
+		value = king_of_storm_perk_count
+		desc = ALF_king_of_storm_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+king_of_stream_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 1
+	naval_movement_speed_mult = 0.2
+	scale = {
+		value = king_of_stream_perk_count
+		desc = ALF_king_of_stream_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+king_of_material_modifier = {
+	icon = magic_positive
+	prowess_no_portrait = 1
+	advantage = 2
+	scale = {
+		value = king_of_material_perk_count
+		desc = ALF_king_of_material_perk_count_desc
+		display_mode = scaled
+	}
+}
+
+lucky_day_modifier = {
+	icon = magic_positive
+	hard_casualty_modifier = -0.02
+	min_combat_roll = 1
+	max_combat_roll = 1
+	
+	owned_hostile_scheme_success_chance_add = 2
+	owned_personal_scheme_success_chance_add = 2
+	enemy_hostile_scheme_success_chance_add = -2
+	scheme_discovery_chance_mult = 0.02
+	
+	inbreeding_chance = -0.05
+	positive_inactive_inheritance_chance = 0.05
+	positive_random_genetic_chance = 0.05
+	negative_inactive_inheritance_chance = -0.05
+	negative_random_genetic_chance = -0.05
+	genetic_trait_strengthen_chance = 0.05
+	scale = {
+		value = lucky_day_perk_count
+		desc = ALF_lucky_day_perk_count_desc
+		display_mode = scaled
+	}
+}

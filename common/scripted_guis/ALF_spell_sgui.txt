@@ -19,9 +19,12 @@ inspect_will_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
 		trigger_if = { 
-			limit = { ALF_general_spell_trigger = yes } 
-			var:spell_target ?= { NOT = { has_perk = hide_will_perk } } 
-			trigger_if = { limit = { NOT = { var:spell_target = THIS } } has_perk = inspect_will_perk }
+			limit = { ALF_general_spell_trigger = yes }  
+			trigger_if = { 
+				limit = { NOT = { var:spell_target = THIS } }
+				has_perk = inspect_will_perk 
+				var:spell_target ?= { NOT = { has_perk = hide_will_perk } }
+			}
 		}
 	}
 	effect = {
@@ -302,6 +305,148 @@ devastate_duchy_sgui = {
 		if = { 
 			limit = { ALF_general_spell_trigger = yes var:spell_target = { tier = 3 } } 
 			ALF_devastate_duchy_effect = yes
+		}
+	}
+}
+
+share_luck_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = share_luck_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { NOT = { has_character_modifier = additional_luck_modifier } }
+			NOT = { THIS = var:spell_target }
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_share_luck_effect = yes
+		}
+	}
+}
+
+steal_luck_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = steal_luck_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			var:spell_target = { NOT = { has_character_modifier = stolen_luck_modifier } }
+			NOT = { THIS = var:spell_target }
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_steal_luck_effect = yes
+		}
+	}
+}
+
+oops_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = oops_perk
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_oops_effect = yes
+		}
+	}
+}
+
+bless_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:character } 
+			var:spell_target = { NOT = { has_character_modifier = bless_character_modifier } }
+			has_perk = bless_character_perk
+		}
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:artifact } 
+			custom_tooltip = { 
+				text = spell_bless_tt 
+				var:spell_target = { NOT = { has_artifact_modifier = bless_artifact_modifier } } 
+			}
+			has_perk = bless_artifact_perk
+			
+		}
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:title } 
+			var:spell_target = { tier = 2 }
+			trigger_if = { 
+				limit = { var:spell_target = { tier = 2 } } 
+				var:spell_target = { NOT = { has_county_modifier = bless_land_modifier } }
+			}
+			has_perk = bless_land_perk
+		}
+	}
+	effect = {
+		if = { 
+			limit = { 
+				ALF_general_spell_trigger = yes 
+				trigger_if = { 
+					limit = { var:spell_type ?= flag:title } 
+					var:spell_target = { tier = 2 }
+				}
+			} 
+			ALF_bless_effect = yes
+		}
+	}
+}
+
+curse_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = curse_perk
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:character } 
+			var:spell_target = { NOT = { has_character_modifier = curse_character_modifier } }
+		}
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:artifact } 
+			custom_tooltip = { 
+				text = spell_curse_tt 
+				var:spell_target = { NOT = { has_artifact_modifier = curse_artifact_modifier } } 
+			}
+			
+		}
+		trigger_if = { 
+			limit = { var:spell_type ?= flag:title } 
+			var:spell_target = { tier = 2 }
+			trigger_if = { 
+				limit = { var:spell_target = { tier = 2 } } 
+				var:spell_target = { NOT = { has_county_modifier = curse_land_modifier } }
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { 
+				ALF_general_spell_trigger = yes 
+				trigger_if = { 
+					limit = { var:spell_type ?= flag:title } 
+					var:spell_target = { tier = 2 }
+				}
+			} 
+			ALF_curse_effect = yes
+		}
+	}
+}
+
+tragic_day_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = tragic_day_perk
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_tragic_day_effect = yes
 		}
 	}
 }

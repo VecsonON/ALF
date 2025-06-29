@@ -1,5 +1,5 @@
 ﻿macro = {
 	description = "Return the spell target"
 	definition = "SpellTarget"
-	replace_with = "GetPlayer.MakeScope.Var('spell_target').Char"
+	replace_with = "GetPlayer.MakeScope.Var('spell_target')"
 }

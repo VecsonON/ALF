@@ -23,110 +23,89 @@ ALF_will_power_45_modifier = {
 	stacking = yes
 }
 
-counter_will_modifier = {
-	icon = magic_positive
-	ALF_terrain_mage_max_combat_roll = 0.05
-	scale = {
-		value = counter_will_perk_count
-		desc = ALF_counter_will_perk_count_desc
-		display_mode = scaled
-	}
+additional_luck_modifier = {
+	icon = compass_positive
+	hard_casualty_modifier = -0.05
+	min_combat_roll = 1
+	max_combat_roll = 1
+	
+	owned_hostile_scheme_success_chance_add = 5
+	owned_personal_scheme_success_chance_add = 5
+	enemy_hostile_scheme_success_chance_add = -5
+	scheme_discovery_chance_mult = 0.05
+	
+	inbreeding_chance = -0.1
+	positive_inactive_inheritance_chance = 0.1
+	positive_random_genetic_chance = 0.1
+	negative_inactive_inheritance_chance = -0.1
+	negative_random_genetic_chance = -0.1
+	genetic_trait_strengthen_chance = 0.1
+	stacking = yes
 }
-enforce_will_modifier = {
-	icon = magic_positive
-	ALF_terrain_mage_min_combat_roll = -0.05
-	scale = {
-		value = enforce_will_perk_count
-		desc = ALF_enforce_will_perk_count_desc
-		display_mode = scaled
-	}
-}
-strenghen_will_modifier = {
-	icon = magic_positive
-	ALF_terrain_mage_development_growth = 0.1
-	scale = {
-		value = strenghen_will_perk_count
-		desc = ALF_strenghen_will_perk_count_desc
-		display_mode = scaled
-	}
-}
-
-strong_animals_modifier = {
-	icon = magic_positive
-	ALF_animals_maa_damage_mult = 0.05
-	ALF_animals_maa_pursuit_mult = 0.05
-	ALF_animals_maa_toughness_mult = 0.05
-	ALF_animals_maa_screen_mult = 0.05
-	scale = {
-		value = strong_animals_perk_count
-		desc = ALF_strong_animals_perk_count_desc
-		display_mode = scaled
-	}
-}
-cheap_animals_modifier = {
-	icon = magic_positive
-	ALF_animals_maa_maintenance_mult = -0.05
-	ALF_animals_maa_recruitment_cost_mult = -0.05
-	scale = {
-		value = cheap_animals_perk_count
-		desc = ALF_cheap_animals_perk_count_desc
-		display_mode = scaled
-	}
+stolen_luck_modifier = {
+	icon = compass_negative
+	hard_casualty_modifier = 0.05
+	min_combat_roll = -1
+	max_combat_roll = -1
+	
+	owned_hostile_scheme_success_chance_add = -5
+	owned_personal_scheme_success_chance_add = -5
+	enemy_hostile_scheme_success_chance_add = 5
+	scheme_discovery_chance_mult = -0.05
+	
+	inbreeding_chance = 0.1
+	positive_inactive_inheritance_chance = -0.1
+	positive_random_genetic_chance = -0.1
+	negative_inactive_inheritance_chance = 0.1
+	negative_random_genetic_chance = 0.1
+	genetic_trait_strengthen_chance = -0.1
+	stacking = yes
 }
 
-long_life_modifier = {
-	icon = magic_positive
+bless_character_modifier = {
+	icon = compass_positive
+	diplomacy = 2
+	martial = 2
+	stewardship = 2
+	intrigue = 2
+	learning = 2
 	health = 1
-	life_expectancy = 10
-	scale = {
-		value = long_life_perk_count
-		desc = ALF_long_life_perk_count_desc
-		display_mode = scaled
-	}
 }
-
-king_of_fire_modifier = {
-	icon = magic_positive
-	prowess_no_portrait = 2
-	enemy_hard_casualty_modifier = 0.1
-	scale = {
-		value = king_of_fire_perk_count
-		desc = ALF_king_of_fire_perk_count_desc
-		display_mode = scaled
-	}
-}
-
-king_of_storm_modifier = {
-	icon = magic_positive
+bless_artifact_modifier = {
+	icon = compass_positive
+	health = 0.25
 	prowess_no_portrait = 1
-	character_travel_speed_mult = 0.2
-	movement_speed = 0.1
-	naval_movement_speed_mult = 0.1
-	scale = {
-		value = king_of_storm_perk_count
-		desc = ALF_king_of_storm_perk_count_desc
-		display_mode = scaled
-	}
+	owned_hostile_scheme_success_chance_add = 1
+	owned_personal_scheme_success_chance_add = 1
+	enemy_hostile_scheme_success_chance_add = -1
+}
+bless_land_modifier = {
+	icon = compass_positive
+	tax_mult = 0.25
+	development_growth = 0.5
+	development_growth_factor = 0.5
 }
 
-king_of_stream_modifier = {
-	icon = magic_positive
-	prowess_no_portrait = 1
-	naval_movement_speed_mult = 0.2
-	scale = {
-		value = king_of_stream_perk_count
-		desc = ALF_king_of_stream_perk_count_desc
-		display_mode = scaled
-	}
+curse_character_modifier = {
+	icon = compass_negative
+	diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	learning = -2
+	health = -1
 }
-
-king_of_material_modifier = {
-	icon = magic_positive
-	prowess_no_portrait = 1
-	advantage = 2
-	scale = {
-		value = king_of_material_perk_count
-		desc = ALF_king_of_material_perk_count_desc
-		display_mode = scaled
-	}
+curse_artifact_modifier = {
+	icon = compass_negative
+	health = -0.25
+	prowess_no_portrait = -1
+	owned_hostile_scheme_success_chance_add = -1
+	owned_personal_scheme_success_chance_add = -1
+	enemy_hostile_scheme_success_chance_add = 1
+}
+curse_land_modifier = {
+	icon = compass_negative
+	tax_mult = -0.25
+	development_decline = -0.5
+	development_decline_factor = 0.5
 }
