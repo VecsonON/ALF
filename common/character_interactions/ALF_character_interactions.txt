@@ -79,3 +79,420 @@ ALF_open_gui_title_interaction = {
 		base = 0
 	}
 }
+
+ALF_teach_willmagic_interaction = {
+	category = interaction_category_friendly
+	icon = ALF_willmagic
+	desc = ALF_teach_willmagic_interaction_desc
+
+	interface_priority = 1
+	
+	common_interaction = yes
+
+	cooldown = { years = 5 }
+	is_shown = {
+		scope:actor = { has_trait = ALF_mage }
+		scope:recipient = { NOT = { has_trait = ALF_mage } }
+		scope:recipient = { age >= 13 }
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	on_accept = {
+		scope:recipient = {
+			random = {
+				chance = {
+					value = ALF_mental_fortitude
+					multiply = 10
+					add = sum_of_all_skills_value
+				}
+				add_trait = ALF_mage
+			}
+			add_stress = 75
+		}
+		scope:actor = {
+			ALF_use_willpower_effect = { COUNT = 50 }
+		}
+	}
+
+	ai_accept = {
+		base = 0
+
+		modifier = { # Greedy for power
+			add = 50
+			scope:recipient = {
+				has_trait = ambitious
+				NOT = { has_trait = zealous }
+			}
+			desc = ambition_tt
+		}
+		opinion_modifier = { # Compare Opinion modifier.
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.6
+		}
+		modifier = { # Say no to rivals
+			add = -25
+			scope:recipient = {
+				has_relation_rival = scope:actor
+			}
+			desc = "ACTOR_RIVAL_TO_ME_REASON"
+		}
+		modifier = { # Say no to nemesis
+			add = -50
+			scope:recipient = {
+				has_relation_nemesis = scope:actor
+			}
+			desc = "ACTOR_NEMESIS_TO_ME_REASON"
+		}
+		modifier = {
+			add = 1000
+			scope:recipient = {
+				is_heir_of = scope:actor
+			}
+			desc = "is_recipients_player_heir"
+		}
+	}
+}
+ALF_teach_path_interaction = {
+	category = interaction_category_friendly
+	icon = ALF_willmagic
+	desc = ALF_teach_path_interaction_desc
+
+	interface_priority = 1
+	
+
+	common_interaction = yes
+
+	cooldown = { years = 5 }
+	is_shown = {
+		scope:actor = { has_trait = ALF_mage }
+		scope:recipient = { has_trait = ALF_mage }
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = { willmagic_lifestyle_perk_points >= 1 }
+	}
+
+	on_accept = {
+		scope:actor = { add_willmagic_lifestyle_perk_points = -1 }
+		scope:recipient = { add_willmagic_lifestyle_perk_points = 1 }
+
+	}
+	auto_accept = yes
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+ALF_request_teach_willmagic_interaction = {
+	category = interaction_category_friendly
+	icon = ALF_willmagic
+	desc = ALF_request_teach_willmagic_interaction_desc
+
+	is_shown = {
+		scope:recipient = { has_trait = ALF_mage }
+		scope:actor = { NOT = { has_trait = ALF_mage } }
+	}
+
+	send_options_exclusive = no
+	send_option = {
+		is_valid = {
+			exists = scope:recipient
+			scope:actor = { has_usable_hook = scope:recipient }
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	send_option = {
+		flag = gold
+		localization = SCHEME_AGENT_GOLD
+	}
+
+	should_use_extra_icon = { scope:actor = { has_usable_hook = scope:recipient } }
+
+	on_accept = {
+		scope:actor = { 
+			if = { limit = { scope:gold = yes }
+				pay_reserved_gold = { target = scope:recipient gold = 100 } 
+			} 
+			random = {
+				chance = {
+					value = ALF_mental_fortitude
+					multiply = 10
+					add = sum_of_all_skills_value
+				}
+				add_trait = ALF_mage
+			}
+			add_stress = 75
+		}
+		scope:recipient = { add_stress = 25 }
+	}
+
+	ai_accept = {
+		base = -100
+		
+		opinion_modifier = { # Opinion Factor
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.75
+			desc = AI_OPINION_REASON
+		}
+		modifier = { # Say no to rivals
+			add = -25
+			scope:recipient = {
+				has_relation_rival = scope:actor
+			}
+			desc = "ACTOR_RIVAL_TO_ME_REASON"
+		}
+		modifier = { # Say no to nemesis
+			add = -50
+			scope:recipient = {
+				has_relation_nemesis = scope:actor
+			}
+			desc = "ACTOR_NEMESIS_TO_ME_REASON"
+		}
+
+		modifier = { # Use hook
+			scope:hook = yes
+			add = 50
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		modifier = { # Use Gold
+			scope:gold = yes
+			add = 50
+			desc = SCHEME_WITH_GIFT
+		}
+		modifier = { # Same language
+			add = 5
+			desc = speaks_same_language_interaction_reason
+			trigger = {
+				scope:actor = {
+					knows_language_of_culture = scope:recipient.culture
+				}
+			}
+		}
+		modifier = { # You're my friend :)
+			add = 10
+			desc = youre_my_friend_tt
+			has_relation_friend = scope:actor
+		}
+		modifier = { # Shared Court Language (non-spoken)
+			add = 10
+			desc = foreign_realm_court_language_non_spoken_interaction_reason
+			trigger = {
+				scope:actor = {
+					has_royal_court = yes
+					NOT = { knows_court_language_of = this }
+				}
+				NOT = {
+					scope:actor.top_liege = scope:recipient.top_liege
+				}
+				OR = {
+					AND = {
+						scope:recipient = {
+							has_royal_court = yes
+						}
+						scope:actor = { # You share Court Language
+							has_same_court_language = scope:recipient
+						}
+					}
+					
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege does
+						is_independent_ruler = no
+						has_royal_court = no
+						liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege's liege does, while their liege doesn't have a royal court
+						is_independent_ruler = no
+						has_royal_court = no
+						exists = liege.liege
+						liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege's liege's liege does, while their liege doesn't have a royal court
+						is_independent_ruler = no
+						has_royal_court = no
+						exists = liege.liege
+						exists = liege.liege.liege
+						liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege.liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege's liege's liege's liege does, while their liege doesn't have a royal court
+						is_independent_ruler = no
+						has_royal_court = no
+						exists = liege.liege
+						exists = liege.liege.liege
+						exists = liege.liege.liege.liege
+						liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege.liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege.liege.liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+				}
+			}
+		}
+		modifier = { # Shared Court Language (spoken)
+			add = 20
+			desc = foreign_realm_court_language_spoken_interaction_reason
+			trigger = {
+				scope:actor = {
+					has_royal_court = yes
+					knows_court_language_of = this
+				}
+				NOT = {
+					scope:actor.top_liege = scope:recipient.top_liege
+				}
+				OR = {
+					AND = {
+						scope:recipient = {
+							has_royal_court = yes
+						}
+						scope:actor = { # You share Court Language
+							has_same_court_language = scope:recipient
+						}
+					}
+					
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege does
+						is_independent_ruler = no
+						has_royal_court = no
+						liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege's liege does, while their liege doesn't have a royal court
+						is_independent_ruler = no
+						has_royal_court = no
+						exists = liege.liege
+						liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege's liege's liege does, while their liege doesn't have a royal court
+						is_independent_ruler = no
+						has_royal_court = no
+						exists = liege.liege
+						exists = liege.liege.liege
+						liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege.liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+					scope:recipient = { # The recipient doesn't have a royal court, but their liege's liege's liege's liege does, while their liege doesn't have a royal court
+						is_independent_ruler = no
+						has_royal_court = no
+						exists = liege.liege
+						exists = liege.liege.liege
+						exists = liege.liege.liege.liege
+						liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege.liege = {
+							is_independent_ruler = no
+							has_royal_court = no
+						}
+						liege.liege.liege.liege = {
+							has_royal_court = yes
+							has_same_court_language = scope:actor
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ai_targets = {
+		ai_recipients = scripted_relations
+	}
+	ai_targets = {
+		ai_recipients = liege
+	}
+	ai_targets = {
+		ai_recipients = head_of_faith
+	}
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	ai_targets = {
+		ai_recipients = vassals
+		max = 10
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	
+	ai_frequency = 24
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = -50
+
+		modifier = {
+			has_trait = ambitious
+			add = 30
+		}
+		opinion_modifier = {
+			opinion_target = scope:recipient
+			multiplier = 0.25
+		}
+	}	
+	ai_max_reply_days = 5
+	ai_min_reply_days = 1
+}

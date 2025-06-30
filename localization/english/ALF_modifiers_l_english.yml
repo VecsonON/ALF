@@ -31,6 +31,9 @@
  
  lucky_day_modifier: "Lucky Day"
  ALF_lucky_day_perk_count_desc: "Per #V $lucky_day_modifier$#! level"
+ 
+ prefect_vision_modifier: "Perfect Vision"
+ ALF_prefect_vision_perk_count_desc: "Per #V $prefect_vision_modifier$#! level"
 
  additional_luck_modifier: "Additonal Luck"
  stolen_luck_modifier: "Stolen Luck"

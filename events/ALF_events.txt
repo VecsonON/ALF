@@ -1,0 +1,31 @@
+﻿namespace = ALF_events
+
+ALF_events.1 = {
+	type = character_event
+	title = ALF_events.1.t
+	desc = ALF_events.1.desc
+	
+	theme = mental_break
+	left_portrait = {
+		character = root
+		animation = stunned
+	}
+
+	trigger = {
+		NOT = { has_trait = ALF_mage }
+	}
+	option = {
+		name = ALF_events.1.a
+		random_list = {
+			5 = { 
+				desc = ALF_events.1.a.a
+				add_trait = ALF_mage 
+			}
+			2 = {
+				trigger = { NOT = { has_trait = lunatic_1 } }
+				desc = ALF_events.1.a.b
+				add_trait = lunatic_1
+			}
+		}
+	}
+}

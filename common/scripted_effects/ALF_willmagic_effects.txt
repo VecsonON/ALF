@@ -45,3 +45,8 @@ ALF_mental_fortitude_duel_effect = {
 		}
 	}
 }
+ALF_ai_spell_cast_effect = {
+	set_variable = { name = spell_target value = scope:recipient } 
+	ALF_$SPELL$_effect = yes
+	remove_variable = spell_target
+}

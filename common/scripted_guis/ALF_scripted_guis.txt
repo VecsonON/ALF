@@ -32,6 +32,13 @@ ALF_spell_target_title = {
 		}
 	} 
 }
+ALF_spell_target_is_you = {
+	is_valid = {
+		trigger_if = { limit = { var:spell_type ?= flag:character } var:spell_target = ROOT }
+		trigger_else_if = { limit = { var:spell_type ?= flag:artifact } var:spell_target.artifact_owner = ROOT }
+		trigger_else = { var:spell_target.holder = ROOT }
+	}
+}
 ALF_setup = {
 	effect = {
 		clear_variable_list = WillMagicPaths
@@ -44,6 +51,7 @@ ALF_setup = {
 		add_to_variable_list = { name = WillMagicPaths target = flag:vita }
 		add_to_variable_list = { name = WillMagicPaths target = flag:elementis }
 		add_to_variable_list = { name = WillMagicPaths target = flag:fortuna }
+		add_to_variable_list = { name = WillMagicPaths target = flag:aspectum }
 		
 		clear_variable_list = WillMagicSpells
 		remove_variable = spell
@@ -74,6 +82,13 @@ ALF_setup = {
 		ALF_genereate_spell = { ID = bless TYPE = any PATH = fortuna LIST = WillMagicSpells }
 		ALF_genereate_spell = { ID = curse TYPE = any PATH = fortuna LIST = WillMagicSpells }
 		ALF_genereate_spell = { ID = tragic_day TYPE = character PATH = fortuna LIST = WillMagicSpells }
+
+		ALF_genereate_spell = { ID = scry_for_secrets TYPE = character PATH = aspectum LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = scry_for_information TYPE = character PATH = aspectum LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = scry_for_schemes TYPE = character PATH = aspectum LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = scry_for_plans TYPE = character PATH = aspectum LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = scry_for_knowledge TYPE = character PATH = aspectum LIST = WillMagicSpells }
+		ALF_genereate_spell = { ID = scry_for_education TYPE = character PATH = aspectum LIST = WillMagicSpells }
 	}
 }
 ALF_clearup = {

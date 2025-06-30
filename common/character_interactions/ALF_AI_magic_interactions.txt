@@ -1,0 +1,496 @@
+﻿ALF_AI_close_wound_interaction = {
+	category = interaction_category_friendly
+
+	is_shown = { 
+		scope:actor = {
+			has_perk = close_wound_perk
+			is_ai = yes
+		}
+		scope:recipient = {
+			has_trait = wounded
+		}
+	}
+
+	on_accept = {
+		scope:actor = { 
+			ALF_ai_spell_cast_effect = { SPELL = close_wound }
+		}
+	}
+
+	auto_accept = yes
+	
+	ai_potential = {
+		is_imprisoned = no 
+		has_trait = ALF_mage
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+		max = 5
+	}
+	ai_frequency = 6
+	ai_will_do = {
+		base = 50
+
+		modifier = { # AI will more likely to heal themselves than others
+			scope:recipient = scope:actor
+			add = 250
+		}
+
+		modifier = { # AI won't heal rivals or nemesis.
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor 
+				}
+			}
+			add = -1000
+		}
+
+		opinion_modifier = { # AI will more likely heal characters with better opinion
+			trigger = {
+				NOT = { scope:recipient = scope:actor }
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+		}
+	}
+}
+ALF_AI_heal_illness_interaction = {
+	category = interaction_category_friendly
+
+	is_shown = { 
+		scope:actor = {
+			has_perk = heal_illness_perk
+			is_ai = yes
+		}
+		scope:recipient = {
+			has_any_illness = yes 
+		}
+	}
+
+	on_accept = {
+		scope:actor = { 
+			ALF_ai_spell_cast_effect = { SPELL = heal_illness }
+		}
+	}
+
+	auto_accept = yes
+	
+	ai_potential = {
+		is_imprisoned = no 
+		has_trait = ALF_mage
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+		max = 5
+	}
+	ai_frequency = 6
+	ai_will_do = {
+		base = 50
+
+		modifier = { # AI will more likely to heal themselves than others
+			scope:recipient = scope:actor
+			add = 250
+		}
+
+		modifier = { # AI won't heal rivals or nemesis.
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor 
+				}
+			}
+			add = -1000
+		}
+
+		opinion_modifier = { # AI will more likely heal characters with better opinion
+			trigger = {
+				NOT = { scope:recipient = scope:actor }
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+		}
+	}
+}
+ALF_AI_amend_flesh_interaction = {
+	category = interaction_category_friendly
+
+	is_shown = { 
+		scope:actor = {
+			has_perk = amend_flesh_perk
+			is_ai = yes
+		}
+		scope:recipient = {
+			OR = {
+				has_trait = maimed
+				has_trait = one_eyed
+				has_trait = one_legged
+				has_trait = blind
+				has_trait = eunuch_1
+				has_trait = beardless_eunuch
+				has_trait = disfigured
+				has_trait = infirm
+				has_trait = incapable
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = { 
+			ALF_ai_spell_cast_effect = { SPELL = amend_flesh }
+		}
+	}
+
+	auto_accept = yes
+	
+	ai_potential = {
+		is_imprisoned = no 
+		has_trait = ALF_mage
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+		max = 5
+	}
+	ai_frequency = 12
+	ai_will_do = {
+		base = 50
+
+		modifier = { # AI will more likely to heal themselves than others
+			scope:recipient = scope:actor
+			add = 250
+		}
+
+		modifier = { # AI won't heal rivals or nemesis.
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor 
+				}
+			}
+			add = -1000
+		}
+
+		opinion_modifier = { # AI will more likely heal characters with better opinion
+			trigger = {
+				NOT = { scope:recipient = scope:actor }
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+		}
+	}
+}
+ALF_AI_improve_flesh_interaction = {
+	category = interaction_category_friendly
+
+	is_shown = { 
+		scope:actor = {
+			has_perk = improve_flesh_perk
+			is_ai = yes
+		}
+		scope:recipient = {
+			NOT = {
+				AND = {
+					has_trait = beauty_good_3
+					has_trait = intellect_good_3
+					has_trait = physique_good_3
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = { 
+			ALF_ai_spell_cast_effect = { SPELL = improve_flesh }
+		}
+	}
+
+	auto_accept = yes
+	
+	ai_potential = {
+		is_imprisoned = no 
+		has_trait = ALF_mage
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+		max = 5
+	}
+	ai_frequency = 60
+	ai_will_do = {
+		base = 50
+
+		modifier = {
+			scope:actor = {
+				stress >= 100
+			}
+			add = -500
+		}
+
+		modifier = {
+			scope:recipient = scope:actor
+			add = 250
+		}
+
+		modifier = {
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor 
+				}
+			}
+			add = -1000
+		}
+
+		opinion_modifier = {
+			trigger = {
+				NOT = { scope:recipient = scope:actor }
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+		}
+	}
+}
+
+ALF_AI_influence_animals_interaction = {
+	category = interaction_category_friendly
+
+	is_shown = { 
+		scope:actor = {
+			has_perk = improve_flesh_perk
+			is_ai = yes
+		}
+		scope:recipient = {
+			NOT = {
+				AND = {
+					has_character_modifier = cat_story_modifier
+					has_character_modifier = dog_story_modifier
+					has_character_modifier = horse_story_modifier
+				}
+			}
+		}
+		scope:recipient = scope:actor
+	}
+
+	on_accept = {
+		scope:actor = { 
+			ALF_ai_spell_cast_effect = { SPELL = influence_animals }
+		}
+	}
+
+	auto_accept = yes
+	
+	ai_potential = {
+		is_imprisoned = no 
+		has_trait = ALF_mage
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+		max = 5
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 50
+
+		modifier = {
+			scope:actor = {
+				stress >= 100
+			}
+			add = -500
+		}
+
+		modifier = {
+			scope:recipient = scope:actor
+			add = 250
+		}
+
+		modifier = {
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor 
+				}
+			}
+			add = -1000
+		}
+
+		opinion_modifier = {
+			trigger = {
+				NOT = { scope:recipient = scope:actor }
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+		}
+	}
+}
+
+ALF_AI_manipulate_material_interaction = {
+	category = interaction_category_friendly
+
+	is_shown = { 
+		scope:actor = {
+			has_perk = manipulate_material_perk
+			is_ai = yes
+		}
+		scope:recipient = {
+			NOT = {
+				AND = {
+					has_trait = beauty_good_3
+					has_trait = intellect_good_3
+					has_trait = physique_good_3
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = { 
+			ALF_ai_spell_cast_effect = { SPELL = manipulate_material }
+			ALF_ai_spell_cast_effect = { SPELL = manipulate_material }
+		}
+	}
+
+	auto_accept = yes
+	
+	ai_potential = {
+		is_imprisoned = no 
+		has_trait = ALF_mage
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+		max = 5
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 50
+
+		modifier = {
+			scope:actor = {
+				stress >= 100
+			}
+			add = -500
+		}
+
+		modifier = {
+			scope:recipient = scope:actor
+			add = 250
+		}
+
+		modifier = {
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor 
+				}
+			}
+			add = -1000
+		}
+
+		opinion_modifier = {
+			trigger = {
+				NOT = { scope:recipient = scope:actor }
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+		}
+	}
+}
+ALF_AI_bless_interaction = {
+	category = interaction_category_friendly
+
+	is_shown = { 
+		scope:actor = {
+			has_perk = bless_character_perk
+			is_ai = yes
+		}
+		scope:recipient = {
+			NOT = { has_character_modifier = bless_character_modifier }
+		}
+	}
+
+	on_accept = {
+		scope:actor = { 
+			set_variable = { name = spell_type value = flag:character } 
+			ALF_ai_spell_cast_effect = { SPELL = bless }
+			remove_variable = spell_type
+		}
+	}
+
+	auto_accept = yes
+	
+	ai_potential = {
+		is_imprisoned = no 
+		has_trait = ALF_mage
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+		max = 5
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 50
+
+		modifier = {
+			scope:actor = {
+				stress >= 100
+			}
+			add = -500
+		}
+
+		modifier = {
+			scope:recipient = scope:actor
+			add = 250
+		}
+
+		modifier = {
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor 
+				}
+			}
+			add = -1000
+		}
+
+		opinion_modifier = {
+			trigger = {
+				NOT = { scope:recipient = scope:actor }
+			}
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+		}
+	}
+}

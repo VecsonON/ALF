@@ -180,7 +180,7 @@ ALF_inflict_wounds_effect = {
 	var:spell_target = {
 		increase_wounds_effect = { REASON = fight }
 	}
-	ALF_use_willpower_effect = { COUNT = 50 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 1 TARGET = var:spell_target }
 }
 ALF_inflict_illness_effect = {
 	custom_tooltip = {
@@ -205,7 +205,7 @@ ALF_inflict_illness_effect = {
 			}
 		}
 	}
-	ALF_use_willpower_effect = { COUNT = 75 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 75 TARGET = var:spell_target }
 }
 ALF_inflict_epidemic_effect = {
 	random_list = {
@@ -290,7 +290,7 @@ ALF_inflict_epidemic_effect = {
 			}
 		}
 	}
-	ALF_use_willpower_effect = { COUNT = 125 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 125 TARGET = var:spell_target.holder }
 }
 ALF_remove_flesh_effect = {
 	var:spell_target = {
@@ -330,7 +330,7 @@ ALF_remove_flesh_effect = {
 			}
 		}
 	}
-	ALF_use_willpower_effect = { COUNT = 125 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 125 TARGET = var:spell_target }
 }
 ALF_improve_flesh_effect = {
 	var:spell_target = {
@@ -398,7 +398,7 @@ ALF_devastate_duchy_effect = {
 			}
 		}
 	}
-	ALF_use_willpower_effect = { COUNT = 100 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 100 TARGET = var:spell_target.holder }
 }
 
 ALF_share_luck_effect = {
@@ -412,13 +412,13 @@ ALF_steal_luck_effect = {
 		add_character_modifier = { modifier = stolen_luck_modifier years = 5 }
 	}
 	add_character_modifier = { modifier = additional_luck_modifier years = 5 }
-	ALF_use_willpower_effect = { COUNT = 25 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target }
 }
 ALF_oops_effect = {
 	var:spell_target = {
 		add_durability = -10
 	}
-	ALF_use_willpower_effect = { COUNT = 50 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target.artifact_owner }
 }
 ALF_bless_effect = {
 	var:spell_target = {
@@ -435,12 +435,20 @@ ALF_curse_effect = {
 	var:spell_target = {
 		switch = {
 			trigger = PREV.var:spell_type
-			flag:character = { add_character_modifier = { modifier = curse_character_modifier years = 5 } }
-			flag:artifact = { add_artifact_modifier = curse_artifact_modifier }
-			flag:title = { add_county_modifier = { modifier = curse_land_modifier years = 5 } }
+			flag:character = { 
+				add_character_modifier = { modifier = curse_character_modifier years = 5 } 
+				ROOT = { ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target } }
+			}
+			flag:artifact = { 
+				add_artifact_modifier = curse_artifact_modifier 
+				ROOT = { ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target.artifact_owner } }
+			}
+			flag:title = { 
+				add_county_modifier = { modifier = curse_land_modifier years = 5 } 
+				ROOT = { ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target.holder } }
+			}
 		}
 	}
-	ALF_use_willpower_effect = { COUNT = 50 }
 }
 ALF_tragic_day_effect = {
 	duel = {
@@ -475,5 +483,222 @@ ALF_tragic_day_effect = {
 			}
 		}
 	}
-	ALF_use_willpower_effect = { COUNT = 50 }
+	ALF_use_willpower_with_enemy_effect = { COUNT = 50 TARGET = var:spell_target }
+}
+
+ALF_scry_for_secrets_effect = {
+	custom_tooltip = {
+		text = ALF_scry_for_secrets_effect
+		random_secret = {
+			limit = { NOT = { is_known_by = PREV } }
+			reveal_to = PREV
+		}
+	}
+	ALF_use_willpower_with_enemy_effect = { COUNT = 25 TARGET = var:spell_target }
+}
+ALF_scry_for_information_effect = {
+	custom_tooltip = {
+		text = ALF_scry_for_information_effect
+		random_known_secret = {
+			limit = { NOT = { is_known_by = PREV } }
+			reveal_to = PREV
+		}
+	}
+	ALF_use_willpower_with_enemy_effect = { COUNT = 25 TARGET = var:spell_target }
+}
+ALF_scry_for_schemes_effect = {
+	custom_tooltip = {
+		text = ALF_scry_for_schemes_effect
+		random_scheme = {
+			limit = { is_scheme_exposed = no }
+			expose_scheme = PREV
+		}
+	}
+	ALF_use_willpower_with_enemy_effect = { COUNT = 25 TARGET = var:spell_target }
+}
+ALF_scry_for_plans_effect = {
+	custom_tooltip = {
+		text = ALF_scry_for_plans_effect
+		every_targeting_scheme = {
+			limit = { is_scheme_exposed = no }
+			expose_scheme = PREV
+		}
+	}
+	ALF_use_willpower_with_enemy_effect = { COUNT = 25 TARGET = var:spell_target }
+}
+ALF_scry_for_knowledge_effect = {
+	random_list = {
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = shrewd } 
+				NOT = { has_trait = shrewd }
+			}
+			add_trait = shrewd
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = poet } 
+				NOT = { has_trait = poet }
+			}
+			add_trait = poet
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = logistician } 
+				NOT = { has_trait = logistician }
+			}
+			add_trait = logistician
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = military_engineer } 
+				NOT = { has_trait = military_engineer }
+			}
+			add_trait = military_engineer
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = aggressive_attacker } 
+				NOT = { has_trait = aggressive_attacker }
+			}
+			add_trait = aggressive_attacker
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = unyielding_defender } 
+				NOT = { has_trait = unyielding_defender }
+			}
+			add_trait = unyielding_defender
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = forder } 
+				NOT = { has_trait = forder }
+			}
+			add_trait = forder
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = flexible_leader } 
+				NOT = { has_trait = flexible_leader }
+			}
+			add_trait = flexible_leader
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = desert_warrior } 
+				NOT = { has_trait = desert_warrior }
+			}
+			add_trait = desert_warrior
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = jungle_stalker } 
+				NOT = { has_trait = jungle_stalker }
+			}
+			add_trait = jungle_stalker
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = reaver } 
+				NOT = { has_trait = reaver }
+			}
+			add_trait = reaver
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = reckless } 
+				NOT = { has_trait = reckless }
+			}
+			add_trait = reckless
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = holy_warrior } 
+				NOT = { has_trait = holy_warrior }
+			}
+			add_trait = holy_warrior
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = open_terrain_expert } 
+				NOT = { has_trait = open_terrain_expert }
+			}
+			add_trait = open_terrain_expert
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = rough_terrain_expert } 
+				NOT = { has_trait = rough_terrain_expert }
+			}
+			add_trait = rough_terrain_expert
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = forest_fighter } 
+				NOT = { has_trait = forest_fighter }
+			}
+			add_trait = forest_fighter
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = cautious_leader } 
+				NOT = { has_trait = cautious_leader }
+			}
+			add_trait = cautious_leader
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = organizer } 
+				NOT = { has_trait = organizer }
+			}
+			add_trait = organizer
+		}
+		1 = { 
+			trigger = { 
+				var:spell_target = { has_trait = winter_soldier } 
+				NOT = { has_trait = winter_soldier }
+			}
+			add_trait = winter_soldier
+		}
+	}
+	ALF_use_willpower_with_enemy_effect = { COUNT = 75 TARGET = var:spell_target }
+}
+ALF_scry_for_education_effect = {
+	if = { 
+		limit = { has_trait = education_diplomacy NOT = { has_trait = education_diplomacy_5 } }
+		change_trait_rank = {
+			trait = education_diplomacy
+			rank = 1
+		} 
+	}
+	if = { 
+		limit = { has_trait = education_martial NOT = { has_trait = education_martial_5 } }
+		change_trait_rank = {
+			trait = education_martial
+			rank = 1
+		} 
+	}
+	if = { 
+		limit = { has_trait = education_stewardship NOT = { has_trait = education_stewardship_5 } }
+		change_trait_rank = {
+			trait = education_stewardship
+			rank = 1
+		} 
+	}
+	if = { 
+		limit = { has_trait = education_intrigue NOT = { has_trait = education_intrigue_5 } }
+		change_trait_rank = {
+			trait = education_intrigue
+			rank = 1
+		} 
+	}
+	if = { 
+		limit = { has_trait = education_learning NOT = { has_trait = education_learning_5 } }
+		change_trait_rank = {
+			trait = education_learning
+			rank = 1
+		} 
+	}
+	ALF_use_willpower_with_enemy_effect = { COUNT = 100 TARGET = var:spell_target }
 }

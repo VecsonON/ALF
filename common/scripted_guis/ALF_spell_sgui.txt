@@ -326,7 +326,6 @@ share_luck_sgui = {
 		}
 	}
 }
-
 steal_luck_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
@@ -344,7 +343,6 @@ steal_luck_sgui = {
 		}
 	}
 }
-
 oops_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
@@ -357,7 +355,6 @@ oops_sgui = {
 		}
 	}
 }
-
 bless_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
@@ -398,7 +395,6 @@ bless_sgui = {
 		}
 	}
 }
-
 curse_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
@@ -437,7 +433,6 @@ curse_sgui = {
 		}
 	}
 }
-
 tragic_day_sgui = {
 	is_valid = { 
 		ALF_general_spell_trigger = yes
@@ -447,6 +442,257 @@ tragic_day_sgui = {
 		if = { 
 			limit = { ALF_general_spell_trigger = yes } 
 			ALF_tragic_day_effect = yes
+		}
+	}
+}
+
+scry_for_secrets_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = scry_for_secrets_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes }
+			custom_tooltip = {
+				text = spell_scry_for_secrets_tt
+				any_secret = {
+					count >= 1
+					NOT = { is_known_by = PREV }
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_scry_for_secrets_effect = yes
+		}
+	}
+}
+scry_for_information_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = scry_for_information_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes }
+			custom_tooltip = {
+				text = spell_scry_for_information_tt
+				any_known_secret = {
+					count >= 1
+					NOT = { is_known_by = PREV }
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_scry_for_information_effect = yes
+		}
+	}
+}
+scry_for_schemes_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = scry_for_schemes_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes }
+			custom_tooltip = {
+				text = spell_scry_for_schemes_tt
+				any_scheme = {
+					count >= 1
+					is_scheme_exposed = no
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_scry_for_schemes_effect = yes
+		}
+	}
+}
+scry_for_plans_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = scry_for_plans_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes }
+			custom_tooltip = {
+				text = spell_scry_for_plans_tt
+				any_targeting_scheme = {
+					count >= 1
+					is_scheme_exposed = no
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_scry_for_plans_effect = yes
+		}
+	}
+}
+scry_for_knowledge_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = scry_for_knowledge_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes }
+			custom_tooltip = {
+				text = spell_scry_for_knowledge_tt
+				OR = {
+					AND = {
+						var:spell_target = { has_trait = shrewd }
+						NOT = { has_trait = shrewd }
+					}
+					AND = {
+						var:spell_target = { has_trait = poet }
+						NOT = { has_trait = poet }
+					}
+					AND = {
+						var:spell_target = { has_trait = logistician }
+						NOT = { has_trait = logistician }
+					}
+					AND = {
+						var:spell_target = { has_trait = military_engineer }
+						NOT = { has_trait = military_engineer }
+					}
+					AND = {
+						var:spell_target = { has_trait = aggressive_attacker }
+						NOT = { has_trait = aggressive_attacker }
+					}
+					AND = {
+						var:spell_target = { has_trait = unyielding_defender }
+						NOT = { has_trait = unyielding_defender }
+					}
+					AND = {
+						var:spell_target = { has_trait = forder }
+						NOT = { has_trait = forder }
+					}
+					AND = {
+						var:spell_target = { has_trait = flexible_leader }
+						NOT = { has_trait = flexible_leader }
+					}
+					AND = {
+						var:spell_target = { has_trait = desert_warrior }
+						NOT = { has_trait = desert_warrior }
+					}
+					AND = {
+						var:spell_target = { has_trait = jungle_stalker }
+						NOT = { has_trait = jungle_stalker }
+					}
+					AND = {
+						var:spell_target = { has_trait = reaver }
+						NOT = { has_trait = reaver }
+					}
+					AND = {
+						var:spell_target = { has_trait = reckless }
+						NOT = { has_trait = reckless }
+					}
+					AND = {
+						var:spell_target = { has_trait = holy_warrior }
+						NOT = { has_trait = holy_warrior }
+					}
+					AND = {
+						var:spell_target = { has_trait = open_terrain_expert }
+						NOT = { has_trait = open_terrain_expert }
+					}
+					AND = {
+						var:spell_target = { has_trait = rough_terrain_expert }
+						NOT = { has_trait = rough_terrain_expert }
+					}
+					AND = {
+						var:spell_target = { has_trait = forest_fighter }
+						NOT = { has_trait = forest_fighter }
+					}
+					AND = {
+						var:spell_target = { has_trait = cautious_leader }
+						NOT = { has_trait = cautious_leader }
+					}
+					AND = {
+						var:spell_target = { has_trait = organizer }
+						NOT = { has_trait = organizer }
+					}
+					AND = {
+						var:spell_target = { has_trait = winter_soldier }
+						NOT = { has_trait = winter_soldier }
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_scry_for_knowledge_effect = yes
+		}
+	}
+}
+scry_for_education_sgui = {
+	is_valid = { 
+		ALF_general_spell_trigger = yes
+		has_perk = scry_for_education_perk
+		trigger_if = { 
+			limit = { ALF_general_spell_trigger = yes }
+			custom_tooltip = {
+				text = spell_scry_for_education_tt
+				OR = {
+					trigger_if = {
+						limit = { has_trait = education_diplomacy NOT = { has_trait = education_diplomacy_5 } }
+						var:spell_target = { 
+							has_trait_rank = {
+								trait = education_diplomacy
+								rank >= PREV.ALF_education_diplomacy_level
+							} 
+						}
+					}
+					trigger_if = {
+						limit = { has_trait = education_martial NOT = { has_trait = education_martial_5 } }
+						var:spell_target = { 
+							has_trait_rank = {
+								trait = education_martial
+								rank >= PREV.ALF_education_martial_level
+							} 
+						}
+					}
+					trigger_if = {
+						limit = { has_trait = education_stewardship NOT = { has_trait = education_stewardship_5 } }
+						var:spell_target = { 
+							has_trait_rank = {
+								trait = education_stewardship
+								rank >= PREV.ALF_education_stewardship_level
+							} 
+						}
+					}
+					trigger_if = {
+						limit = { has_trait = education_intrigue NOT = { has_trait = education_intrigue_5 } }
+						var:spell_target = { 
+							has_trait_rank = {
+								trait = education_intrigue
+								rank >= PREV.ALF_education_intrigue_level
+							} 
+						}
+					}
+					trigger_if = {
+						limit = { has_trait = education_learning NOT = { has_trait = education_learning_5 } }
+						var:spell_target = { 
+							has_trait_rank = {
+								trait = education_learning
+								rank >= PREV.ALF_education_learning_level
+							} 
+						}
+					}
+					
+				}
+			}
+		}
+	}
+	effect = {
+		if = { 
+			limit = { ALF_general_spell_trigger = yes } 
+			ALF_scry_for_education_effect = yes
 		}
 	}
 }

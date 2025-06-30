@@ -3,62 +3,41 @@
 ############ VOLUNTAS ############
 inspect_will_perk_effect = { global = INSPECT_WILL_PERK_EFFECT }
 train_will_perk_effect = { global = TRAIN_WILL_PERK_EFFECT }
-
 command_will_perk_effect = { global = COMMAND_WILL_PERK_EFFECT }
-
 extend_will_perk_effect = { global = EXTEND_WILL_PERK_EFFECT }
-
 hide_will_perk_effect = { global = HIDE_WILL_PERK_EFFECT }
 regenerate_will_perk_effect = { global = REGENERATE_WILL_PERK_EFFECT }
-
 defend_will_perk_effect = { global = DEFEND_WILL_PERK_EFFECT }
 attack_will_perk_effect = { global = ATTACK_WILL_PERK_EFFECT }
-
 steal_will_perk_effect = { global = STEAL_WILL_PERK_EFFECT }
-
 conquer_will_perk_effect = { global = CONQUER_WILL_PERK_EFFECT }
-
 counter_will_perk_effect = { global = COUNTER_WILL_PERK_EFFECT }
 enforce_will_perk_effect = { global = ENFORCE_WILL_PERK_EFFECT }
 strenghen_will_perk_effect = { global = STRENGHEN_WILL_PERK_EFFECT }
 
 ############ ANIMALIUM ############
 influence_animals_perk_effect = { global = INFLUENCE_ANIMALS_PERK_EFFECT }
-
 control_animals_perk_effect = { global = CONTROL_ANIMALS_PERK_EFFECT }
-
 ferocious_animals_perk_effect = { global = FEROCIOUS_ANIMALS_PERK_EFFECT }
 calm_animals_perk_effect = { global = CALM_ANIMALS_PERK_EFFECT }
-
 durrable_animals_perk_effect = { global = DURRABLE_ANIMALS_PERK_EFFECT }
-
 create_animals_perk_effect = { global = CREATE_ANIMALS_PERK_EFFECT }
-
 create_mythical_animals_perk_effect = { global = CREATE_MYTHICAL_ANIMALS_PERK_EFFECT }
-
 supernatural_animals_perk_effect = { global = SUPERNATURAL_ANIMALS_PERK_EFFECT }
-
 strong_animals_perk_effect = { global = STRONG_ANIMALS_PERK_EFFECT }
 cheap_animals_perk_effect = { global = CHEAP_ANIMALS_PERK_EFFECT }
 
 ############ VITA ############
 sense_life_perk_effect = { global = SENSE_LIFE_PERK_EFFECT }
-
 understand_life_perk_effect = { global = UNDERSTAND_LIFE_PERK_EFFECT }
-
 influence_life_perk_effect = { global = INFLUENCE_LIFE_PERK_EFFECT }
-
 close_wound_perk_effect = { global = CLOSE_WOUND_PERK_EFFECT }
 heal_illness_perk_effect = { global = HEAL_ILLNESS_PERK_EFFECT }
-
 amend_flesh_perk_effect = { global = AMEND_FLESH_PERK_EFFECT }
 inflict_wounds_perk_effect = { global = INFLICT_WOUNDS_PERK_EFFECT }
-
 inflict_illness_perk_effect = { global = INFLICT_ILLNESS_PERK_EFFECT }
 remove_flesh_perk_effect = { global = REMOVE_FLESH_PERK_EFFECT }
-
 improve_flesh_perk_effect = { global = IMPROVE_FLESH_PERK_EFFECT }
-
 long_life_perk_effect = { global = LONG_LIFE_PERK_EFFECT }
 long_life_perk_cost_effect = { global = LONG_LIFE_PERK_COST_EFFECT }
 
@@ -67,34 +46,27 @@ manipulate_flame_perk_effect = { global = MANIPULATE_FLAME_PERK_EFFECT }
 manipulate_wind_perk_effect = { global = MANIPULATE_WIND_PERK_EFFECT }
 manipulate_water_perk_effect = { global = MANIPULATE_WATER_PERK_EFFECT }
 manipulate_rock_perk_effect = { global = MANIPULATE_ROCK_PERK_EFFECT }
-
 control_flame_perk_effect = { global = CONTROL_FLAME_PERK_EFFECT }
 control_wind_perk_effect = { global = CONTROL_WIND_PERK_EFFECT }
 control_water_perk_effect = { global = CONTROL_WATER_PERK_EFFECT }
 control_rock_perk_effect = { global = CONTROL_ROCK_PERK_EFFECT }
-
 rule_flame_perk_effect = { global = RULE_FLAME_PERK_EFFECT }
 rule_wind_perk_effect = { global = RULE_WIND_PERK_EFFECT }
 rule_water_perk_effect = { global = RULE_WATER_PERK_EFFECT }
 rule_rock_perk_effect = { global = RULE_ROCK_PERK_EFFECT }
-
 manipulate_fire_perk_effect = { global = MANIPULATE_FIRE_PERK_EFFECT }
 manipulate_storm_perk_effect = { global = MANIPULATE_STORM_PERK_EFFECT }
 manipulate_stream_perk_effect = { global = MANIPULATE_STREAM_PERK_EFFECT }
 manipulate_material_perk_effect = { global = MANIPULATE_MATERIAL_PERK_EFFECT }
-
 control_fire_perk_effect = { global = CONTROL_FIRE_PERK_EFFECT }
 control_storm_perk_effect = { global = CONTROL_STORM_PERK_EFFECT }
 control_stream_perk_effect = { global = CONTROL_STREAM_PERK_EFFECT }
 control_material_perk_effect = { global = CONTROL_MATERIAL_PERK_EFFECT }
-
 rule_fire_perk_effect = { global = RULE_FIRE_PERK_EFFECT }
 rule_storm_perk_effect = { global = RULE_STORM_PERK_EFFECT }
 rule_stream_perk_effect = { global = RULE_STREAM_PERK_EFFECT }
 rule_material_perk_effect = { global = RULE_MATERIAL_PERK_EFFECT }
-
 king_of_elements_perk_effect = { global = KING_OF_ELEMENTS_PERK_EFFECT }
-
 king_of_fire_perk_effect = { global = KING_OF_FIRE_PERK_EFFECT }
 king_of_storm_perk_effect = { global = KING_OF_STORM_PERK_EFFECT }
 king_of_stream_perk_effect = { global = KING_OF_STREAM_PERK_EFFECT }
@@ -102,20 +74,25 @@ king_of_material_perk_effect = { global = KING_OF_MATERIAL_PERK_EFFECT }
 
 ############ FORTUNA ############
 lucky_existence_perk_effect = { global = LUCKY_EXISTENCE_PERK_EFFECT }
-
 share_luck_perk_effect = { global = SHARE_LUCK_PERK_EFFECT }
 steal_luck_perk_effect = { global = STEAL_LUCK_PERK_EFFECT }
-
 greater_luck_perk_effect = { global = GREATER_LUCK_PERK_EFFECT }
-
 oops_perk_effect = { global = OOPS_PERK_EFFECT }
-
 bless_character_perk_effect = { global = BLESS_CHARACTER_PERK_EFFECT }
 bless_artifact_perk_effect = { global = BLESS_ARTIFACT_PERK_EFFECT }
 bless_land_perk_effect = { global = BLESS_LAND_PERK_EFFECT }
-
 curse_perk_effect = { global = CURSE_PERK_EFFECT }
-
 tragic_day_perk_effect = { global = TRAGIC_DAY_PERK_EFFECT }
-
 lucky_day_perk_effect = { global = LUCKY_DAY_PERK_EFFECT }
+
+############ ASPECTUM ############
+enhance_vision_perk_effect = { global = ENHANCE_VISION_PERK_EFFECT }
+perfect_view_perk_effect = { global = PERFECT_VIEW_PERK_EFFECT }
+nothing_wrong_here_perk_effect = { global = NOTHING_WRONG_HERE_PERK_EFFECT }
+scry_for_secrets_perk_effect = { global = SCRY_FOR_SECRETS_PERK_EFFECT }
+scry_for_information_perk_effect = { global = SCRY_FOR_INFORMATION_PERK_EFFECT }
+scry_for_schemes_perk_effect = { global = SCRY_FOR_SCHEMES_PERK_EFFECT }
+scry_for_plans_perk_effect = { global = SCRY_FOR_PLANS_PERK_EFFECT }
+scry_for_knowledge_perk_effect = { global = SCRY_FOR_KNOWLEDGE_PERK_EFFECT }
+scry_for_education_perk_effect = { global = SCRY_FOR_EDUCATION_PERK_EFFECT }
+prefect_vision_perk_effect = { global = PREFECT_VISION_PERK_EFFECT }

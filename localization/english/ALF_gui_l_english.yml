@@ -1,22 +1,30 @@
 ﻿l_english:
  ALF_WILLMAGIC_TITLE: "[ALF_spell|E] Casting"
- ALF_caster: "Caster"
- ALF_target: "Target"
 
- ALF_filter: "Filter Spells"
+ ALF_caster: "Caster"
+ ALF_caster_character_cost: "[GetPlayer.MakeScope.ScriptValue('ALF_willpower_cost_caster_mult')|0=-V%][ALF_willpower_i]"
+ ALF_target: "Target"
+ ALF_target_character_cost: "[SpellTarget.Char.MakeScope.ScriptValue('ALF_willpower_cost_target_mult')|0=-V%][ALF_willpower_i]"
+ ALF_target_artifact_cost: "[SpellTarget.Artifact.GetOwner.MakeScope.ScriptValue('ALF_willpower_cost_target_mult')|0=-V%][ALF_willpower_i]"
+ ALF_target_title_cost: "[SpellTarget.Title.GetHolder.MakeScope.ScriptValue('ALF_willpower_cost_target_mult')|0=-V%][ALF_willpower_i]"
+
+ ALF_filter: "Filter [ALF_spells|E]"
+
+ ALF_willpower_cost: "[GetPlayer.MakeScope.ScriptValue('ALF_willpower_cost')|0=-V%][ALF_willpower_i]"
 
  spell_filter_-: ""
  spell_filter_any: "Any"
  spell_filter_character: "Type: Character"
  spell_filter_artifact: "Type: Artifact"
  spell_filter_title: "Type: Title"
- spell_filter_voluntas: "Path: Voluntas"
- spell_filter_animalium: "Path: Animalium"
- spell_filter_vita: "Path: Vita"
- spell_filter_elementis: "Path: Elementis"
- spell_filter_fortuna: "Path: Fortuna"
+ spell_filter_voluntas: "[ALF_willmagic_path|E]: [ALF_willmagic_path_voluntas|E]"
+ spell_filter_animalium: "[ALF_willmagic_path|E]: [ALF_willmagic_path_animalium|E]"
+ spell_filter_vita: "[ALF_willmagic_path|E]: [ALF_willmagic_path_vita|E]"
+ spell_filter_elementis: "[ALF_willmagic_path|E]: [ALF_willmagic_path_elementis|E]"
+ spell_filter_fortuna: "[ALF_willmagic_path|E]: [ALF_willmagic_path_fortuna|E]"
+ spell_filter_aspectum: "[ALF_willmagic_path|E]: [ALF_willmagic_path_aspectum|E]"
 
- ALF_cast_spell_sgui_type: "This spell targets different type!"
+ ALF_cast_spell_sgui_type: "This [ALF_spell|E] targets something different!"
  ALF_cast_spell_sgui_stress: "You don't have any [ALF_willpower|E] left!"
 
  ALF_execute: "Cast"

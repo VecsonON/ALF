@@ -1,23 +1,27 @@
 ﻿l_english:
  willmagic_lifestyle_name: "Will Magic"
  willmagic_lifestyle_desc: "Imprint your will into the world"
+ willmagic_lifestyle_highlight_desc: "Unlocks new [Concept('ALF_spell', 'Spells')|E]"
 
  game_concept_willmagic_lifestyle: "$willmagic_lifestyle_name$"
  game_concept_willmagic_lifestyle_desc: "$willmagic_lifestyle_desc$"
- 
- GAINS_WILLMAGIC_LIFESTYLE_LIFESTYLE_XP: "Gains $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] Experience"
- GAINED_WILLMAGIC_LIFESTYLE_LIFESTYLE_XP: "Gained $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] Experience"
- I_GAIN_WILLMAGIC_LIFESTYLE_LIFESTYLE_XP: "You gain $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] Experience"
- I_GAINED_WILLMAGIC_LIFESTYLE_LIFESTYLE_XP: "You gained $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] Experience"
- TARGET_GAINS_WILLMAGIC_LIFESTYLE_LIFESTYLE_XP: "[CHARACTER.GetShortUIName] gains $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] Experience"
- TARGET_GAINED_WILLMAGIC_LIFESTYLE_LIFESTYLE_XP: "[CHARACTER.GetShortUIName] gained $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] Experience"
 
- GAINS_A_WILLMAGIC_LIFESTYLE_LIFESTYLE_PERKPOINT: "Gains $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] [perk|E] Unlock"
- GAINED_A_WILLMAGIC_LIFESTYLE_LIFESTYLE_PERKPOINT: "Gained $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] [perk|E] Unlock"
- I_GAIN_A_WILLMAGIC_LIFESTYLE_LIFESTYLE_PERKPOINT: "You gain $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] [perk|E] Unlock"
- I_GAINED_A_WILLMAGIC_LIFESTYLE_LIFESTYLE_PERKPOINT: "You gained $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] [perk|E] Unlock"
- TARGET_GAINS_A_WILLMAGIC_LIFESTYLE_LIFESTYLE_PERKPOINT: "[CHARACTER.GetShortUIName] gains $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] [perk|E] Unlock"
- TARGET_GAINED_A_WILLMAGIC_LIFESTYLE_LIFESTYLE_PERKPOINT: "[CHARACTER.GetShortUIName] gained $VALUE|V0$ [willmagic_lifestyle_lifestyle|E] [perk|E] Unlock"
+ GAINS_WILLMAGIC_LIFESTYLE_XP: "Gains $VALUE|V0$ [willmagic_lifestyle|E] Experience"
+ GAINED_WILLMAGIC_LIFESTYLE_XP: "Gained $VALUE|V0$ [willmagic_lifestyle|E] Experience"
+ I_GAIN_WILLMAGIC_LIFESTYLE_XP: "You gain $VALUE|V0$ [willmagic_lifestyle|E] Experience"
+ I_GAINED_WILLMAGIC_LIFESTYLE_XP: "You gained $VALUE|V0$ [willmagic_lifestyle|E] Experience"
+ TARGET_GAINS_WILLMAGIC_LIFESTYLE_XP: "[CHARACTER.GetShortUIName] gains $VALUE|V0$ [willmagic_lifestyle|E] Experience"
+ TARGET_GAINED_WILLMAGIC_LIFESTYLE_XP: "[CHARACTER.GetShortUIName] gained $VALUE|V0$ [willmagic_lifestyle|E] Experience"
+
+ GAINS_A_WILLMAGIC_LIFESTYLE_PERKPOINT: "Gains $VALUE|V0$ [willmagic_lifestyle|E] [perk|E] Points"
+ GAINED_A_WILLMAGIC_LIFESTYLE_PERKPOINT: "Gained $VALUE|V0$ [willmagic_lifestyle|E] [perk|E] Points"
+ I_GAIN_A_WILLMAGIC_LIFESTYLE_PERKPOINT: "You gain $VALUE|V0$ [willmagic_lifestyle|E] [perk|E] Points"
+ I_GAINED_A_WILLMAGIC_LIFESTYLE_PERKPOINT: "You gained $VALUE|V0$ [willmagic_lifestyle|E] [perk|E] Points"
+ TARGET_GAINS_A_WILLMAGIC_LIFESTYLE_PERKPOINT: "[CHARACTER.GetShortUIName] gains $VALUE|V0$ [willmagic_lifestyle|E] [perk|E] Points"
+ TARGET_GAINED_A_WILLMAGIC_LIFESTYLE_PERKPOINT: "[CHARACTER.GetShortUIName] gained $VALUE|V0$ [willmagic_lifestyle|E] [perk|E] Points"
+
+ WILLMAGIC_LIFESTYLE_PERK_POINTS_TRIGGER: "Will Magic lifestyle perk points: $NUM|V0$"
+ NOT_WILLMAGIC_LIFESTYLE_PERK_POINTS_TRIGGER: "You must have at least $NUM|V0$ [perk|E] points in [willmagic_lifestyle|E]"
 
  REPEATABLE_PERK_EFFECT: "This [perk|E] can be repeated as many times as [perk|E] name says"
 

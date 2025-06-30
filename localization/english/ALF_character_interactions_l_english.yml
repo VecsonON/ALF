@@ -1,7 +1,16 @@
 ﻿l_english:
- ALF_open_gui_character_interaction: "Open Will Magic GUI #weak ([character|E])#!"
- ALF_open_gui_artifact_interaction: "Open Will Magic GUI #weak ([artifact|E])#!"
- ALF_open_gui_title_interaction: "Open Will Magic GUI #weak ([title|E])#!"
- ALF_open_gui_interaction_desc: "Open Will Magic GUI to cast spells"
- ALF_open_gui_interaction_effect: "You will open Will Magic GUI with target being [recipient.GetFullName]"
- ALF_open_gui_interaction_target_effect: "You will open Will Magic GUI with target being [target.GetName]"
+ ALF_open_gui_character_interaction: "Open [ALF_willmagic|E] GUI #weak ([character|E])#!"
+ ALF_open_gui_artifact_interaction: "Open [ALF_willmagic|E] GUI #weak ([artifact|E])#!"
+ ALF_open_gui_title_interaction: "Open [ALF_willmagic|E] GUI #weak ([title|E])#!"
+ ALF_open_gui_interaction_desc: "Open [ALF_willmagic|E] GUI to cast spells"
+ ALF_open_gui_interaction_effect: "You will open [ALF_willmagic|E] GUI with target being [recipient.GetFullName]"
+ ALF_open_gui_interaction_target_effect: "You will open [ALF_willmagic|E] GUI with target being [target.GetName]"
+
+ ALF_teach_willmagic_interaction: "Teach [ALF_willmagic|E]"
+ ALF_teach_willmagic_interaction_desc: "You will try to awaken [recipient.GetFullName], and teach them [ALF_willmagic|E]"
+
+ ALF_teach_path_interaction: "Share Path Knowledge"
+ ALF_teach_path_interaction_desc: "You will teach [recipient.GetFullName] your knowledge in [ALF_willmagic|E]"
+
+ ALF_request_teach_willmagic_interaction: "Request [ALF_willmagic|E] Teaching"
+ ALF_request_teach_willmagic_interaction_desc: "You will try convincing [recipient.GetFullName] to teach you their 'magic'"

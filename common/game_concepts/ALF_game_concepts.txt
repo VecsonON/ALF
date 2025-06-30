@@ -1,26 +1,46 @@
 ﻿ALF_mod = {
 	texture = "gfx/interface/icons/ALF.dds"
 }
-ALF_mental_fortitude = {
-	texture = "gfx/interface/icons/ALF_willpower.dds"
-	alias = { ALF_mental_fortitude_with_i ALF_mental_fortitude_i }
-	parent = ALF_mod
-}
 ALF_willpower = {
+	parent = ALF_mage
 	texture = "gfx/interface/icons/ALF_willpower.dds"
-	parent = ALF_mod
+	alias = { ALF_willpower_with_i ALF_willpower_i }
 }
 willmagic_lifestyle = {
-	texture = "gfx/interface/icons/traits/ALF_mage.dds"
 	parent = focus
+	texture = "gfx/interface/icons/traits/ALF_mage.dds"
 }
-ALF_spell = {
-	texture = "gfx/interface/icons/ALF_willmagic.dds"
-	parent = ALF_mod
-}
-
 
 ALF_animals_maa = {
 	parent = men_at_arms
 	texture = "gfx/interface/icons/regimenttypes/ALF_wolves.dds"
+}
+
+ALF_willmagic = {
+	parent = ALF_mage
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_willmagic_paths = {
+	parent = ALF_willmagic
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+	alias = { ALF_willmagic_path }
+}
+ALF_spell = {
+	parent = ALF_willmagic_paths
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+	alias = { ALF_spells }
+}
+ALF_first_will = {
+	parent = ALF_mod
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_mage = {
+	parent = ALF_mod
+	alias = { ALF_mages }
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_mental_fortitude = {
+	parent = ALF_mod
+	texture = "gfx/interface/icons/ALF_willpower.dds"
+	alias = { ALF_mental_fortitude_with_i ALF_mental_fortitude_i }
 }

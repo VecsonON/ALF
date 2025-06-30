@@ -68,6 +68,14 @@
 							blockoverride "opinion_box" {}
 							blockoverride "status_icons" {}
 						}
+						text_single = { 
+							align = center
+							margin_bottom = 5
+							fontsize_min = 12
+							layoutpolicy_horizontal = expanding
+							text = ALF_caster_character_cost
+							alwaystransparent = yes
+						}
 					}
 					scrollbox = {
 						# using = Window_Decoration_Spike
@@ -115,6 +123,33 @@
 						coa_title_medium = {
 							visible = "[GetScriptedGui('ALF_target_title').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							datacontext = "[GetPlayer.MakeScope.Var('spell_target').Title]"
+						}
+						text_single = { 
+							visible = "[And(GetScriptedGui('ALF_target_character').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('ALF_spell_target_is_you').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							align = center
+							margin_bottom = 5
+							fontsize_min = 12
+							layoutpolicy_horizontal = expanding
+							text = ALF_target_character_cost
+							alwaystransparent = yes
+						}
+						text_single = { 
+							visible = "[And(GetScriptedGui('ALF_target_artifact').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('ALF_spell_target_is_you').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							align = center
+							margin_bottom = 5
+							fontsize_min = 12
+							layoutpolicy_horizontal = expanding
+							text = ALF_target_artifact_cost
+							alwaystransparent = yes
+						}
+						text_single = { 
+							visible = "[And(GetScriptedGui('ALF_target_title').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('ALF_spell_target_is_you').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							align = center
+							margin_bottom = 5
+							fontsize_min = 12
+							layoutpolicy_horizontal = expanding
+							text = ALF_target_title_cost
+							alwaystransparent = yes
 						}
 					}
 				}

@@ -6,6 +6,11 @@
 		}
 	}
 
+
+	is_highlighted = {
+		always = yes
+	}
+
 	xp_per_level = 1000
 	base_xp_gain = 20
 }

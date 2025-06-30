@@ -2,18 +2,33 @@
  game_concept_ALF_mod: "Arcane Legacy 4"
  game_concept_ALF_mod_desc: "#bold Arcane Legacy 4#! is an another mod from Arcane Legacy series to Ck3 with goal of adding immersive and well designed magic to very magic-less ck3"
 
- game_concept_ALF_mental_fortitude: "Mental Fortitude"
- game_concept_ALF_mental_fortitude_i: "@willpower_icon!"
- game_concept_ALF_mental_fortitude_with_i: "$game_concept_ALF_mental_fortitude_i$Mental Fortitude"
- game_concept_ALF_mental_fortitude_desc: "#bold Mental Fortitude#!, is messure of how strong mind and will of certain character is.\n\nIn game, it works as new [skill|E] against which you can be 'dueled' as well flat reduction of any [ALF_spell|E] cost."
-
  game_concept_ALF_willpower: "Willpower"
  game_concept_ALF_willpower_i: "@willpower_icon!"
  game_concept_ALF_willpower_with_i: "$game_concept_ALF_willpower_i$Willpower"
  game_concept_ALF_willpower_desc: "#bold Willpower#!, is a form of [stress|E] which cannot be reduced via existing [stress|E]-related [modifiers|E] and is affected only by specific to [ALF_mod|E] [modifiers|E] and your [ALF_mental_fortitude|E]."
 
- game_concept_ALF_spell: "Spell"
- game_concept_ALF_spell_desc: "#bold Spell#!, is name for any effect that mage wills into existance.\n\nIn game, all spells are new effects avaiable in GUI accessable by [character_interaction|E]."
-
  game_concept_ALF_animals_maa: "Animals"
- game_concept_ALF_animals_maa_desc: "Animals are type of [men_at_arms|E] recuitable by mages proficent in Animalium Path."
+ game_concept_ALF_animals_maa_desc: "Animals are type of [men_at_arms|E] recuitable by mages proficent in [ALF_willmagic_path_animalium|E] [ALF_willmagic_path|E]."
+
+ game_concept_ALF_willmagic: "Will Magic"
+ game_concept_ALF_willmagic_desc: "Everything in the world is shaped by the pure will of sentient beings.\n\nWithout will, there is no world-only chaos. The rules and laws of reality were imposed by the [ALF_first_will|E]-call it God, if you prefer. Yet these rules are not absolute; they can be altered and influenced. That act of alteration is known as #bold 'will magic'#!.\n\nAny sentient being has the potential to reshape the world through will alone, but few succeed, lacking either the conviction or the [ALF_mental_fortitude|E] to do so."
+
+ game_concept_ALF_willmagic_paths: "Paths"
+ game_concept_ALF_willmagic_path: "Path"
+ game_concept_ALF_willmagic_paths_desc: "In theory, any practitioner of [ALF_willmagic|E] can reshape reality as they desire. In practice, however, almost all lack the [ALF_mental_fortitude|E] to do so without a framework to anchor their intent. That is precisely what Paths provide-a structured foundation upon which a mage can base their alterations, making it easier to will those changes into reality."
+
+ game_concept_ALF_spell: "Spell"
+ game_concept_ALF_spells: "Spells"
+ game_concept_ALF_spell_desc: "#bold Spell#! is the term [ALF_mages|E] use for any alteration to reality performed through the framework of a [ALF_willmagic_paths|E].\n\nWhile the effects of spells are far more limited than those achieved without a [ALF_willmagic_paths|E], they are vastly easier to cast and will into existence-still offering a powerful means to reshape reality according to the mage's vision.\n\n\nIn game, all spells are new effects available in GUI accessible by [character_interaction|E]."
+
+ game_concept_ALF_first_will: "First Will"
+ game_concept_ALF_first_will_desc: "Before the 'world' as we know it existed, there was Will-a force so powerful and potent that it created the fundamental rules and laws governing reality. Little is known about it, other than the fact that it exists, is sentient, and without it, reality as we understand it would not be possible.\n\nThe First will does not appear particularly interested in maintaining reality's current state-or perhaps it is simply preoccupied with keeping the fabric of existence intact. There is, however, one clear exception: the First will strictly forbids any form of eternity or immortality. Any attempt to achieve such things through [ALF_willmagic|E] ultimately fails."
+
+ game_concept_ALF_mage: "Mage"
+ game_concept_ALF_mages: "Mages"
+ game_concept_ALF_mage_desc: "In theory, any sentient being can shape reality according to their will. In practice, only a small fraction possess the strength to do so. Those rare individuals who can bend reality are known as 'mages'.\n\nWhile mages have the potential to alter reality freely, most lack the necessary [ALF_mental_fortitude|E]. Instead, they rely on structured techniques known as [ALF_willmagic_paths|E] to channel their will."
+
+ game_concept_ALF_mental_fortitude: "Mental Fortitude"
+ game_concept_ALF_mental_fortitude_i: "@willpower_icon!"
+ game_concept_ALF_mental_fortitude_with_i: "$game_concept_ALF_mental_fortitude_i$Mental Fortitude"
+ game_concept_ALF_mental_fortitude_desc: "#bold Mental Fortitude#! is a measure of a sentient being's willpower and conviction to shape reality according to their desires. While partially genetic, it is also something that can be cultivated through experience and personal growth.\n\nIn-game, Mental Fortitude functions as a new [skill|E]: it can be directly challenged in WILL duels and provides a flat reduction to the cost of casting [ALF_spells|E]."

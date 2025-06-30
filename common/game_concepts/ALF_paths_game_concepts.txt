@@ -1,0 +1,24 @@
+﻿ALF_willmagic_path_voluntas = {
+	parent = ALF_willmagic_paths
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_willmagic_path_animalium = {
+	parent = ALF_willmagic_paths
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_willmagic_path_vita = {
+	parent = ALF_willmagic_paths
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_willmagic_path_elementis = {
+	parent = ALF_willmagic_paths
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_willmagic_path_fortuna = {
+	parent = ALF_willmagic_paths
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}
+ALF_willmagic_path_aspectum = {
+	parent = ALF_willmagic_paths
+	texture = "gfx/interface/icons/ALF_willmagic.dds"
+}

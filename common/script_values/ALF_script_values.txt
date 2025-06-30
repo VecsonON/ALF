@@ -10,28 +10,48 @@ ALF_mental_fortitude = {
 	if = { limit = { is_alive = no } value = -1 }
 	
 }
+# Requires scope:count and optional scope:target
+ALF_willpower_cost = {
+	value = scope:count
+	multiply = ALF_willpower_cost_mult
+	subtract = ALF_willpower_cost_flat
+	min = 0
+	divide = 2
+	floor = yes
+}
 
-ALF_willpower_owned_cost_mult = {
+ALF_willpower_cost_mult = {
 	value = 1
 
+	add = ALF_willpower_cost_caster_mult
+	
+	if = { 
+		limit = { exists = scope:target } 
+		scope:target = { 
+			add = ALF_willpower_cost_target_mult
+		}
+	}
+	min = 0
+}
+
+ALF_willpower_cost_caster_mult = {
 	if = { limit = { has_perk = command_will_perk } add = -0.05 }
 	if = { limit = { has_perk = extend_will_perk } add = -0.05 }
 	if = { limit = { has_perk = attack_will_perk } add = -0.1 }
 
 	add = {
-		value = counter_will_perk_count_tt
+		value = enforce_will_perk_count_tt
 		multiply = -0.05
 	}
 }
-ALF_willpower_hostile_cost_mult = {
-	value = 1
 
+ALF_willpower_cost_target_mult = {
 	if = { limit = { has_perk = command_will_perk } add = 0.05 }
 	if = { limit = { has_perk = extend_will_perk } add = 0.05 }
 	if = { limit = { has_perk = defend_will_perk } add = 0.1 }
 
 	add = {
-		value = enforce_will_perk_count_tt
+		value = counter_will_perk_count_tt
 		multiply = 0.05
 	}
 }
@@ -69,4 +89,45 @@ ALF_devastate_duchy_level = {
 	if = { limit = { has_perk = king_of_elements_perk } add = 1 }
 	min = 1
 	multiply = -1
+}
+
+ALF_education_diplomacy_level = {
+	value = 0
+	if = { limit = { has_trait = education_diplomacy_1 } value = 1 }
+	if = { limit = { has_trait = education_diplomacy_2 } value = 2 }
+	if = { limit = { has_trait = education_diplomacy_3 } value = 3 }
+	if = { limit = { has_trait = education_diplomacy_4 } value = 4 }
+	if = { limit = { has_trait = education_diplomacy_5 } value = 5 }
+}
+ALF_education_martial_level = {
+	value = 0
+	if = { limit = { has_trait = education_martial_1 } value = 1 }
+	if = { limit = { has_trait = education_martial_2 } value = 2 }
+	if = { limit = { has_trait = education_martial_3 } value = 3 }
+	if = { limit = { has_trait = education_martial_4 } value = 4 }
+	if = { limit = { has_trait = education_martial_5 } value = 5 }
+}
+ALF_education_stewardship_level = {
+	value = 0
+	if = { limit = { has_trait = education_stewardship_1 } value = 1 }
+	if = { limit = { has_trait = education_stewardship_2 } value = 2 }
+	if = { limit = { has_trait = education_stewardship_3 } value = 3 }
+	if = { limit = { has_trait = education_stewardship_4 } value = 4 }
+	if = { limit = { has_trait = education_stewardship_5 } value = 5 }
+}
+ALF_education_intrigue_level = {
+	value = 0
+	if = { limit = { has_trait = education_intrigue_1 } value = 1 }
+	if = { limit = { has_trait = education_intrigue_2 } value = 2 }
+	if = { limit = { has_trait = education_intrigue_3 } value = 3 }
+	if = { limit = { has_trait = education_intrigue_4 } value = 4 }
+	if = { limit = { has_trait = education_intrigue_5 } value = 5 }
+}
+ALF_education_learning_level = {
+	value = 0
+	if = { limit = { has_trait = education_learning_1 } value = 1 }
+	if = { limit = { has_trait = education_learning_2 } value = 2 }
+	if = { limit = { has_trait = education_learning_3 } value = 3 }
+	if = { limit = { has_trait = education_learning_4 } value = 4 }
+	if = { limit = { has_trait = education_learning_5 } value = 5 }
 }

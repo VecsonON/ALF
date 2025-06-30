@@ -18,8 +18,8 @@
 	}
 }
 ALF_change_mental_fortitude_effect = {
-	if = { 
-		limit = { $COUNT$ > 0 } 
+	if = {
+		limit = { $COUNT$ > 0 }
 		custom_description = {
 			text = ALF_add_mental_fortitude_effect
 			value = $COUNT$
@@ -34,8 +34,8 @@ ALF_change_mental_fortitude_effect = {
 	ALF_set_variable_or_change = { VAR = ALF_mental_fortitude_var VAL = $COUNT$ }
 }
 ALF_willpower_change_effect = {
-	if = { 
-		limit = { $COUNT$ > 0 } 
+	if = {
+		limit = { $COUNT$ > 0 }
 		custom_description = {
 			text = ALF_willpower_cost_effect
 			value = $COUNT$
@@ -48,12 +48,12 @@ ALF_willpower_change_effect = {
 		}
 	}
 	hidden_effect = {
-		if = { limit = { NOT = { $COUNT$ = 0 } } 
+		if = { limit = { NOT = { $COUNT$ = 0 } }
 			add_character_flag = ALF_willpower_change_flag
 			save_scope_value_as = { name = saved_stress  value = stress }
-			
+
 			add_stress = 100
-			
+
 			while = {
 				limit = { stress = scope:saved_stress }
 				add_character_modifier = ALF_will_power_1_modifier
@@ -66,7 +66,7 @@ ALF_willpower_change_effect = {
 				add_character_modifier = ALF_will_power_2_modifier
 				force_character_skill_recalculation = yes
 				add_stress = -600
-			}      
+			}
 			add_stress = 100
 			while = {
 				limit = { NOT = { stress = 100 } }
@@ -106,32 +106,17 @@ ALF_willpower_change_effect = {
 }
 
 ALF_use_willpower_effect = {
-	save_scope_value_as = { 
-		name = true_value 
-		value = { 
-			value = $COUNT$ 
-			subtract = ALF_willpower_cost_flat 
-			multiply = ALF_willpower_owned_cost_mult 
-		} 
+	save_scope_value_as = {
+		name = count
+		value = $COUNT$
 	}
-	ALF_willpower_change_effect = { COUNT = scope:true_value }
+	ALF_willpower_change_effect = { COUNT = ALF_willpower_cost }
 }
 
 ALF_use_willpower_with_enemy_effect = {
-	if = { 
-		limit = { ROOT = $TARGET$ } 
-		ALF_use_willpower_effect = { COUNT = $COUNT$ }
+	if = {
+		limit = { NOT = { ROOT = $TARGET$ } }
+		$TARGET$ = { save_scope_as = target }
 	}
-	else = {
-		save_scope_value_as = { 
-			name = true_value 
-			value = { 
-				value = $COUNT$ 
-				subtract = ALF_willpower_cost_flat 
-				multiply = ALF_willpower_owned_cost_mult 
-				multiply = $TARGET$.ALF_willpower_hostile_cost_mult 
-			} 
-		}
-		ALF_willpower_change_effect = { COUNT = scope:true_value }
-	}
+	ALF_use_willpower_effect = { COUNT = $COUNT$ }
 }
