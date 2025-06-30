@@ -1,7 +1,7 @@
 ﻿l_english:
  spell_inspect_will: "Inspect Will"
  ALF_inspect_will_effect: "You will scry [SpellTarget.Char.GetFullName] to determinate their [ALF_mental_fortitude|E]."
- ALF_inspect_will_effect_real: "[ALF_mental_fortitude|E] of [SpellTarget.Char.GetFullName] is #V;bold [SpellTarget.Char.MakeScope.ScriptValue('ALF_mental_fortitude')]#!"
+ ALF_inspect_will_effect_real: "[ALF_mental_fortitude|E] of [SpellTarget.Char.GetFullName] is #V;bold [SpellTarget.Char.MakeScope.ScriptValue('ALF_mental_fortitude')]#! ([SpellTarget.Char.Custom('ALFMentalFortitudeLevel')])"
 
  spell_steal_will: "Steal Will"
 

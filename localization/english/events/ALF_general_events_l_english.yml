@@ -1,6 +1,10 @@
 ﻿l_english: 
- ALF_events.1.t: "Mental Break: Moving Cup?"
- ALF_events.1.desc: "Lately, I've felt a growing surge of anger rising within me. Just today, as I was about to hurl the cup I was drinking from against the wall, it flew from my hand on its own-shattering without me lifting a finger. As I stood there, stunned, I felt something shift. It was as if the entire world around me changed in response to my rage."
- ALF_events.1.a: "Am I going insane?"
- ALF_events.1.a.a: "No, I will study it further"
- ALF_events.1.a.b: "I think? After all, for some time already I do see that flying pig..."
+ ALF_events.0001.t: "[ALF_mod|E]!"
+ ALF_events.0001.desc: "Welcome to the 4th Iteration of Arcane Legacy!\nFor new players: #italic Arcane Legacy#! is a series of mods designed to bring magic into the grounded world of #bold #!Crusader Kings III#!, all developed by #bold VecsonON#!.\n\nIn this fourth iteration, I've chosen to return to the roots of #italic Arcane Legacy#!-focusing on a streamlined lifestyle tree rather than an overly complex GUI. While earlier versions like AL1 and AL2 were limited in scope due to their rigid lore, this version has been built from the ground up with expandability in mind, aiming to greatly increase the mod's lifespan.\n\nThanks to my expanded experience with CK3 modding-both from the previous #italic Arcane Legacy#! mods and my time as a developer for #italic Princes of Darkness#!-this iteration features a more robust and flexible framework, making it easier than ever to build upon and maintain.\n\nBecoming a [GetTrait('ALF_mage').GetName(GetPlayer)] in this mod is quite simple, either convince already existing mage to teach you, or randomly become one after [mental_break|E]"
+ ALF_events.0001.a: "Let's start"
+
+ ALF_events.9001.t: "Mental Break: Moving Cup?"
+ ALF_events.9001.desc: "Lately, I've felt a growing surge of anger rising within me. Just today, as I was about to hurl the cup I was drinking from against the wall, it flew from my hand on its own-shattering without me lifting a finger. As I stood there, stunned, I felt something shift. It was as if the entire world around me changed in response to my rage."
+ ALF_events.9001.a: "Am I going insane?"
+ ALF_events.9001.a.a: "No, I will study it further"
+ ALF_events.9001.a.b: "I think? After all, for some time already I do see that flying pig..."

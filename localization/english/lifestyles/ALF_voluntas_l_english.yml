@@ -22,7 +22,7 @@
  COMMAND_WILL_PERK_EFFECT: "#flavor [ALF_mage|E] can manipulate [ALF_willpower|E] much easier than before.#!"
  EXTEND_WILL_PERK_EFFECT: "#flavor [ALF_mage|E] can extend their own [ALF_willpower|E] beyond what was possible before.#!"
  HIDE_WILL_PERK_EFFECT: "Become Immune to [GetPerk('inspect_will_perk').GetName(GetPlayer)].\n#flavor [ALF_mage|E] can hide their [ALF_mental_fortitude|E] from spying eyes.#!"
- REGENERATE_WILL_PERK_EFFECT: "Every #V 10#! years, gain 1 [ALF_mental_fortitude|E].\n#flavor [ALF_mage|E] can create infinite loop which generates free [ALF_willpower|E] over time.#!"
+ REGENERATE_WILL_PERK_EFFECT: "Every #V 10#! years, gain 1 additional [ALF_mental_fortitude|E].\n#flavor [ALF_mage|E] can create infinite loop which generates free [ALF_willpower|E] over time.#!"
  DEFEND_WILL_PERK_EFFECT: "#flavor [ALF_mage|E]'s defensive abilites against hostile will are much stronger.#!"
  ATTACK_WILL_PERK_EFFECT: "#flavor [ALF_mage|E]'s aggresive abilites against hostile will are much stronger.#!"
  STEAL_WILL_PERK_EFFECT: "$general_spell_loca$ Steal 1 [ALF_mental_fortitude|E] from [imprisoned|E] target at cost of 100 [ALF_willpower|E].\n#flavor [ALF_mage|E] can steal [ALF_mental_fortitude|E] of other beings although at great cost to both of sides.#!"

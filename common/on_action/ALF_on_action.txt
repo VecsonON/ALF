@@ -21,54 +21,51 @@ ALF_on_game_start_after_lobby = {
 			every_child = {
 				limit = { is_alive = yes }
 				ALF_set_mental_fortitude_from_parents_effect = yes
+				ALF_change_mental_fortitude_effect = { COUNT = ALF_mental_fortitude_from_living }
 			}
+			ALF_change_mental_fortitude_effect = { COUNT = ALF_mental_fortitude_from_living }
+		}
+		every_player = {
+			trigger_event = ALF_events.0001
 		}
 	}
 }
 ALF_yearly_global_pulse = {
 	effect = {
-		trigger_event = { on_action = ALF_quarterly_global_pulse days = 45 }
-		trigger_event = { on_action = ALF_quarterly_global_pulse days = 135 }
-		trigger_event = { on_action = ALF_quarterly_global_pulse days = 225 }
-		trigger_event = { on_action = ALF_quarterly_global_pulse days = 315 }
 		every_living_character = {
-			limit = { has_perk = regenerate_will_perk }
 			if = {
 				limit = {
 					save_temporary_scope_value_as = {
 						name = biyearly_countdown
-						value = { value = current_year modulo = 10 }
+						value = { value = current_year modulo = 2 }
 					}
 					scope:biyearly_countdown = 0
 				}
-				send_interface_message = {
-					title = regenerate_will_perk_name
-					ALF_change_mental_fortitude_effect = { COUNT = 1 }
+				if = { limit = { has_perk = regenerate_will_perk } 
+					send_interface_message = {
+						title = regenerate_will_perk_name
+						ALF_change_mental_fortitude_effect = { COUNT = 2 }
+					}
+				}
+				else = {
+					send_interface_message = {
+						title = ALF_yearly_global_pulse_mental_fortitude
+						ALF_change_mental_fortitude_effect = { COUNT = 1 }
+					}
 				}
 			}
-		}
-		every_living_character = {
-			limit = { is_ai = yes has_trait = ALF_mage }
 			if = {
-				limit = { NOT = { has_focus = willmagic_focus } }
+				limit = { 
+					is_ai = yes 
+					has_trait = ALF_mage
+					NOT = { has_focus = willmagic_focus } 
+				}
 				random = {
 					chance = 1 # Sometimes AI will switch to willmagic
 					set_focus = willmagic_focus
 				}
 			}
 		}
-	}
-}
-ALF_quarterly_global_pulse = {
-	effect = {
-		trigger_event = { on_action = ALF_monthly_global_pulse }
-		trigger_event = { on_action = ALF_monthly_global_pulse months = 1 }
-		trigger_event = { on_action = ALF_monthly_global_pulse months = 2 }
-	}
-}
-ALF_monthly_global_pulse = {
-	effect = {
-		
 	}
 }
 

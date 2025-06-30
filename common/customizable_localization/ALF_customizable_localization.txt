@@ -1,0 +1,32 @@
+﻿ALFMentalFortitudeLevel = {
+	type = character
+
+	text = {
+		trigger = { ALF_mental_fortitude > 20 }
+		localization_key = ALFMentalFortitudeLevel_Inhuman
+	}
+	text = {
+		trigger = { ALF_mental_fortitude > 15 }
+		localization_key = ALFMentalFortitudeLevel_Insane
+	}
+	text = {
+		trigger = { ALF_mental_fortitude > 10 }
+		localization_key = ALFMentalFortitudeLevel_Very_High
+	}
+	text = {
+		trigger = { ALF_mental_fortitude > 6 }
+		localization_key = ALFMentalFortitudeLevel_High
+	}
+	text = {
+		trigger = { ALF_mental_fortitude > 4 }
+		localization_key = ALFMentalFortitudeLevel_Normal
+	}
+	text = {
+		trigger = { ALF_mental_fortitude > 2 }
+		localization_key = ALFMentalFortitudeLevel_Weak
+	}
+
+	text = {
+		localization_key = ALFMentalFortitudeLevel_Very_Weak
+	}
+}

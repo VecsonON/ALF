@@ -5,6 +5,8 @@
 	name = trait_ALF_mage
 
 	flag = ALF_has_access_to_willmagic
+
+	ruler_designer_cost = 20
 	
 	desc = {
 		first_valid = {	

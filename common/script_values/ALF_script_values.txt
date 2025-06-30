@@ -10,6 +10,12 @@ ALF_mental_fortitude = {
 	if = { limit = { is_alive = no } value = -1 }
 	
 }
+ALF_mental_fortitude_from_living = {
+	value = age
+	divide = 10
+	floor = yes
+}
+
 # Requires scope:count and optional scope:target
 ALF_willpower_cost = {
 	value = scope:count

@@ -1,10 +1,26 @@
 ﻿namespace = ALF_events
 
-ALF_events.1 = {
+###
+# 9XXX - Stress
+# 0XXX - General
+
+ALF_events.0001 = {
 	type = character_event
-	title = ALF_events.1.t
-	desc = ALF_events.1.desc
-	
+	title = ALF_events.0001.t
+	desc = ALF_events.0001.desc
+
+	theme = witchcraft
+
+	option = {
+		name = ALF_events.0001.a
+	}
+}
+
+ALF_events.9001 = {
+	type = character_event
+	title = ALF_events.9001.t
+	desc = ALF_events.9001.desc
+
 	theme = mental_break
 	left_portrait = {
 		character = root
@@ -15,15 +31,15 @@ ALF_events.1 = {
 		NOT = { has_trait = ALF_mage }
 	}
 	option = {
-		name = ALF_events.1.a
+		name = ALF_events.9001.a
 		random_list = {
-			5 = { 
-				desc = ALF_events.1.a.a
-				add_trait = ALF_mage 
+			5 = {
+				desc = ALF_events.9001.a.a
+				add_trait = ALF_mage
 			}
 			2 = {
 				trigger = { NOT = { has_trait = lunatic_1 } }
-				desc = ALF_events.1.a.b
+				desc = ALF_events.9001.a.b
 				add_trait = lunatic_1
 			}
 		}

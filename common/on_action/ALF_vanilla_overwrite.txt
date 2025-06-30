@@ -29,21 +29,21 @@ on_stress_level_4 = {
 
 stress_threshold_level_1_event = {
 	random_events = {
-		500 = ALF_events.1
+		500 = ALF_events.9001
 	}
 }
 stress_threshold_level_2_event = {
 	random_events = {
-		800 = ALF_events.1
+		800 = ALF_events.9001
 	}
 }
 stress_threshold_level_3_event = {
 	random_events = {
-		1000 = ALF_events.1
+		1000 = ALF_events.9001
 	}
 }
 stress_threshold_level_4_event = {
 	random_events = {
-		2000 = ALF_events.1
+		2000 = ALF_events.9001
 	}
 }

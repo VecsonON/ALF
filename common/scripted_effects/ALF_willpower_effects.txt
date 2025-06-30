@@ -16,6 +16,7 @@
 		3 = { change_variable = { name = ALF_mental_fortitude_genetic_var add = 1 } }
 		1 = { change_variable = { name = ALF_mental_fortitude_genetic_var add = 2 } }
 	}
+	if = { limit = { var:ALF_mental_fortitude_genetic_var <= 0 } set_variable = { name = ALF_mental_fortitude_genetic_var value = 0 } }
 }
 ALF_change_mental_fortitude_effect = {
 	if = {

@@ -42,3 +42,13 @@
  ALF_generalized_mental_fortitude_duel_tt:0 "[ALF_mental_fortitude_with_i|E] Challenge against [TARGET_CHARACTER.GetTitledFirstName]"
 
  ALF_target_is_root: "You are not [SpellTarget.Char.GetTitledFirstName]!"
+
+ ALFMentalFortitudeLevel_Inhuman: "#color_yellow;bold Inhuman#!"
+ ALFMentalFortitudeLevel_Insane: "#color_yellow Insane#!"
+ ALFMentalFortitudeLevel_Very_High: "#color_light_red;bold Very High#!"
+ ALFMentalFortitudeLevel_High: "#color_light_red High#!"
+ ALFMentalFortitudeLevel_Normal: "#color_light_blue Normal#!"
+ ALFMentalFortitudeLevel_Weak: "#color_dark_gray;bold Weak#!"
+ ALFMentalFortitudeLevel_Very_Weak: "#color_dark_gray Very Weak#!"
+
+ ALF_yearly_global_pulse_mental_fortitude: "With age, comes stronger mind"
