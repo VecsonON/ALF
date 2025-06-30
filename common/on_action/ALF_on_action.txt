@@ -47,6 +47,16 @@ ALF_yearly_global_pulse = {
 				}
 			}
 		}
+		every_living_character = {
+			limit = { is_ai = yes has_trait = ALF_mage }
+			if = {
+				limit = { NOT = { has_focus = willmagic_focus } }
+				random = {
+					chance = 1 # Sometimes AI will switch to willmagic
+					set_focus = willmagic_focus
+				}
+			}
+		}
 	}
 }
 ALF_quarterly_global_pulse = {

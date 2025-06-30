@@ -49,7 +49,7 @@ ALF_willpower_change_effect = {
 	}
 	hidden_effect = {
 		if = { limit = { NOT = { $COUNT$ = 0 } }
-			add_character_flag = ALF_willpower_change_flag
+			add_character_flag = recently_hit_stress_threshold
 			save_scope_value_as = { name = saved_stress  value = stress }
 
 			add_stress = 100
@@ -92,7 +92,7 @@ ALF_willpower_change_effect = {
 			}
 			add_stress = -600
 			add_stress = scope:saved_stress
-			remove_character_flag = ALF_willpower_change_flag
+			remove_character_flag = recently_hit_stress_threshold
 			add_stress = $COUNT$
 			remove_all_character_modifier_instances = ALF_will_power_1_modifier
 			remove_all_character_modifier_instances = ALF_will_power_2_modifier
