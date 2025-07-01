@@ -52,3 +52,7 @@
  ALFMentalFortitudeLevel_Very_Weak: "#color_dark_gray Very Weak#!"
 
  ALF_yearly_global_pulse_mental_fortitude: "With age, comes stronger mind"
+
+ ALF_unnamed: "Unnamed"
+
+ GAME_OVER_WORLD_END: "World doesn't exist anymore."

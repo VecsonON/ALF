@@ -231,12 +231,11 @@ ALF_request_teach_willmagic_interaction = {
 	}
 
 	ai_accept = {
-		base = -100
+		base = -75
 		
 		opinion_modifier = { # Opinion Factor
 			who = scope:recipient
 			opinion_target = scope:actor
-			multiplier = 0.75
 			desc = AI_OPINION_REASON
 		}
 		modifier = { # Say no to rivals

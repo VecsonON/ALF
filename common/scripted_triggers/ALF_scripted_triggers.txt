@@ -23,3 +23,26 @@ ALF_target_is_root = {
 		var:spell_target = ROOT
 	}
 }
+
+ALF_master_mage_trigger = {
+	OR = {
+		has_perk = conquer_will_perk # Voluntas
+		has_perk = supernatural_animals_perk # Animalium
+		has_perk = improve_flesh_perk # Vita
+		has_perk = king_of_elements_perk # Elementis
+		has_perk = tragic_day_perk # Fortuna
+		has_perk = scry_for_education_perk # Aspectum
+	}
+}
+
+ALF_archmage_trigger = {
+	calc_true_if = {
+		amount >= 3
+		has_perk = conquer_will_perk # Voluntas
+		has_perk = supernatural_animals_perk # Animalium
+		has_perk = improve_flesh_perk # Vita
+		has_perk = king_of_elements_perk # Elementis
+		has_perk = tragic_day_perk # Fortuna
+		has_perk = scry_for_education_perk # Aspectum
+	}
+}

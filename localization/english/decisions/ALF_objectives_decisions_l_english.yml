@@ -1,0 +1,6 @@
+﻿l_english:
+ ALF_greatest_spell_objective_decision: "Greatest [ALF_spell|E]"
+ ALF_greatest_spell_objective_decision_tooltip: "If sufencly powerful, one can ignore even most stricts taboos"
+ ALF_greatest_spell_objective_decision_desc: "The [ALF_first_will|E] does not permit immortality-that is a known fact. Countless [ALF_mages|E] have tried, and all have failed. But recently, a new idea has begun circulating among certain [ALF_mage|E] circles:\n\n\"What if we could put the [ALF_first_will|E] to sleep, just for a moment? Would immortality still be impossible?\"\n\nIt's a question as bold as it is dangerous. One miscalculation, and reality itself could collapse without the [ALF_first_will|E]'s support. But the reward for a successful [ALF_spell|E]? Eternal life."
+ ALF_greatest_spell_objective_decision_confirm: "End of the World, or eternal life?"
+ ALF_greatest_spell_objective_decision_effect: "#X This [ALF_spell|E] is DANGEROUS, outcome is uncertain and highly based on your skill. But if successful you will gain #bold [GetTrait('immortal').GetName(GetPlayer)]#!#!"

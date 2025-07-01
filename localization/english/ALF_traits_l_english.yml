@@ -1,4 +1,8 @@
 ﻿l_english:
  trait_ALF_mage: "Mage"
+ trait_ALF_master_mage: "Master Mage"
+ trait_ALF_archmage: "Archmage"
  trait_ALF_mage_desc: "This character is a [ALF_mage|E], allowing them to change world around by using [ALF_willmagic|E]."
  trait_character_ALF_mage_desc: "[ROOT.Char.GetFirstName] is a [ALF_mage|E], allowing them to change world around them by using [ALF_willmagic|E]."
+ trait_character_ALF_master_mage_desc: "[ROOT.Char.GetFirstName] is an master [ALF_mage|E], that mastered at least 1 [ALF_willmagic|E] [ALF_willmagic_path|E]."
+ trait_character_ALF_archmage_desc: "[ROOT.Char.GetFirstName] is an [Concept('ALF_mage','Archmage')|E], that mastered at least 3 [ALF_willmagic|E] [ALF_willmagic_paths|E]."

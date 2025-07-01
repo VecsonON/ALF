@@ -1,0 +1,47 @@
+﻿ALF_greatest_spell_objective_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = ALF_greatest_spell_objective_decision_desc
+
+	is_shown = {
+		NOT = {
+			is_target_in_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:ALF_greatest_spell_objective_decision
+			}
+		}
+		has_trait = ALF_mage
+		ALF_master_mage_trigger = yes
+	}
+
+	is_valid = {
+
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		custom_tooltip = ALF_greatest_spell_objective_decision_effect
+		add_to_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:ALF_greatest_spell_objective_decision
+		}
+		trigger_event = ALF_events.1000
+	}
+
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

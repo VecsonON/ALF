@@ -3,6 +3,7 @@
 ###
 # 9XXX - Stress
 # 0XXX - General
+# 1XXX - Greatest Spell Events
 
 ALF_events.0001 = {
 	type = character_event
@@ -13,6 +14,313 @@ ALF_events.0001 = {
 
 	option = {
 		name = ALF_events.0001.a
+	}
+}
+
+scripted_effect ALF_greatest_spell_increase_mental_dif = {
+	custom_tooltip = {
+		text = ALF_greatest_spell_objective_decision_mental_fortitude_more_dificult
+		ALF_set_variable_or_change = { VAR = ALF_greatest_spell_mental_fortitude VAL = 5 }
+	}
+}
+
+scripted_effect ALF_greatest_spell_increase_success_chance = {
+	custom_tooltip = {
+		text = ALF_greatest_spell_increase_success_chance
+		ALF_set_variable_or_change = { VAR = ALF_greatest_spell_success_chance VAL = 10 }
+	}
+}
+
+ALF_events.1000 = {
+	type = character_event
+	title = ALF_events.1000.t
+	desc = ALF_events.1000.desc
+
+	theme = witchcraft
+
+	option = {
+		name = ALF_events.1000.a
+		trigger_event = { id = ALF_events.1001 days = { 2 10 } }
+	}
+
+	option = {
+		name = ALF_events.1000.b
+		remove_list_variable = {
+			name = unavailable_unique_decisions
+			target = flag:ALF_greatest_spell_objective_decision
+		}
+	}
+}
+
+ALF_events.1001 = {
+	type = character_event
+	title = ALF_events.1001.t
+	desc = ALF_events.1001.desc
+
+	theme = witchcraft
+
+	option = { 
+		trigger = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude >= var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		show_as_unavailable = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude < var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		name = ALF_events.1001.a
+		ALF_greatest_spell_increase_mental_dif = yes
+		ALF_greatest_spell_increase_success_chance = yes
+		
+		ALF_willpower_change_effect = { COUNT = 100 }
+	}
+
+	option = {
+		name = ALF_events.1001.b
+		trigger = {
+			custom_tooltip = {
+				text = ALF_events.1001.b.tt
+				OR = {
+					learning >= 20
+					any_relation = { has_trait = immortal }
+				}
+			}
+		}
+		show_as_unavailable = {
+			custom_tooltip = {
+				text = ALF_events.1001.b.tt
+				learning <= 20
+				NOT = { any_relation = { has_trait = immortal } }
+				
+			}
+		}
+		ALF_greatest_spell_increase_success_chance = yes
+	}
+
+	option = {
+		name = ALF_events.1001.c
+	}
+
+	after = {
+		trigger_event = { id = ALF_events.1002 days = { 10 25 } }
+	}
+}
+
+ALF_events.1002 = {
+	type = character_event
+	title = ALF_events.1002.t
+	desc = ALF_events.1002.desc
+
+	theme = witchcraft
+
+	option = { 
+		trigger = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude >= var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		show_as_unavailable = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude < var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		name = ALF_events.1002.a
+		ALF_greatest_spell_increase_mental_dif = yes
+		ALF_greatest_spell_increase_success_chance = yes
+		
+		ALF_willpower_change_effect = { COUNT = 100 }
+	}
+
+	option = {
+		name = ALF_events.1002.b
+		trigger = {
+			custom_tooltip = {
+				text = ALF_events.1002.b.tt
+				ALF_archmage_trigger = yes
+			}
+		}
+		show_as_unavailable = {
+			custom_tooltip = {
+				text = ALF_events.1002.b.tt
+				ALF_archmage_trigger = no
+			}
+		}
+		ALF_greatest_spell_increase_success_chance = yes
+	}
+
+	option = {
+		name = ALF_events.1002.c
+	}
+
+	after = {
+		trigger_event = { id = ALF_events.1003 days = { 25 50 } }
+	}
+}
+
+ALF_events.1003 = {
+	type = character_event
+	title = ALF_events.1003.t
+	desc = ALF_events.1003.desc
+
+	theme = witchcraft
+
+	option = { 
+		trigger = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude >= var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		show_as_unavailable = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude < var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		name = ALF_events.1003.a
+		ALF_greatest_spell_increase_mental_dif = yes
+		ALF_greatest_spell_increase_success_chance = yes
+		
+		ALF_willpower_change_effect = { COUNT = 100 }
+	}
+
+	option = {
+		name = ALF_events.1003.b
+		trigger = {
+			custom_tooltip = {
+				text = ALF_events.1003.b.tt
+				OR = {
+					martial >= 20
+					prowess >= 60
+				}
+			}
+		}
+		show_as_unavailable = {
+			custom_tooltip = {
+				text = ALF_events.1003.b.tt
+				NOT = {
+					AND = {
+						martial >= 20
+						prowess >= 60
+					}
+				}
+			}
+		}
+		ALF_greatest_spell_increase_success_chance = yes
+	}
+
+	option = {
+		name = ALF_events.1003.c
+	}
+
+	after = {
+		trigger_event = { id = ALF_events.1004 days = { 50 100 } }
+	}
+}
+
+ALF_events.1004 = {
+	type = character_event
+	title = ALF_events.1004.t
+	desc = ALF_events.1004.desc
+
+	theme = witchcraft
+
+	option = { 
+		trigger = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude >= var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		show_as_unavailable = {
+			custom_tooltip = {
+				text = ALF_events.1001.a.tt
+				ALF_mental_fortitude < var:ALF_greatest_spell_mental_fortitude
+			}
+		}
+		name = ALF_events.1004.a
+		ALF_greatest_spell_increase_mental_dif = yes
+		ALF_greatest_spell_increase_success_chance = yes
+		
+		ALF_willpower_change_effect = { COUNT = 100 }
+	}
+
+	option = {
+		name = ALF_events.1004.b
+		trigger = {
+			gold >= 1000
+		}
+		show_as_unavailable = {
+			gold < 1000
+		}
+		ALF_greatest_spell_increase_success_chance = yes
+	}
+
+	option = {
+		name = ALF_events.1004.c
+	}
+
+	after = {
+		trigger_event = { id = ALF_events.1005 days = { 5 10 } }
+	}
+}
+
+ALF_events.1005 = {
+	type = character_event
+	title = ALF_events.1005.t
+	desc = ALF_events.1005.desc
+
+	theme = witchcraft
+
+	option = { 
+		name = ALF_events.1005.a
+		random_list = {
+			0 = {
+				desc = ALF_events.1005.a.a.tt
+				modifier = { add = var:ALF_greatest_spell_success_chance }
+				add_trait = immortal
+			}
+			0 = {
+				desc = ALF_events.1005.a.b.tt
+				modifier = { add = var:ALF_greatest_spell_success_chance }
+				modifier = { add = var:ALF_greatest_spell_success_chance }
+				remove_list_variable = {
+					name = unavailable_unique_decisions
+					target = flag:ALF_greatest_spell_objective_decision
+				}
+			}
+			100 = {
+				desc = ALF_events.1005.a.c.tt
+				modifier = { add = { value = var:ALF_greatest_spell_success_chance multiply = -1 } }
+				modifier = { add = { value = var:ALF_greatest_spell_success_chance multiply = -1 } }
+				modifier = { add = { value = var:ALF_greatest_spell_success_chance multiply = -1 } }
+				custom_tooltip =  ALF_events.1005.a.c.effect
+				set_global_variable = {
+					name = the_end_of_the_world
+					value = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ALF_events.1005.b
+		remove_list_variable = {
+			name = unavailable_unique_decisions
+			target = flag:ALF_greatest_spell_objective_decision
+		}
+	}
+
+	after = {
+		if = { limit = { has_variable = ALF_greatest_spell_mental_fortitude } remove_variable = ALF_greatest_spell_mental_fortitude }
+		if = { limit = { has_variable = ALF_greatest_spell_success_chance } remove_variable = ALF_greatest_spell_success_chance }
+		
 	}
 }
 

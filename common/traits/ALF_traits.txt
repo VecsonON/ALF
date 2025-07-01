@@ -2,19 +2,39 @@
 	stress_gain_mult = -0.25
 	stress_loss_mult = 0.25
 
-	name = trait_ALF_mage
-
 	flag = ALF_has_access_to_willmagic
 
 	ruler_designer_cost = 20
-	
-	desc = {
-		first_valid = {	
+
+	name = {
+		first_valid = {
 			triggered_desc = {
-				trigger = { NOT = { exists = this } }
-				desc = trait_ALF_mage_desc
-			}	
-			desc = trait_character_ALF_mage_desc
+				trigger = { exists = this ALF_archmage_trigger = yes }
+				desc = trait_ALF_archmage
+			}
+			triggered_desc = {
+				trigger = { exists = this ALF_master_mage_trigger = yes }
+				desc = trait_ALF_master_mage
+			}
+			desc = trait_ALF_mage
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = this ALF_archmage_trigger = yes }
+				desc = trait_character_ALF_archmage_desc
+			}
+			triggered_desc = {
+				trigger = { exists = this ALF_master_mage_trigger = yes }
+				desc = trait_character_ALF_master_mage_desc
+			}
+			triggered_desc = {
+				trigger = { exists = this }
+				desc = trait_character_ALF_mage_desc
+			}
+			desc = trait_ALF_mage_desc
 		}
 	}
 }

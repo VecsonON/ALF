@@ -2,3 +2,104 @@
 	if = { limit = { has_variable = $VAR$ } change_variable = { name = $VAR$ add = $VAL$ } }
 	else = { set_variable = { name = $VAR$ value = $VAL$ } }
 }
+
+ALF_assign_perk = {
+	if = {
+		limit = { NOT = { has_perk = $PERK$ } }
+		add_perk = $PERK$
+	}
+}
+
+ALF_assign_voluntas_perks_effect = {
+	if = { limit = { $LEVEL$ >= 1 } ALF_assign_perk = { PERK = inspect_will_perk } }
+	if = { limit = { $LEVEL$ >= 1 } ALF_assign_perk = { PERK = train_will_perk } }
+	if = { limit = { $LEVEL$ >= 2 } ALF_assign_perk = { PERK = command_will_perk } }
+	if = { limit = { $LEVEL$ >= 3 } ALF_assign_perk = { PERK = extend_will_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = hide_will_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = regenerate_will_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = defend_will_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = attack_will_perk } }
+	if = { limit = { $LEVEL$ >= 6 } ALF_assign_perk = { PERK = steal_will_perk } }
+	if = { limit = { $LEVEL$ >= 7 } ALF_assign_perk = { PERK = conquer_will_perk } }
+}
+
+ALF_assign_animalium_perks_effect = {
+	if = { limit = { $LEVEL$ >= 1 } ALF_assign_perk = { PERK = influence_animals_perk } }
+	if = { limit = { $LEVEL$ >= 2 } ALF_assign_perk = { PERK = control_animals_perk } }
+	if = { limit = { $LEVEL$ >= 3 } ALF_assign_perk = { PERK = ferocious_animals_perk } }
+	if = { limit = { $LEVEL$ >= 3 } ALF_assign_perk = { PERK = calm_animals_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = durrable_animals_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = create_animals_perk } }
+	if = { limit = { $LEVEL$ >= 6 } ALF_assign_perk = { PERK = create_mythical_animals_perk } }
+	if = { limit = { $LEVEL$ >= 7 } ALF_assign_perk = { PERK = supernatural_animals_perk } }
+}
+
+ALF_assign_vita_perks_effect = {
+	if = { limit = { $LEVEL$ >= 1 } ALF_assign_perk = { PERK = sense_life_perk } }
+	if = { limit = { $LEVEL$ >= 2 } ALF_assign_perk = { PERK = understand_life_perk } }
+	if = { limit = { $LEVEL$ >= 3 } ALF_assign_perk = { PERK = influence_life_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = close_wound_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = heal_illness_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = amend_flesh_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = inflict_wounds_perk } }
+	if = { limit = { $LEVEL$ >= 6 } ALF_assign_perk = { PERK = inflict_illness_perk } }
+	if = { limit = { $LEVEL$ >= 6 } ALF_assign_perk = { PERK = remove_flesh_perk } }
+	if = { limit = { $LEVEL$ >= 7 } ALF_assign_perk = { PERK = improve_flesh_perk } }
+}
+
+ALF_assign_elementis_perks_effect = {
+	if = { limit = { $LEVEL$ >= 1 flag:$TYPE$ = flag:fire } ALF_assign_perk = { PERK = manipulate_flame_perk } }
+	if = { limit = { $LEVEL$ >= 2 flag:$TYPE$ = flag:fire } ALF_assign_perk = { PERK = control_flame_perk } }
+	if = { limit = { $LEVEL$ >= 3 flag:$TYPE$ = flag:fire } ALF_assign_perk = { PERK = rule_flame_perk } }
+	if = { limit = { $LEVEL$ >= 4 flag:$TYPE$ = flag:fire } ALF_assign_perk = { PERK = manipulate_fire_perk } }
+	if = { limit = { $LEVEL$ >= 5 flag:$TYPE$ = flag:fire } ALF_assign_perk = { PERK = control_fire_perk } }
+	if = { limit = { $LEVEL$ >= 6 flag:$TYPE$ = flag:fire } ALF_assign_perk = { PERK = rule_fire_perk } }
+
+	if = { limit = { $LEVEL$ >= 1 flag:$TYPE$ = flag:wind } ALF_assign_perk = { PERK = manipulate_wind_perk } }
+	if = { limit = { $LEVEL$ >= 2 flag:$TYPE$ = flag:wind } ALF_assign_perk = { PERK = control_wind_perk } }
+	if = { limit = { $LEVEL$ >= 3 flag:$TYPE$ = flag:wind } ALF_assign_perk = { PERK = rule_wind_perk } }
+	if = { limit = { $LEVEL$ >= 4 flag:$TYPE$ = flag:wind } ALF_assign_perk = { PERK = manipulate_storm_perk } }
+	if = { limit = { $LEVEL$ >= 5 flag:$TYPE$ = flag:wind } ALF_assign_perk = { PERK = control_storm_perk } }
+	if = { limit = { $LEVEL$ >= 6 flag:$TYPE$ = flag:wind } ALF_assign_perk = { PERK = rule_storm_perk } }
+
+	if = { limit = { $LEVEL$ >= 1 flag:$TYPE$ = flag:water } ALF_assign_perk = { PERK = manipulate_water_perk } }
+	if = { limit = { $LEVEL$ >= 2 flag:$TYPE$ = flag:water } ALF_assign_perk = { PERK = control_water_perk } }
+	if = { limit = { $LEVEL$ >= 3 flag:$TYPE$ = flag:water } ALF_assign_perk = { PERK = rule_water_perk } }
+	if = { limit = { $LEVEL$ >= 4 flag:$TYPE$ = flag:water } ALF_assign_perk = { PERK = manipulate_stream_perk } }
+	if = { limit = { $LEVEL$ >= 5 flag:$TYPE$ = flag:water } ALF_assign_perk = { PERK = control_stream_perk } }
+	if = { limit = { $LEVEL$ >= 6 flag:$TYPE$ = flag:water } ALF_assign_perk = { PERK = rule_stream_perk } }
+
+	if = { limit = { $LEVEL$ >= 1 flag:$TYPE$ = flag:rock } ALF_assign_perk = { PERK = manipulate_rock_perk } }
+	if = { limit = { $LEVEL$ >= 2 flag:$TYPE$ = flag:rock } ALF_assign_perk = { PERK = control_rock_perk } }
+	if = { limit = { $LEVEL$ >= 3 flag:$TYPE$ = flag:rock } ALF_assign_perk = { PERK = rule_rock_perk } }
+	if = { limit = { $LEVEL$ >= 4 flag:$TYPE$ = flag:rock } ALF_assign_perk = { PERK = manipulate_material_perk } }
+	if = { limit = { $LEVEL$ >= 5 flag:$TYPE$ = flag:rock } ALF_assign_perk = { PERK = control_material_perk } }
+	if = { limit = { $LEVEL$ >= 6 flag:$TYPE$ = flag:rock } ALF_assign_perk = { PERK = rule_material_perk } }
+
+	if = { limit = { $LEVEL$ >= 7 } ALF_assign_perk = { PERK = king_of_elements_perk } }
+}
+
+ALF_assign_fortuna_perks_effect = {
+	if = { limit = { $LEVEL$ >= 1 } ALF_assign_perk = { PERK = lucky_existence_perk } }
+	if = { limit = { $LEVEL$ >= 2 } ALF_assign_perk = { PERK = share_luck_perk } }
+	if = { limit = { $LEVEL$ >= 2 } ALF_assign_perk = { PERK = steal_luck_perk } }
+	if = { limit = { $LEVEL$ >= 3 } ALF_assign_perk = { PERK = greater_luck_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = oops_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = bless_character_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = bless_artifact_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = bless_land_perk } }
+	if = { limit = { $LEVEL$ >= 6 } ALF_assign_perk = { PERK = curse_perk } }
+	if = { limit = { $LEVEL$ >= 7 } ALF_assign_perk = { PERK = tragic_day_perk } }
+}
+
+ALF_assign_aspectum_perks_effect = {
+	if = { limit = { $LEVEL$ >= 1 } ALF_assign_perk = { PERK = enhance_vision_perk } }
+	if = { limit = { $LEVEL$ >= 2 } ALF_assign_perk = { PERK = perfect_view_perk } }
+	if = { limit = { $LEVEL$ >= 3 } ALF_assign_perk = { PERK = nothing_wrong_here_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = scry_for_secrets_perk } }
+	if = { limit = { $LEVEL$ >= 4 } ALF_assign_perk = { PERK = scry_for_information_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = scry_for_schemes_perk } }
+	if = { limit = { $LEVEL$ >= 5 } ALF_assign_perk = { PERK = scry_for_plans_perk } }
+	if = { limit = { $LEVEL$ >= 6 } ALF_assign_perk = { PERK = scry_for_knowledge_perk } }
+	if = { limit = { $LEVEL$ >= 7 } ALF_assign_perk = { PERK = scry_for_education_perk } }
+}
