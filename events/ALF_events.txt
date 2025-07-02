@@ -41,6 +41,8 @@ ALF_events.1000 = {
 	option = {
 		name = ALF_events.1000.a
 		trigger_event = { id = ALF_events.1001 days = { 2 10 } }
+		ALF_set_variable_or_change = { VAR = ALF_greatest_spell_mental_fortitude VAL = 5 }
+		ALF_set_variable_or_change = { VAR = ALF_greatest_spell_success_chance VAL = 10 }
 	}
 
 	option = {
@@ -288,8 +290,13 @@ ALF_events.1005 = {
 			}
 			0 = {
 				desc = ALF_events.1005.a.b.tt
-				modifier = { add = var:ALF_greatest_spell_success_chance }
-				modifier = { add = var:ALF_greatest_spell_success_chance }
+				modifier = { 
+					add = { 
+						value = var:ALF_greatest_spell_success_chance 
+						add = var:ALF_greatest_spell_success_chance 
+						max = 50
+					}
+				}
 				remove_list_variable = {
 					name = unavailable_unique_decisions
 					target = flag:ALF_greatest_spell_objective_decision
@@ -297,9 +304,15 @@ ALF_events.1005 = {
 			}
 			100 = {
 				desc = ALF_events.1005.a.c.tt
-				modifier = { add = { value = var:ALF_greatest_spell_success_chance multiply = -1 } }
-				modifier = { add = { value = var:ALF_greatest_spell_success_chance multiply = -1 } }
-				modifier = { add = { value = var:ALF_greatest_spell_success_chance multiply = -1 } }
+				modifier = { 
+					add = { 
+						value = var:ALF_greatest_spell_success_chance 
+						add = var:ALF_greatest_spell_success_chance 
+						add = var:ALF_greatest_spell_success_chance 
+						multiply = -1 
+						min = -100
+					} 
+				}
 				custom_tooltip =  ALF_events.1005.a.c.effect
 				set_global_variable = {
 					name = the_end_of_the_world
