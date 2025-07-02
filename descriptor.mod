@@ -10,3 +10,4 @@ tags={
 }
 name="Arcane Legacy Four"
 supported_version="1.16.*"
+remote_file_id="3514430504"
