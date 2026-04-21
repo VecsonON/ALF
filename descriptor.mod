@@ -9,5 +9,5 @@ tags={
 	"Gameplay"
 }
 name="Arcane Legacy Four"
-supported_version="1.16.*"
+supported_version="1.19.*"
 remote_file_id="3514430504"

@@ -21,6 +21,6 @@
  SCRY_FOR_INFORMATION_PERK_EFFECT: "$general_spell_loca$ Scry to disccover random secret target knows of.\n#flavor [ALF_mage|E] can scry their surroundings in search for information.#!"
  SCRY_FOR_SCHEMES_PERK_EFFECT: "$general_spell_loca$ Scry to discover random scheme target is planning.\n#flavor [ALF_mage|E] scry world itself in search for schemes.#!"
  SCRY_FOR_PLANS_PERK_EFFECT: "$general_spell_loca$ Scry to discover random scheme targeted against target.\n#flavor [ALF_mage|E] can scry future in search of plans.#!"
- SCRY_FOR_KNOWLEDGE_PERK_EFFECT: "$general_spell_loca$ Scry to copy [traits|E] like [GetTrait('shrewd').GetName(GetPlayer)] or [GetTrait('poet').GetName(GetPlayer)].\n#flavor [ALF_mage|E] can scry other's mind in search of knowledge.#!"
+ SCRY_FOR_KNOWLEDGE_PERK_EFFECT: "$general_spell_loca$ Scry to copy [traits|E] like [GetTrait('shrewd').GetName(GetPlayer)] or [GetTrait('lifestyle_poet').GetName(GetPlayer)].\n#flavor [ALF_mage|E] can scry other's mind in search of knowledge.#!"
  SCRY_FOR_EDUCATION_PERK_EFFECT: "$general_spell_loca$ Scry to advance your education [trait|E].\n#flavor [ALF_mage|E] can scry other's mind in search of advancing their knowledge.#!"
  PREFECT_VISION_PERK_EFFECT: "#flavor [ALF_mage|E]'s vision becomes sharper to supernatural levels as needed.#!"

@@ -548,8 +548,8 @@ scry_for_knowledge_sgui = {
 						NOT = { has_trait = shrewd }
 					}
 					AND = {
-						var:spell_target = { has_trait = poet }
-						NOT = { has_trait = poet }
+						var:spell_target = { has_trait = lifestyle_poet }
+						NOT = { has_trait = lifestyle_poet }
 					}
 					AND = {
 						var:spell_target = { has_trait = logistician }

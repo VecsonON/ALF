@@ -172,6 +172,10 @@ ALF_amend_flesh_effect = {
 			1 = { trigger = { has_trait = disfigured } remove_trait = disfigured }
 			1 = { trigger = { has_trait = infirm } remove_trait = infirm }
 			1 = { trigger = { has_trait = incapable } remove_trait = incapable }
+			1 = { trigger = { has_trait = withering_mind } remove_trait = withering_mind }
+			1 = { trigger = { has_trait = clouded_eyes } remove_trait = clouded_eyes }
+			1 = { trigger = { has_trait = faltering_heart } remove_trait = faltering_heart }
+			1 = { trigger = { has_trait = fragile_bones } remove_trait = fragile_bones }
 		}
 	}
 	ALF_use_willpower_effect = { COUNT = 100 }
@@ -635,10 +639,10 @@ ALF_scry_for_knowledge_effect = {
 				}
 				1 = { 
 					trigger = { 
-						var:spell_target = { has_trait = poet } 
-						NOT = { has_trait = poet }
+						var:spell_target = { has_trait = lifestyle_poet } 
+						NOT = { has_trait = lifestyle_poet }
 					}
-					add_trait = poet
+					add_trait = lifestyle_poet
 				}
 				1 = { 
 					trigger = { 

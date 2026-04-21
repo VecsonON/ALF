@@ -72,7 +72,7 @@
  spell_scry_for_plans_tt: "[SpellTarget.Char.GetFullName] doesn't have any schemes against them to discover!"
  ALF_scry_for_plans_effect: "Discover random scheme targeted against [SpellTarget.Char.GetFullName]"
  spell_scry_for_knowledge: "Scry for Knowledge"
- spell_scry_for_knowledge_tt: "[SpellTarget.Char.GetFullName] doesn't have any new knowledge to learn! #weak Traits like [GetTrait('shrewd').GetName(GetPlayer)] or [GetTrait('poet').GetName(GetPlayer)] and most commander traits#!"
+ spell_scry_for_knowledge_tt: "[SpellTarget.Char.GetFullName] doesn't have any new knowledge to learn! #weak Traits like [GetTrait('shrewd').GetName(GetPlayer)] or [GetTrait('lifestyle_poet').GetName(GetPlayer)] and most commander traits#!"
  spell_scry_for_education: "Scry for Education"
  spell_scry_for_education_tt: "[SpellTarget.Char.GetFullName] doesn't have any education trait you can use to upgrade your!"
 
