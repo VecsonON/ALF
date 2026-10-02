@@ -3,10 +3,6 @@
 		limit = {
 			scope:will_override_government = no
 		}
-		custom_description = {
-			text = "GAME_OVER_CANNOT_PLAY_THEOCRACY"
-			NOT = { government_has_flag = government_is_theocracy }
-		}
 
 		custom_description = {
 			text = "GAME_OVER_CANNOT_PLAY_REPUBLIC"
@@ -33,6 +29,25 @@
 			}
 		}
 
+		trigger_if = {
+			limit = {
+				NOT = { has_dlc_feature = by_god_alone }
+			}
+			trigger_if = {
+				limit = { government_has_flag = government_is_ecclesiastical }
+				custom_description = {
+					text = "GAME_OVER_CANNOT_PLAY_ECCLESIASTICAL"
+					NOT = { government_has_flag = government_is_ecclesiastical }
+				}
+			}
+			trigger_else = {
+				custom_description = {
+					text = "GAME_OVER_CANNOT_PLAY_THEOCRACY"
+					NOT = { government_has_flag = government_is_theocracy }
+				}
+			}
+		}
+
 		# We cannot become landless adventurers
 		trigger_if = {
 			limit = {
@@ -50,6 +65,24 @@
 			# This is a generic "catch all", we should have caught it before this
 			is_playable_character = yes
 		}
+
+		# This character is not playable
+		trigger_if = {
+			limit = {
+				OR = {
+					government_is_japanese_trigger = yes
+					government_has_flag = government_is_theocracy
+				}
+				is_landed = no
+				not = { exists = clerical_elector_title }
+			}
+
+			custom_tooltip = {
+				text = GAME_OVER_CANNOT_PLAY_ESTATELESS
+				has_domicile = yes
+			}
+		}
+		
 		# We can become landless adventurers
 		trigger_else = {
 			# This is a generic "catch all", we should have caught it before this
@@ -60,6 +93,8 @@
 				}
 				is_playable_character = yes # General catch-all, we can continue playing
 			}
+			NOT = { has_character_flag = declined_become_laamp }
+			
 		}
 
 		custom_description = {
