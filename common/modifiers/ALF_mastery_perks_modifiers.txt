@@ -18,7 +18,7 @@ enforce_will_modifier = {
 }
 strenghen_will_modifier = {
 	icon = magic_positive
-	ALF_terrain_mage_development_growth = 0.1
+	ALF_terrain_mage_prosperity_growth = 0.1
 	scale = {
 		value = strenghen_will_perk_count
 		desc = ALF_strenghen_will_perk_count_desc

@@ -37,7 +37,7 @@
  ALF_terrain_mage_advantage: "[ALF_mental_fortitude|E]"
  ALF_terrain_mage_min_combat_roll: "[ALF_willpower|E] Cost"
  ALF_terrain_mage_max_combat_roll: "Enemy [ALF_mental_fortitude|E] Cost"
- ALF_terrain_mage_development_growth: "Chance for [mental_break|E] to increase [ALF_mental_fortitude|E]"
+ ALF_terrain_mage_prosperity_growth: "Chance for [mental_break|E] to increase [ALF_mental_fortitude|E]"
 
  ALF_generalized_mental_fortitude_duel_tt:0 "[ALF_mental_fortitude_with_i|E] Challenge against [TARGET_CHARACTER.GetTitledFirstName]"
 

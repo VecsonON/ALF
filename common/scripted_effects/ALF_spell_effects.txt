@@ -424,7 +424,7 @@ ALF_devastate_duchy_effect = {
 		SUCCESS = "
 			var:spell_target = {
 				every_de_jure_county = {
-					change_development_level = ROOT.ALF_devastate_duchy_level
+					change_prosperity_level = ROOT.ALF_devastate_duchy_level
 					title_province = {
 						hidden_effect = { destroy_random_building_variable_effect = yes }
 						destroy_random_building_effect = yes

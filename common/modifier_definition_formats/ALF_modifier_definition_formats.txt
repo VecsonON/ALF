@@ -14,7 +14,7 @@ ALF_terrain_mage_max_combat_roll = { # Enemy Power Cost
 	decimals = 0
 	percent = yes
 }
-ALF_terrain_mage_development_growth = { # Meditation Mental Fortitude Buff
+ALF_terrain_mage_prosperity_growth = { # Meditation Mental Fortitude Buff
 	decimals = 0
 	percent = yes
 }
