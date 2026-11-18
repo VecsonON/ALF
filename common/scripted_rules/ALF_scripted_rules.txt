@@ -4,9 +4,18 @@
 			scope:will_override_government = no
 		}
 
-		custom_description = {
-			text = "GAME_OVER_CANNOT_PLAY_REPUBLIC"
-			NOT = { government_has_flag = government_is_republic }
+		trigger_if = {
+			limit = {
+				NOT = { has_dlc_feature = playable_republics }
+			}
+			custom_description = {
+				text = "GAME_OVER_CANNOT_PLAY_REPUBLIC"
+				NOT = { government_has_flag = government_is_republic }
+			}
+			custom_description = {
+				text = "GAME_OVER_CANNOT_PLAY_MERCHANT"
+				NOT = { government_has_flag = government_is_merchant }
+			}
 		}
 
 		custom_description = {
@@ -51,19 +60,22 @@
 		# We cannot become landless adventurers
 		trigger_if = {
 			limit = {
-				NOT = { has_dlc_feature = roads_to_power }
+				NOT = { has_dlc_feature = landless_adventurer }
 			}
 			custom_description = {
 				text = "GAME_OVER_CANNOT_PLAY_ADVENTURER"
 				NOT = { government_has_flag = government_is_landless_adventurer }
 			}
+		}
+
+		trigger_if = {
+			limit = {
+				NOT = { has_dlc_feature = roads_to_power }
+			}
 			custom_description = {
 				text = "GAME_OVER_CANNOT_PLAY_BARON"
 				NOT = { highest_held_title_tier = tier_barony }
 			}
-
-			# This is a generic "catch all", we should have caught it before this
-			is_playable_character = yes
 		}
 
 		# This character is not playable
@@ -86,15 +98,15 @@
 		# We can become landless adventurers
 		trigger_else = {
 			# This is a generic "catch all", we should have caught it before this
-			OR = {
-				AND = {
-					is_ruler = no # We're not a ruler, but we can become a landless adventurer
+			trigger_if = {
+				limit = { is_playable_character = no }
+				is_ruler = no # We're not a ruler, but we can become a landless adventurer
+				custom_tooltip = {
+					text = is_valid_for_laampdom_tt
 					is_valid_for_laampdom = yes
+					NOT = { has_character_flag = declined_become_laamp }
 				}
-				is_playable_character = yes # General catch-all, we can continue playing
 			}
-			NOT = { has_character_flag = declined_become_laamp }
-			
 		}
 
 		custom_description = {
